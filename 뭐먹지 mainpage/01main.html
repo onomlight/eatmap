@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>뭐먹지</title>
+       <!-- common.css -->
+       <link rel="stylesheet" type="text/css" href="./common.css">
+       <!-- topmenu.css -->
+        <link rel="stylesheet" type="text/css" href="./topmenu.css">
+       <!-- maincontainer.css -->
+       <link rel="stylesheet" type="text/css" href="./maincontainer.css">
+       <!-- footer.css -->
+       <link rel="stylesheet" type="text/css" href="./footer.css">
+       <!-- 이미지 슬라이드 -->
+       <link rel="stylesheet" type="text/css" href="./imgslid.css">
+       <style>
+        /* #top-element{} */
+       
+    
+    </style>
+</head>
+<body>
+    <div id="warpper">
+
+        <div  id="topmenu">
+            <!-- header -->
+            <header> 
+                <!-- quick -->
+                
+                <ul id="quick">
+
+                    <li><a href="#">Menu1</a></li>
+                    <li><a href="#">Menu2</a></li>
+                    <li><a href="#">Menu3</a></li>
+                    <li><a href="#">Menu4</a></li>
+
+                </ul>
+            </header>
+        <div main-img><img id="main-logo" src="뭐먹지.png"></div>
+        <h3 style="text-align: center;">내 취향과 이런집도 있어?
+            확인을 위해!</h3>
+        <nav>
+            <ul id="depth1">
+                
+                <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
+                <li><a href="#">Menu1</a></li>
+                <li><a href="#">Menu2</a></li>
+                <li><a href="#">Menu3</a></li>
+                <li><a href="#">Menu4</a></li>
+                 
+
+            </ul>
+        </nav>
+    </div>
+    <div id="main-container">
+        <!-- banner slider -->
+        <div id="banner-slider">
+            <div id="map" style="width:500px;height:400px;"></div>
+            <!-- <div id="main-img" style="width: 500px;height:400px ;"></div> -->
+            <div class="slideshow-container" style="width: 500px;height:400px ;">
+
+                <div class="mySlideDiv fade active">
+                   <img src="돈까스.jpg"> 
+                </div>
+                       
+                <div class="mySlideDiv fade">
+                    <img src="소바.jpg"> 
+                </div>
+                       
+                <div class="mySlideDiv fade">
+                    <img src="파스타.jpg"> 
+                </div>
+           
+                <a class="prev" onclick="prevSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+                       
+           </div>
+        </div>
+        <!-- tab -->
+        <div id="tab">tab</div>
+        <!-- card -->
+        <div id="card">card</div>
+        <!-- itme slider -->
+        <div id="item-slider">item</div>
+    </div>
+            
+
+           
+
+  
+    <footer>
+        <div id="top-element">
+            <!-- 링크 -->
+            <ul id="footer-menu">
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>고객센터</li>
+                <li>ㅁㅁㅁ</li>
+                <li>ㅁㅁㅁ</li>
+                <li>ㅁㅁㅁ</li>
+                
+            </ul>
+        </div>
+        <div id="body-element"></div>
+        <!-- footer logo -->
+        <div id="footer-logo"> LOGO</div>
+        <!-- info -->
+        <div id="info"> 대표 ㅣ 홍길동... TEL:053-222-5555</div>
+        <!-- sns -->
+        <div id="sns">NOEBTUBE</div>
+     </footer>
+</body>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+<script src="app.js"></script>
+<script src="imgslid.js"></script>
+</html>

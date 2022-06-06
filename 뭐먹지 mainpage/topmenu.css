@@ -1,0 +1,38 @@
+     /* topmenu */
+     #topmenu{}
+     header{
+         height:50px;
+     }
+
+     /* Quick */
+    #quick{
+        
+        display:flex;
+        flex-direction: row-reverse;
+        align-items:center;
+    }
+    
+     /* Nav */
+     nav{
+        /* height:120px; */
+    }
+     #depth1{
+         display:flex;
+         /* 수평정렬 */
+         justify-content: center;
+         /* 수직정렬 */
+         align-items: center;
+     }
+     #depth1>li{
+         width:150px;
+         margin:0 50px;
+     }
+     #main-logo{
+         display: flex;
+         width:300px;
+         height:300px;
+         margin: auto;
+         padding: auto;
+     }   
+
+
