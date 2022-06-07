@@ -1,0 +1,17 @@
+#wrapper{
+    border:1px solid gray ;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+.logo-center{
+    display: block;
+    border: 1px solid gray;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
