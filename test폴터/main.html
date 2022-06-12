@@ -110,28 +110,59 @@
                 }
             </style>
             <div class="slide">
+                <style>
+                    .slide{
+                        width: 1400px;
+                        max-width: 1400px;
+                        padding: 20px;
+                    }
+                </style>
                 <!-- 카카오맵 위치api  -->
-                <div id="map">
+                <div id="map" style="width:500px;height:400px;" >
 
                 </div>
+                <style>
+                    #map{
+                        display: flex;
+                        position: absolute;
+                    }
+                </style>
                 <!-- 이미지 슬라이드 위치 -->
-                <div class="1st-slide">
-                    <div class="2st-slide" data-index="0" style="opacity: 1; width: 800px;">
-                        <div class="3st-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                <!-- 1번 슬라이드 위치 -->
+                <div class="fst-slide">
+                    <style>
+                        .fst-slide{
+                            position: fixed;
+                            margin-left: 500px;
+                            left: 200px;
+                        }
+                        .sst-slide{
+                            width: 956px;
+                            position: relative;
+                            left: 0px;
+                            top: 0px;
+                            z-index: 9;
+                            opacity: 1;
+                            display: block;
+                        }
+                    </style>
+                    <!-- 2번 슬라이드   -->
+                    <div class="sst-slide" data-index="0" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
                             <div>
                                 <div class="item" style="width: 100%; display: inline-block;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="2st-slide" data-index="1" aria-hidden="true" style="width: 260px; position: relative; left: -260px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
-                        <div class="3st-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                    <div class="tst-slide" data-index="1" aria-hidden="true" style="width: 260px; position: relative; left: -260px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
                             <div>
                                 <div class="item" style="width: 100%; display: inline-block;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="2st-slide" data-index="2" style="opacity: 1; width: 800px;">
-                        <div class="2st-slide" data-index="2" aria-hidden="true" style="width: 260px; position: relative; left: -520px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                    <div class="fst-slide" data-index="2" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" data-index="2" aria-hidden="true" style="width: 260px; position: relative; left: -520px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
                             <div>
                                 <div class="item" style="width: 100%; display: inline-block;"></div>
                             </div>
@@ -159,23 +190,23 @@
                     </div>
                 </div>
                 <!-- 날씨 위치-->
-                <div class="wt_area" style="width: 300px ; height: 200px;">
+                <!-- <div class="wt_area" style="width: 300px ; height: 200px;">
                     <div class="wt_group">
                         <a href="https://www.weather.go.kr/" target="_blank">
                             
 
                     </div>
 
-                </div>
+                </div> -->
                 
                 
             </div>
             <!-- 이미지 슬라이드 -->
-            <div>
+            <!-- <div>
                 <div>
                     
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </div>
