@@ -9,14 +9,14 @@
 <body>
     <style>
         *{border: 1px solid gray; padding: 10px;}
-        body, input , textarea , button select , pre {
+        body, input , textarea , button select  {
             font-family: '맑은 고딕', '돋움',Dotunm,'굴림',Gulim,sans-serif;
         }
         .main_top * {
             box-sizing: border-box;
         }
         div{
-            display: block;
+            /* display: block; */
         }
         .main_top .srch{
             padding-bottom: 20px;
@@ -88,7 +88,7 @@
                     <form name="searchFrom" action="" >
                         <div class="srch_area">
                             <label for="s_word" id="srch_keyword"></label>
-                            <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active">
+                            <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
                             <button type="submit" class="btn_srch" onclick="return emptyChk();">검색</button>
                         </div>
                     </form>
