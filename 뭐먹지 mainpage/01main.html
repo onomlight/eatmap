@@ -19,7 +19,7 @@
        <!-- 이미지 슬라이드 -->
        <link rel="stylesheet" type="text/css" href="./imgslid.css">
        <style>
-        /* #top-element{} */
+       
        
     
     </style>
@@ -29,9 +29,10 @@
 
         <div  id="topmenu">
             <!-- header -->
+            <!-- 퀵메뉴 // 제일 상단 -->
             <header> 
                 <!-- quick -->
-                
+                <a href=""> 1번창</a>
                 <!-- <ul id="quick">
 
                     <li><a href="#">나의 현재 위치</a></li>
@@ -41,19 +42,26 @@
 
                 </ul> -->
             </header>
+            <!-- 2번째 로고창 // 크기조절할것  -->
         <div main-img><img id="main-logo" src="뭐먹지.png"></div>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
-        <div class="srch">
-            <div class="inr">
-                <div class="srch_wrap">
-                    <form name="searchFrom" action="" >
-                        <div class="srch_area">
-                            <label for="s_word" id="srch_keyword"></label>
-                            <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
-                            <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
-                        </div>
-                    </form>
 
+        <!-- 검색창 -->
+        <div class="main_top" >
+            <!-- 검색창 -->
+            <div class="top_menu"></div>
+            <div class="srch">
+                <div class="inr">
+                    <div class="srch_wrap">
+                        <form name="searchFrom" action="" >
+                            <div class="srch_area">
+                                <label for="s_word" id="srch_keyword"></label>
+                                <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
+                                <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
+                            </div>
+                        </form>
+    
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,11 +69,18 @@
             <ul id="depth1">
                 
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
-
-                    <li><a href="#">나의 현재 위치</a></li>
-                    <li><a href="#">뭐먹지?</a></li>
-                    <li><a href="#">맛집 리스트 보기</a></li>
-                    <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
+                    <div class="mid-menu">
+                        <li><a href="#">나의 현재 위치</a></li>
+                        <li><a href="#">뭐먹지?</a></li>
+                        <li><a href="#">맛집 리스트 보기</a></li>
+                    </div>
+                    <style>
+                        .mid-menu
+                        {
+                            text-align: center;
+                        }
+                    </style>
+                    
 
               
                  
@@ -73,36 +88,120 @@
             </ul>
         </nav>
     </div>
-    <div id="main-container">
-        <!-- banner slider -->
-        <div id="banner-slider">
-            <div id="map" style="width:500px;height:400px;"></div>
-            <!-- <div id="main-img" style="width: 500px;height:400px ;"></div> -->
-            <div class="slideshow-container" style="width: 500px;height:400px ;">
+    <div class="main_cen">
+        <!-- 가운데 메뉴 라인 // 이미지 슬라이드 // 카카오맵 // 날씨 영역-->
+        <div class="smt_area">
+            <style>
+                .smt_area{
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                }
+            </style>
+            <div class="slide">
+                <style>
+                    .slide{
+                        width: 1400px;
+                        max-width: 1400px;
+                        padding: 20px;
+                    }
+                </style>
+                <!-- 카카오맵 위치api  -->
+                <div id="map" style="width:500px;height:400px;" >
 
-                <div class="mySlideDiv fade active">
-                   <img src="돈까스.jpg"> 
                 </div>
-                       
-                <div class="mySlideDiv fade">
-                    <img src="소바.jpg"> 
+                <style>
+                    #map{
+                        display: flex;
+                        position: absolute;
+                        left: 195px;
+                    }
+                </style>
+                <!-- 이미지 슬라이드 위치 -->
+                <!-- 1번 슬라이드 위치 -->
+                <div class="fst-slide">
+                    <style>
+                        .fst-slide{
+                            position: fixed;
+                            margin-left: 500px;
+                            left: 255px;
+                            border: 1px solid gray;
+                        }
+                        .sst-slide{
+                            width: 956px;
+                            position: relative;
+                            left: 0px;
+                            top: 0px;
+                            z-index: 9;
+                            opacity: 1;
+                            display: block;
+                        }
+                    </style>
+                    <!-- 2번 슬라이드   -->
+                    <div class="sst-slide" data-index="0" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tst-slide" data-index="1" aria-hidden="true" style="width: 260px; position: relative; left: -260px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fst-slide" data-index="2" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" data-index="2" aria-hidden="true" style="width: 260px; position: relative; left: -520px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <button type="button" class="prev">
+                            <span class="sp_main">이전보기</span>
+                        </button>
+                        <span class="count">
+                            <em>1</em>
+                            "/3"
+                        </span>
+                        <button type="button" class="next">
+                            <span class="sp_main">다음보기</span>
+                            </button>
+                        <div class="ctrl_area">
+                            <button type="button" class="pause" style="display: none;">
+                                <span class="sp_main">정지</span>
+                            </button>
+                            <button type="button" class="play active" >
+                                <span class="sp_main">재생</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                       
-                <div class="mySlideDiv fade">
-                    <img src="파스타.jpg"> 
-                </div>
-           
-                <a class="prev" onclick="prevSlide()">&#10094;</a>
-                <a class="next" onclick="nextSlide()">&#10095;</a>
-                       
-           </div>
+                <!-- 날씨 위치-->
+                <!-- <div class="wt_area" style="width: 300px ; height: 200px;">
+                    <div class="wt_group">
+                        <a href="https://www.weather.go.kr/" target="_blank">
+                            
+
+                    </div>
+
+                </div> -->
+                
+                
+            </div>
+            
         </div>
-        <!-- tab -->
-        <div id="tab">tab</div>
-        <!-- card -->
-        <div id="card">card</div>
-        <!-- itme slider -->
-        <div id="item-slider">item</div>
+          <!-- tab -->
+          <div id="tab">tab</div>
+          <!-- card -->
+          <div id="card">card</div>
+          <!-- itme slider -->
+          <div id="item-slider">item</div>
+
     </div>
             
 
