@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{border: 1px solid gray; padding: 10px;}
+        body, input , textarea , button select , pre {
+            font-family: '맑은 고딕', '돋움',Dotunm,'굴림',Gulim,sans-serif;
+        }
+        .main_top * {
+            box-sizing: border-box;
+        }
+        div{
+            display: block;
+        }
+        .main_top .srch{
+            padding-bottom: 20px;
+            padding: 20px 0 40px;
+            box-sizing: border-box;
+            display: block;
+       
+        }
+        .main_top .srch > .inr{
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .main_top .srch_wrap{
+            position: relative;
+            max-width: 837px;
+            margin: 0 auto;
+        }
+        form{display: block; margin-top: 0px;}
+        .main_top .srch_area{
+            position: relative;
+            padding-right: 105px;
+            border: 2px solid rgb(42, 185, 194);
+            border-radius: 20px ;
+            background: white;
+        }
+        .srch_keyword{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 105px;
+            height: 27px;
+            margin: auto;
+            color: transparent;
+            overflow: hidden;
+        }
+        .s_word{
+            width: 100%;
+            padding: 0 30px;
+            border: 0;
+            background: none;
+            font-size: 28px;
+            color: #09A958;
+        }
+        .main_top .srch_area .btn_srch {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            overflow: hidden;
+            width: 126px;
+            border-radius: 20px 0;
+            background: rgb(42, 185, 194) url(../test폴터/btn_srch.png) no-repeat 50% 50%;
+            color: transparent;
+        }
+
+        .btn_srch{
+            cursor: pointer;
+           
+        }
+        
+    </style>
+    <div class="main_top" >
+        <!-- 검색창 -->
+        <div class="top_menu"></div>
+        <div class="srch">
+            <div class="inr">
+                <div class="srch_wrap">
+                    <form name="searchFrom" action="" >
+                        <div class="srch_area">
+                            <label for="s_word" id="srch_keyword"></label>
+                            <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active">
+                            <button type="submit" class="btn_srch" onclick="return emptyChk();">검색</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main_cen">
+        <!-- 가운데 메뉴 라인 // 이미지 슬라이드 // 카카오맵 // 날씨 영역-->
+        <div class="smt_area">
+            <style>
+                .smt_area{
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                }
+            </style>
+            <div class="slide">
+                <style>
+                    .slide{
+                        width: 1400px;
+                        max-width: 1400px;
+                        padding: 20px;
+                    }
+                </style>
+                <!-- 카카오맵 위치api  -->
+                <div id="map" style="width:500px;height:400px;" >
+
+                </div>
+                <style>
+                    #map{
+                        display: flex;
+                        position: absolute;
+                    }
+                </style>
+                <!-- 이미지 슬라이드 위치 -->
+                <!-- 1번 슬라이드 위치 -->
+                <div class="fst-slide">
+                    <style>
+                        .fst-slide{
+                            position: fixed;
+                            margin-left: 500px;
+                            left: 200px;
+                        }
+                        .sst-slide{
+                            width: 956px;
+                            position: relative;
+                            left: 0px;
+                            top: 0px;
+                            z-index: 9;
+                            opacity: 1;
+                            display: block;
+                        }
+                    </style>
+                    <!-- 2번 슬라이드   -->
+                    <div class="sst-slide" data-index="0" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tst-slide" data-index="1" aria-hidden="true" style="width: 260px; position: relative; left: -260px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fst-slide" data-index="2" style="opacity: 1; width: 800px;">
+                        <div class="t-slide" data-index="2" aria-hidden="true" style="width: 260px; position: relative; left: -520px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
+                            <div>
+                                <div class="item" style="width: 100%; display: inline-block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <button type="button" class="prev">
+                            <span class="sp_main">이전보기</span>
+                        </button>
+                        <span class="count">
+                            <em>1</em>
+                            "/3"
+                        </span>
+                        <button type="button" class="next">
+                            <span class="sp_main">다음보기</span>
+                            </button>
+                        <div class="ctrl_area">
+                            <button type="button" class="pause" style="display: none;">
+                                <span class="sp_main">정지</span>
+                            </button>
+                            <button type="button" class="play active" >
+                                <span class="sp_main">재생</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 날씨 위치-->
+                <!-- <div class="wt_area" style="width: 300px ; height: 200px;">
+                    <div class="wt_group">
+                        <a href="https://www.weather.go.kr/" target="_blank">
+                            
+
+                    </div>
+
+                </div> -->
+                
+                
+            </div>
+            <!-- 이미지 슬라이드 -->
+            <!-- <div>
+                <div>
+                    
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+</body>
+</html>
