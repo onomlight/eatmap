@@ -16,7 +16,7 @@
      nav{
         /* height:120px; */
     }
-     #depth1{
+     #depth1{ 
          display:flex;
          /* 수평정렬 */
          justify-content: center;
@@ -35,4 +35,72 @@
          padding: auto;
      }   
 
+ body, input , textarea , button select  {
+            font-family: '맑은 고딕', '돋움',Dotunm,'굴림',Gulim,sans-serif;
+        }
+        .main_top * {
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        div{
+            /* display: block; */
+        }
+        .main_top .srch{
+            padding-bottom: 20px;
+            padding: 20px 0 40px;
+            box-sizing: border-box;
+            display: block;
+       
+        }
+        .main_top .srch > .inr{
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .main_top .srch_wrap{
+            position: relative;
+            max-width: 837px;
+            margin: 0 auto;
+        }
+        form{display: block; margin-top: 0px;}
+        .main_top .srch_area{
+            position: relative;
+            padding-right: 105px;
+            border: 3px solid rgb(42, 185, 194);
+            border-radius: 20px ;
+            background: white;
+        }
+        .srch_keyword{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 105px;
+            height: 27px;
+            margin: auto;
+            color: transparent;
+            overflow: hidden;
+        }
+        .s_word{
+            width: 100%;
+            padding: 0 30px;
+            border: 0;
+            background: none;
+            font-size: 28px;
+            color: #09A958;
+        }
+        .main_top .srch_area .btn_srch {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            overflow: hidden;
+            width: 126px;
+            border-radius: 20px 0;
+            background: rgb(42, 185, 194) url(../test폴터/btn_srch.png) no-repeat 50% 50%;
+            color: transparent;
+        }
 
+        .btn_srch{
+            cursor: pointer;
+           
+        }
