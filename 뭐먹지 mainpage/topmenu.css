@@ -46,8 +46,9 @@
             /* display: block; */
         }
         .main_top .srch{
-            padding-bottom: 20px;
-            padding: 20px 0 40px;
+            /* padding-bottom: 20px; */
+            /* padding: 20px 0 40px; */
+            padding: 0px;
             box-sizing: border-box;
             display: block;
        
@@ -58,7 +59,7 @@
         }
         .main_top .srch_wrap{
             position: relative;
-            max-width: 837px;
+            max-width: 900px;
             margin: 0 auto;
         }
         form{display: block; margin-top: 0px;}
