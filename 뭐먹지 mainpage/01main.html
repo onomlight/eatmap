@@ -16,13 +16,23 @@
        <link rel="stylesheet" type="text/css" href="./maincontainer.css">
        <!-- footer.css -->
        <link rel="stylesheet" type="text/css" href="./footer.css">
-       <!-- 이미지 슬라이드 -->
-       <link rel="stylesheet" type="text/css" href="./imgslid.css">
-       <style>
-       
-       
     
-    </style>
+       <!-- 이미지 슬라이드 -->
+    
+       <link rel="stylesheet" type="text/css" href="./imgslid.css">
+    
+    
+    
+       <!-- JQ -->
+    
+       <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+      
+    
+       <!-- Silck -->
+    
+       <link rel="stylesheet" type="text/css" href="slick.js/slick.css">   
+    
+       <script src="slick.js/slick.min.js"></script>
 </head>
 <body>
     <div id="warpper">
@@ -49,21 +59,29 @@
         <!-- 검색창 -->
         <div class="main_top" >
             <!-- 검색창 -->
-            <div class="top_menu"></div>
-            <div class="srch">
-                <div class="inr">
-                    <div class="srch_wrap">
-                        <form name="searchFrom" action="" >
-                            <div class="srch_area">
-                                <label for="s_word" id="srch_keyword"></label>
-                                <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
-                                <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
-                            </div>
-                        </form>
-    
+            <div class="top_menu">
+                <div class="srch">
+                    <div class="inr">
+                        <style>
+                            #srch{
+                                padding: 0px;
+                            }
+                           
+                        </style>
+                        <div class="srch_wrap">
+                            <form name="searchFrom" action="" >
+                                <div class="srch_area">
+                                    <label for="s_word" id="srch_keyword"></label>
+                                    <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
+                                    <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
+                                </div>
+                            </form>
+        
+                        </div>
                     </div>
                 </div>
             </div>
+               
         </div>
         <nav>
             <ul id="depth1">
@@ -77,7 +95,14 @@
                     <style>
                         .mid-menu
                         {
-                            text-align: center;
+                            /* text-align: center; */
+                            justify-content: space-between;
+                            display: flex;
+                           
+                        }
+                        .mid-menu >li{
+                            margin: 20px;
+                            width: 200px;
                         }
                     </style>
                     
@@ -108,11 +133,14 @@
                     }
                 </style>
                 <!-- 카카오맵 위치api  -->
-                <div id="map" style="width:500px;height:400px;" >
-
+                <!-- 위치 이동을 위한 왼쪽 900px -->
+                <div id="map" style="width:500px;height:400px; left: 900px;"  >
+                    
                 </div>
+                
                 <style>
                     #map{
+                        margin-top: 20px;
                         display: flex;
                         position: absolute;
                         left: 195px;
@@ -120,67 +148,7 @@
                 </style>
                 <!-- 이미지 슬라이드 위치 -->
                 <!-- 1번 슬라이드 위치 -->
-                <div class="fst-slide">
-                    <style>
-                        .fst-slide{
-                            position: fixed;
-                            margin-left: 500px;
-                            left: 255px;
-                            border: 1px solid gray;
-                        }
-                        .sst-slide{
-                            width: 956px;
-                            position: relative;
-                            left: 0px;
-                            top: 0px;
-                            z-index: 9;
-                            opacity: 1;
-                            display: block;
-                        }
-                    </style>
-                    <!-- 2번 슬라이드   -->
-                    <div class="sst-slide" data-index="0" style="opacity: 1; width: 800px;">
-                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
-                            <div>
-                                <div class="item" style="width: 100%; display: inline-block;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tst-slide" data-index="1" aria-hidden="true" style="width: 260px; position: relative; left: -260px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
-                        <div class="t-slide" style="width: 260px; position: relative; left: 0px; top: 0px; z-index: 9; opacity: 1 ;">
-                            <div>
-                                <div class="item" style="width: 100%; display: inline-block;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fst-slide" data-index="2" style="opacity: 1; width: 800px;">
-                        <div class="t-slide" data-index="2" aria-hidden="true" style="width: 260px; position: relative; left: -520px; top: 0px; z-index: 8; opacity: 0; transition: opcity 500ms ease 0s; " tabindex="-1">
-                            <div>
-                                <div class="item" style="width: 100%; display: inline-block;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nav">
-                        <button type="button" class="prev">
-                            <span class="sp_main">이전보기</span>
-                        </button>
-                        <span class="count">
-                            <em>1</em>
-                            "/3"
-                        </span>
-                        <button type="button" class="next">
-                            <span class="sp_main">다음보기</span>
-                            </button>
-                        <div class="ctrl_area">
-                            <button type="button" class="pause" style="display: none;">
-                                <span class="sp_main">정지</span>
-                            </button>
-                            <button type="button" class="play active" >
-                                <span class="sp_main">재생</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- 날씨 위치-->
                 <!-- <div class="wt_area" style="width: 300px ; height: 200px;">
                     <div class="wt_group">
@@ -190,8 +158,48 @@
                     </div>
 
                 </div> -->
-                
-                
+                <!-- 이미지 슬라이드 탑승 -->
+                <style>
+                    img{
+                        width: 500px; height: 400px; margin: 0px;
+                        
+                    }
+                    li{
+                        padding: 10px; margin: 0px 5px;
+                    }
+                 
+                </style>
+                <div id="container">
+                    <div class="tmp">
+                        <ul class="slick">
+                            <li> <img src="돈까스.jpg" alt=""></li>
+                            <li> <img src="소바.jpg" alt=""></li>
+                            <li> <img src="파스타.jpg" alt=""></li>
+                            <li> <img src="img/card4.jpg" alt=""></li>
+
+                            <li> <img src="img/card1.jpg" alt=""></li>
+                            <li> <img src="img/card2.webp" alt=""></li>
+                            <li> <img src="img/card3.jpg" alt=""></li>
+                            <li> <img src="img/card4.jpg" alt=""></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <script>
+                    $('.slick').slick({
+                        arrow : true,
+                        autoplay: true, 
+
+                        // 마우스 hover시 슬라이드 멈춤여부
+                        pauseOnHover : true, 
+
+                        // 버튼없애기
+                        prevArrow:"",
+                        nextArrow:"",
+                    })
+                </script>
             </div>
             
         </div>
