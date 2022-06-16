@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/app.js"></script>
+</head>
+<body>
+    <style>
+        #warpper{
+            padding: 0px;
+            margin: 0px;
+            border: 1px solid gray;
+        }
+
+        #main-logo{
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #mid-menu {
+            display: flex;
+            list-style: none;
+            border: 1px solid gray;
+            justify-content: center;
+        }
+
+        #mid-menu>li{
+            font-weight: 400;
+            font-size: 18px;
+            margin: 10px;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+
+    <div id="warpper">
+
+        <div  id="topmenu">
+            <!-- header -->
+            <!-- 퀵메뉴 // 제일 상단 -->
+            <header> 
+                <div id="main-logo"><img src="../Layout/뭐먹지.png">
+                    <p>내 취향과 이런집도 있어?
+                        확인을 위해!  
+                    </p>
+                </div>
+                <ul id="mid-menu">
+                    <li><a href="#">나의 현재 위치</a></li>
+                    <li><a href="#">뭐먹지?</a></li>
+                    <li><a href="#">맛집 리스트 보기</a></li>
+                </ul>
+            </header>
+        </div>
+    </div>
+
+    <style>
+        .smt_area{
+            border: 1px solid gray;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #map{
+            width: 1200px;
+            height: 800px;
+            margin-top: 20px;
+            border: 1px solid gray;
+           
+        }
+        span{
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+        <div class="smt_area">
+            <div id="map" style="width:1200px;height:800px;">
+                
+            </div>
+            <span>나의 위치 정보</span>
+        </div>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
