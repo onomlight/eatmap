@@ -98,7 +98,7 @@
                             color: black;
                             /* margin: 1em; */
                             font-size: 2rem;
-                            text-line
+                            
                         }
                         #depth1{
                             
@@ -179,13 +179,19 @@
                 <!-- 이미지 슬라이드 탑승 -->
                 <style>
                     img{
-                        width: 500px; height: 400px; margin: 0px;
+                        /* width: 500px; height: 400px;  */
+                        width: 100%;
+                        height: 400px;
+                        margin: 0px;
                         
                     }
                     li{
                         padding: 10px; margin: 0px 5px;
                     }
-                 
+                    .tmp{
+                        height: 400px; width: 500px; margin: 0px;
+                    }
+                     
                 </style>
                 <div id="container">
                     <div class="tmp">
@@ -213,9 +219,11 @@
                         // 마우스 hover시 슬라이드 멈춤여부
                         pauseOnHover : true, 
 
+
                         // 버튼없애기
                         prevArrow:"",
                         nextArrow:"",
+                        slidesToShow:1,
                     })
                 </script>
             </div>
@@ -224,7 +232,102 @@
           <!-- tab -->
           <div id="tab">tab</div>
           <!-- card -->
-          <div id="card">card</div>
+
+          <!-- 카드 스타일 -->
+          <style>
+              .card{
+                  width: 300px;
+                  height: 200px;
+                  position: relative;
+                  margin: 30px;
+              }
+              .card img{
+                  width: 100%;
+                  height: 100%;
+                  filter: scale(100%);
+              }
+              .card img:hover{
+                  transform: scale(1.1,1.1);
+                  transition: 0.5s;
+                  filter: scale(0%);
+              }
+              .iteminfo{
+                  width: 100px;
+                  position: absolute;
+                  left: 20px;
+                  top: 100px;
+                  background-color: white;
+                  
+              }
+              .iteminfo span,p{font-size: 0.5rem;}
+
+              .cards{
+                  margin-left: 150px;
+                  display: flex;
+                  flex-wrap: wrap;
+              }
+          </style>
+          <div class="cards">
+
+            <div class="card">
+                <img src="" alt="">
+                <div class="iteminfo">
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+                <div class="card">
+                <img src="" alt="">
+                <div class="iteminfo">
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/KakaoTalk_Photo_2022-05-04-15-22-00.jpeg" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="">
+                <div>
+                    <span>음식설명</span>
+                    <p>이 음식에 대한 한줄평</p>
+                </div>
+            </div>
+          </div>
+          
+
           <!-- itme slider -->
           <div id="item-slider">item</div>
 
