@@ -110,6 +110,7 @@
                             font-size: 1.5rem;
                             
                             
+                            
                         }
                         #depth1{
                             
@@ -118,7 +119,7 @@
                         }
                         .mid-menu
                         {
-                            /* text-align: center; */
+                            text-align: center;
                             justify-content: center;
                             display: flex;
                             /* top: 60px;
@@ -138,10 +139,16 @@
                         }
                     /* 행오버 추가 */
                     .mid-menu > li:hover a { color: black; font-weight: bold;
+                        
                         border-bottom: 5px solid rgb(42, 185, 194);
 
                      }
-                     
+                     .mid-menu{
+                       
+                     }
+                     .mid-menu >ul{
+                        display: inline-block;
+                     }
                         
                     </style>
                     
@@ -296,11 +303,14 @@
                   height: 100%;
                   filter: scale(100%);
               }
-              .card img:hover{
+              .card:hover{
                   transform: scale(1.1,1.1);
                   transition: 0.5s;
                   filter: scale(0%);
+                  
+                  color: black; font-weight: bold;
               }
+              
               .iteminfo{
                   width: 300px;
                   height: 80px;
@@ -313,7 +323,8 @@
                   padding: 10px;
                   
               }
-              .iteminfo span,p{font-size: 0.5rem;}
+              /* 글짜 크기 키우기  */
+              .iteminfo span,p{font-size: 1rem;}
 
               .cards{
                   margin-left: 50px;
@@ -322,6 +333,7 @@
 
                   margin-bottom: 100px;
               }
+           
           </style>
           <div class="cards">
 
