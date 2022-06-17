@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/뭐먹지 mainpage/map.css">
+    <script src="/뭐먹지 mainpage/map.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+    
+    
+</head>
+
+
+<body>
+    <div class="map_wrap">
+        <style>
+            
+            *{
+                border: 1px solid black;
+            }
+        </style>
+        
+            <div class="rap" id="map" style="width:1000px;height: 1000px;position:relative;overflow:hidden;"></div>
+        
+        
+    
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces();  ">
+                        키워드 : <input type="text" value="동성로 맛집" id="keyword" size="15"> 
+                        <button type="submit">검색하기</button> 
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+</body>
+</html>
