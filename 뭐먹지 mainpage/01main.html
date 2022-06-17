@@ -42,7 +42,7 @@
             <!-- 퀵메뉴 // 제일 상단 -->
             <header> 
                 <!-- quick -->
-                <a href=""> 1번창</a>
+                <!-- <a href=""> 1번창</a> -->
                 <!-- <ul id="quick">
 
                     <li><a href="#">나의 현재 위치</a></li>
@@ -69,7 +69,13 @@
                             input{
                                 border: 0 solid black
                             }
-                           
+                            #s_word{
+                                width: 100%;
+                            }
+                            /* @media (max-width:1400px){
+
+                            해상도에 따른 크기조절해야함
+                            } */
                         </style>
                         <div class="srch_wrap">
                             <form name="searchFrom" action="" >
@@ -91,7 +97,7 @@
                 
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
                     <div class="mid-menu">
-                        <li><a href="#">나의 현재 위치</a></li>
+                        <li><a href="#">나의 현재 위치 맛집</a></li>
                         <li><a href="#">뭐먹지?</a></li>
                         <li><a href="#">맛집 리스트 보기</a></li>
                         <li><a href="#">눈으로 검색하기</a></li>
@@ -102,6 +108,7 @@
                             color: black;
                             /* margin: 1em; */
                             font-size: 1.5rem;
+                            
                             
                         }
                         #depth1{
@@ -126,7 +133,16 @@
                         .mid-menu >li{
                             margin: 00px;
                             width: 300px;
+                            height: 100px;
+                            line-height: 80px;
                         }
+                    /* 행오버 추가 */
+                    .mid-menu > li:hover a { color: black; font-weight: bold;
+                        border-bottom: 5px solid rgb(42, 185, 194);
+
+                     }
+                     
+                        
                     </style>
                     
 
@@ -138,6 +154,11 @@
     </div>
     <div class="main_cen">
         <!-- 가운데 메뉴 라인 // 이미지 슬라이드 // 카카오맵 // 날씨 영역-->
+        <!-- 추가 -->
+        <div class="test1">
+            <h3 style="border-bottom: 5px solid rgb(42, 185, 194); ">맛있다!</h3>
+        </div>
+        <!-- end -->
         <div class="smt_area">
             <style>
                 .smt_area{
@@ -145,6 +166,9 @@
                     flex-wrap: wrap;
                     max-width: 1400px;
                     margin: 0 auto;
+                }
+                .main_cen{
+                    margin-left: 59.5;
                 }
             </style>
             <div class="slide">
@@ -239,6 +263,11 @@
         </div>
           <!-- tab -->
           <div id="tab">tab</div>
+           <!-- 추가 add -->
+           <div class="test2" style="margin-left: 95px; margin-top: 500px;"> 
+            <h3 style="border-bottom: 5px solid rgb(42, 185, 194);">뭐먹지가 먹어본 맛</h3>
+            </div>
+            <!-- and -->
           <!-- card -->
 
           <!-- 카드 스타일 -->

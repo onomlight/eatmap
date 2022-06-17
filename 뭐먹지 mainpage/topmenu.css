@@ -38,7 +38,7 @@
  body, input , textarea , button select  {
             font-family: '맑은 고딕', '돋움',Dotunm,'굴림',Gulim,sans-serif;
         }
-        .main_top * {
+        .main_top  *{
             box-sizing: border-box;
             padding: 10px;
         }
