@@ -120,12 +120,12 @@
                             width: 100%;
                             background-color:rgb(42, 185, 194) ; */
                             width: 100%;
-                            
+                            font-size: 0.5rem;
                            
                         }
                         .mid-menu >li{
-                            margin: 20px;
-                            width: 200px;
+                            margin: 00px;
+                            width: 300px;
                         }
                     </style>
                     
@@ -196,6 +196,9 @@
                     .tmp{
                         height: 400px; width: 500px; margin: 0px;
                     }
+                    #container{
+                         top: 100px;
+                    }
                      
                 </style>
                 <div id="container">
@@ -204,12 +207,12 @@
                             <li> <img src="돈까스.jpg" alt=""></li>
                             <li> <img src="소바.jpg" alt=""></li>
                             <li> <img src="파스타.jpg" alt=""></li>
-                            <li> <img src="img/card4.jpg" alt=""></li>
+                            <li> <img src="img/1.jpg" alt=""></li>
 
-                            <li> <img src="img/card1.jpg" alt=""></li>
-                            <li> <img src="img/card2.webp" alt=""></li>
-                            <li> <img src="img/card3.jpg" alt=""></li>
-                            <li> <img src="img/card4.jpg" alt=""></li>
+                            <li> <img src="img/2.jpg" alt=""></li>
+                            <li> <img src="img/3.jpg" alt=""></li>
+                            <li> <img src="img/4.jpg" alt=""></li>
+                            <li> <img src="img/5.jpg" alt=""></li>
 
                         </ul>
 
@@ -244,7 +247,7 @@
                   width: 300px;
                   height: 200px;
                   position: relative;
-                  margin: 30px;
+                  margin: 50px;
               }
               .card img{
                   width: 100%;
@@ -257,10 +260,10 @@
                   filter: scale(0%);
               }
               .iteminfo{
-                  width: 200px;
+                  width: 300px;
                   height: 80px;
                   position: absolute;
-                  left: 70px;
+                  left: 0px;
                   top: 110px;
                   background-color: rgb(220, 239, 246);
                   margin-top: 50px;
@@ -271,7 +274,7 @@
               .iteminfo span,p{font-size: 0.5rem;}
 
               .cards{
-                  margin-left: 150px;
+                  margin-left: 50px;
                   display: flex;
                   flex-wrap: wrap;
               }
@@ -281,8 +284,10 @@
             <div class="card">
                 <img src="./img/1.jpg" alt="">
                 <div class="iteminfo">
-                    <span>음식설명</span>
-                    <p>이 음식에 대한 한줄평</p>
+                    <span>라면</span>
+                    <p>이 음식에 대한 한줄평:
+                        ㅈㅁㅌ
+                    </p>
                 </div>
             </div>
                 <div class="card">
@@ -295,8 +300,8 @@
             <div class="card">
                 <img src="./img/3.jpg" alt="">
                 <div class="iteminfo"> 
-                    <span>음식설명</span>
-                    <p>이 음식에 대한 한줄평</p>
+                    <span>푸딩빙수</span>
+                    <p>이 음식에 대한 한줄평 : ㅈㅁㅌ!</p>
                 </div>
             </div>
             <div class="card">
@@ -345,9 +350,13 @@
 
            <style>
                footer{
-                   background-color: rgb(42, 185, 194);
-                   border-top: 9px solid black;
-                   border-bottom: 9px solid black;
+                   background-color: rgb(251, 255, 255);
+                   border-top: 1px solid lightgray;
+                   
+               }
+               #footer-menu>span{
+                margin-left: 10px;
+                margin-right: 20px;
                }
 
            </style>
@@ -356,15 +365,15 @@
     <footer>
         <div id="top-element">
             <!-- 링크 -->
-            <ul id="footer-menu">
-                <li>이용약관</li>
-                <li>개인정보처리방침</li>
-                <li>고객센터</li>
-                <li>ㅁㅁㅁ</li>
-                <li>ㅁㅁㅁ</li>
-                <li>ㅁㅁㅁ</li>
+            <div id="footer-menu">
+                <span>회사소개 <span> &nbsp;&nbsp;| </span></span>
+                <span>서비스 소개<span>&nbsp;&nbsp; | </span></span>
+                <span>개인정보처리방침&nbsp;<span> &nbsp;&nbsp;| </span></span>
+                <span>이용약관<span>&nbsp;&nbsp; | </span></span>
+                <span>도움말</span>
                 
-            </ul>
+                
+            </div>
         </div>
         <style>
             #footimg{
@@ -377,7 +386,7 @@
         <!-- footer logo -->
         <div id="footer-logo"> <img id="footimg" src="뭐먹지.png" alt=""></div>
         <!-- info -->
-        <div id="info"> 대표 ㅣ 홍길동... TEL:053-222-5555</div>
+        <div id="info"> 대표 ㅣ 홍길동... 연락처 | 053-222-5555 위치 | 대구시 중구 중앙대로 999 </div>
         <!-- sns -->
         <div id="sns">NOEBTUBE</div>
      </footer>
