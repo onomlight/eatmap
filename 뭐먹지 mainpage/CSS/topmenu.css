@@ -35,6 +35,8 @@
          padding: auto;
      }   
 
+     /* 검색창 라인 */
+
  body, input , textarea , button select  {
             font-family: '맑은 고딕', '돋움',Dotunm,'굴림',Gulim,sans-serif;
         }
@@ -97,11 +99,74 @@
             overflow: hidden;
             width: 126px;
             border-radius: 20px 0;
-            background: rgb(42, 185, 194) url(../test폴터/btn_srch.png) no-repeat 50% 50%;
+            background: rgb(42, 185, 194) url(../img/btn_srch.png) no-repeat 50% 50%;
             color: transparent;
         }
 
         .btn_srch{
             cursor: pointer;
             border: 0;
+        }
+        #srch{
+            padding: 0px;
+        }
+        input{
+            border: 0 solid black
+        }
+        #s_word{
+            width: 100%;
+        }
+
+        /* 네이게이션 // 메뉴창 */
+        nav a{
+            text-decoration: none;
+            color: black;
+            /* margin: 1em; */
+            font-size: 1.5rem;
+            
+            
+            
+        }
+        #depth1{
+            
+            /* border-top: 5px solid gray; */
+            border-bottom: 3.5px solid gray;
+        }
+        .mid-menu
+        {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            /* top: 60px;
+            left: 30px;
+            height: 4px;
+            width: 100%;
+            background-color:rgb(42, 185, 194) ; */
+            width: 100%;
+             
+           
+        }
+        .mid-menu >li{
+            margin: 00px;
+            width: 300px;
+            height: 100px;
+            line-height: 80px;
+        }
+         /* 행오버 추가 */
+         .mid-menu > li:hover a {
+         color: black; font-weight: bold;
+        
+        border-bottom: 5px solid rgb(42, 185, 194);
+
+          }
+         .mid-menu{
+       
+        }
+         .mid-menu >ul{
+            display: inline-block;
+         }
+         #footimg{
+            width: 100px;
+            height: 100px;
+            background-color: white;
         }
