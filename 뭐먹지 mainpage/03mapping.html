@@ -12,14 +12,50 @@
      <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
      <!-- footer.css -->
      <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
-     <!-- mapapp.css -->
-     <link rel="stylesheet" href="./CSS/mapapp.css">
-     
+  
     <title>Document</title>
     
 </head>
 <body>
-   
+    <style>
+        /* #warpper{
+            padding: 0px;
+            margin: 0px;
+            border: 1px solid gray;
+        }
+
+        #main-logo{
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #mid-menu {
+            display: flex;
+            list-style: none;
+            border: 1px solid gray;
+            justify-content: center;
+        }
+
+        #mid-menu>li{
+            font-weight: 400;
+            font-size: 18px;
+            margin: 10px;
+            text-align: center;
+            align-items: center;
+        } */
+        /* li:hover a { color: white; font-weight: bold;
+
+        }
+        li:hover{
+            background-color: blueviolet;
+            
+        } */
+    </style>
 
     <div id="warpper">
 
@@ -27,9 +63,18 @@
             <!-- header -->
             <!-- 퀵메뉴 // 제일 상단 -->
             <header> 
-              
+                <!-- quick -->
+                <!-- <a href=""> 1번창</a> -->
+                <!-- <ul id="quick">
+
+                    <li><a href="#">나의 현재 위치</a></li>
+                    <li><a href="#">뭐먹지?</a></li>
+                    <li><a href="#">맛집 리스트 보기</a></li>
+                    <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
+
+                </ul> -->
             </header>
-            
+            <!-- 2번째 로고창 // 크기조절할것  -->
         <div main-img><img id="main-logo" src="img/뭐먹지.png"></div>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
@@ -67,16 +112,78 @@
                         <li><a href="#">맛집 리스트 보기</a></li>
                         <li><a href="#">키워드로 검색하기</a></li>
                     </div>
+            
+
             </ul>
         </nav>
     </div>
     </div>
 
     <style>
-        
+        .smt_area{
+            
+            width: 100%;
+            height: 2000px;
+            border: 1px solid gray;
+            position: relative;
+        }
+
+        #map{
+            max-width: 1500px;
+            margin: 5px;
+            width: 1000px;
+            height: 1200px;
+            border: 1px solid gray;
+            position: absolute;
+            top: 5%;
+            left: 20%;
+        }
+        .smt_area>span{
+            display: block;
+            font-weight: 500;
+            font-size: 3rem;
+            text-align: center;
+            align-items: center;
+        }
     </style>
        <style>
-        
+        .map_wrap{left: 20px; right: 50px; }
+        .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+        .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
+        .map_wrap {position:relative;width:100%;height:500px;}
+        #menu_wrap {position:absolute;top:15px;left:0;bottom:0;height:480px ; width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+        .bg_white {background:#fff;}
+        #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
+        #menu_wrap .option{text-align: center;}
+        #menu_wrap .option p {margin:10px 0;}  
+        #menu_wrap .option button {margin-left:5px;}
+        #placesList li {list-style: none;}
+        #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+        #placesList .item span {display: block;margin-top:4px;}
+        #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+        #placesList .item .info{padding:10px 0 10px 55px;}
+        #placesList .info .gray {color:#8a8a8a;}
+        #placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+        #placesList .info .tel {color:#009900;}
+        #placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+        #placesList .item .marker_1 {background-position: 0 -10px;}
+        #placesList .item .marker_2 {background-position: 0 -56px;}
+        #placesList .item .marker_3 {background-position: 0 -102px}
+        #placesList .item .marker_4 {background-position: 0 -148px;}
+        #placesList .item .marker_5 {background-position: 0 -194px;}
+        #placesList .item .marker_6 {background-position: 0 -240px;}
+        #placesList .item .marker_7 {background-position: 0 -286px;}
+        #placesList .item .marker_8 {background-position: 0 -332px;}
+        #placesList .item .marker_9 {background-position: 0 -378px;}
+        #placesList .item .marker_10 {background-position: 0 -423px;}
+        #placesList .item .marker_11 {background-position: 0 -470px;}
+        #placesList .item .marker_12 {background-position: 0 -516px;}
+        #placesList .item .marker_13 {background-position: 0 -562px;}
+        #placesList .item .marker_14 {background-position: 0 -608px;}
+        #placesList .item .marker_15 {background-position: 0 -654px;}
+        #pagination {margin:10px auto;text-align: center;}
+        #pagination a {display:inline-block;margin-right:10px;}
+        #pagination .on {font-weight: bold; cursor: default;color:#777;}
         </style>
 
 
@@ -327,7 +434,7 @@ function removeAllChildNods(el) {
 <style>
     #null1{
 
-        height: 300px;
+        height: 500px;
     }
 </style>
   
