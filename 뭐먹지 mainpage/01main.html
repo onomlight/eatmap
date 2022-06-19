@@ -9,19 +9,19 @@
 
     <title>뭐먹지</title>
        <!-- common.css -->
-       <link rel="stylesheet" type="text/css" href="./common.css">
+       <link rel="stylesheet" type="text/css" href="./CSS/common.css">
        <!-- topmenu.css -->
-        <link rel="stylesheet" type="text/css" href="./topmenu.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css">
        <!-- maincontainer.css -->
-       <link rel="stylesheet" type="text/css" href="./maincontainer.css">
+       <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
        <!-- footer.css -->
-       <link rel="stylesheet" type="text/css" href="./footer.css">
+       <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
     
        <!-- 이미지 슬라이드 -->
     
-       <link rel="stylesheet" type="text/css" href="./imgslid.css">
+       <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
     
-    
+        
     
        <!-- JQ -->
     
@@ -32,7 +32,14 @@
     
        <link rel="stylesheet" type="text/css" href="slick.js/slick.css">   
     
-       <script src="slick.js/slick.min.js"></script>
+        <script src="slick.js/slick.min.js"></script>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+        <script src="app.js"></script>
+
+       <!-- 수정진행중 
+    1. 이미지 파일안에 넣기
+    2. css/js 분리 / 큰틀에 나눠 분류화 진행 
+-->
 </head>
 <body>
     <div id="warpper">
@@ -53,7 +60,7 @@
                 </ul> -->
             </header>
             <!-- 2번째 로고창 // 크기조절할것  -->
-        <div main-img><img id="main-logo" src="뭐먹지.png"></div>
+        <div main-img><img id="main-logo" src="img/뭐먹지.png"></div>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
         <!-- 검색창 -->
@@ -63,19 +70,7 @@
                 <div class="srch">
                     <div class="inr">
                         <style>
-                            #srch{
-                                padding: 0px;
-                            }
-                            input{
-                                border: 0 solid black
-                            }
-                            #s_word{
-                                width: 100%;
-                            }
-                            /* @media (max-width:1400px){
-
-                            해상도에 따른 크기조절해야함
-                            } */
+                            
                         </style>
                         <div class="srch_wrap">
                             <form name="searchFrom" action="" >
@@ -103,53 +98,7 @@
                         <li><a href="#">키워드로 검색하기</a></li>
                     </div>
                     <style>
-                        nav a{
-                            text-decoration: none;
-                            color: black;
-                            /* margin: 1em; */
-                            font-size: 1.5rem;
-                            
-                            
-                            
-                        }
-                        #depth1{
-                            
-                            /* border-top: 5px solid gray; */
-                            border-bottom: 3.5px solid gray;
-                        }
-                        .mid-menu
-                        {
-                            text-align: center;
-                            justify-content: center;
-                            display: flex;
-                            /* top: 60px;
-                            left: 30px;
-                            height: 4px;
-                            width: 100%;
-                            background-color:rgb(42, 185, 194) ; */
-                            width: 100%;
-                             
-                           
-                        }
-                        .mid-menu >li{
-                            margin: 00px;
-                            width: 300px;
-                            height: 100px;
-                            line-height: 80px;
-                        }
-                    /* 행오버 추가 */
-                    .mid-menu > li:hover a {
-                         color: black; font-weight: bold;
-                        
-                        border-bottom: 5px solid rgb(42, 185, 194);
-
-                     }
-                     .mid-menu{
                        
-                     }
-                     .mid-menu >ul{
-                        display: inline-block;
-                     }
                         
                     </style>
                     
@@ -165,36 +114,19 @@
         <!-- 추가 -->
          
         <style>
-            .test1{
-                margin-left: 2%;
-                width: 480px;
-                margin-top: 50px;
-                margin-bottom: 30px;
-            }
+           
         </style>
         <!-- end -->
         <div class="smt_area">
-            <div class="test1">
+            <div class="menu_line1">
                 <h2 style="border-bottom: 5px solid rgb(42, 185, 194); ">눈으로 보는 뭐먹지!</h2>
             </div>
             <style>
-                .smt_area{
-                    display: flex;
-                    flex-wrap: wrap;
-                    max-width: 1400px;
-                    margin: 0 auto;
-                }
-                .main_cen{
-                    margin-left: 59.5;
-                }
+               
             </style>
             <div class="slide">
                 <style>
-                    .slide{
-                        width: 1400px;
-                        max-width: 1400px;
-                        padding: 20px;
-                    }
+                   
                 </style>
                 <!-- 카카오맵 위치api  -->
                 <!-- 위치 이동을 위한 왼쪽 900px -->
@@ -203,12 +135,7 @@
                 </div>
                 
                 <style>
-                    #map{
-                        margin-top: 20px;
-                        display: flex;
-                        position: absolute;
-                        left: 195px;
-                    }
+                   
                 </style>
                 <!-- 이미지 슬라이드 위치 -->
                 <!-- 1번 슬라이드 위치 -->
@@ -224,30 +151,15 @@
                 </div> -->
                 <!-- 이미지 슬라이드 탑승 -->
                 <style>
-                    img{
-                        /* width: 500px; height: 400px;  */
-                        width: 100%;
-                        height: 400px;
-                        margin: 0px;
-                        
-                    }
-                    li{
-                        padding: 10px; margin: 0px 5px;
-                    }
-                    .tmp{
-                        height: 400px; width: 500px; margin: 0px;
-                    }
-                    #container{
-                         top: 100px;
-                    }
+                    
                      
                 </style>
                 <div id="container">
                     <div class="tmp">
                         <ul class="slick">
-                            <li> <img src="돈까스.jpg" alt=""></li>
-                            <li> <img src="소바.jpg" alt=""></li>
-                            <li> <img src="파스타.jpg" alt=""></li>
+                            <li> <img src="img/돈까스.jpg" alt=""></li>
+                            <li> <img src="img/소바.jpg" alt=""></li>
+                            <li> <img src="img/파스타.jpg" alt=""></li>
                             <li> <img src="img/1.jpg" alt=""></li>
 
                             <li> <img src="img/2.jpg" alt=""></li>
@@ -282,64 +194,16 @@
 
           <!-- <div id="tab">tab</div> -->
 
-           <!-- 추가 add -->
-           <div class="test2" style=" margin-top: 200px;"> 
+        
+           <div class="menu_line2" > 
             <h2 style="border-bottom: 5px solid rgb(42, 185, 194);">뭐먹지에서 구경한 맛!!</h2>
             </div>
-            <!-- and -->
+            
           <!-- card -->
 
           <!-- 카드 스타일 -->
           <style>
-              .test2{
-                width: 480px;
-              margin-left: 14%;
-              }
-              .card{
-                  width: 300px;
-                  height: 250px;
-                  position: relative;
-                  margin: 50px ;
-                  margin-top: 50px;
-                  margin-bottom: 70px;
-               
-              }
-              .card img{
-                  width: 100%;
-                  height: 100%;
-                  filter: scale(100%);
-              }
-              .card:hover{
-                  transform: scale(1.1,1.1);
-                  transition: 0.5s;
-                  filter: scale(0%);
-                  
-                  color: black; font-weight: bold;
-              }
               
-              .iteminfo{
-                  width: 300px;
-                  height: 90px;
-                  position: absolute;
-                  left: 0px;
-                  top: 170px;
-                  background-color: rgb(220, 239, 246);
-                  margin-top: 50px;
-                  /* box-shadow: 0px 0px 14xp 4px black; */
-                  padding: 10px;
-                  
-              }
-              /* 글짜 크기 키우기  */
-              .iteminfo span,p{font-size: 1rem;}
-
-              .cards{
-                  margin-left: 150px;
-                  display: flex;
-                  flex-wrap: wrap;
-
-                  margin-bottom: 100px;
-              }
-           
           </style>
           <div class="cards">
 
@@ -411,17 +275,7 @@
             
 
            <style>
-               footer{
-                   background-color: rgb(251, 255, 255);
-                   border-top: 1px solid lightgray;
-                   
-               }
-               #footer-menu>span{
-                margin-left: 10px;
-                margin-right: 20px;
-                font-size: 1rem;
-               }
-
+              
            </style>
 <div id="null1"></div>
 <style>
@@ -445,15 +299,11 @@
             </div>
         </div>
         <style>
-            #footimg{
-                width: 100px;
-                height: 100px;
-                background-color: white;
-            }
+           
         </style>
         <div id="body-element"></div>
         <!-- footer logo -->
-        <div id="footer-logo"> <img id="footimg" src="뭐먹지.png" alt=""></div>
+        <div id="footer-logo"> <img id="footimg" src="./img/뭐먹지.png" alt=""></div>
         <!-- info -->
         <div id="info"> 대표 ㅣ 홍길동... 연락처 | 053-222-5555 위치 | 대구시 중구 중앙대로 999 </div>
         <!-- sns -->
@@ -471,8 +321,7 @@
      </footer>
 </body>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
-<script src="app.js"></script>
+
 
 </html>
 
