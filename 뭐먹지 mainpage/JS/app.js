@@ -769,6 +769,8 @@ for (var i = 0; i < positions.length; i ++) {
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
         content: positions[i].content // 인포윈도우에 표시할 내용
+		
+		
     });
 
     // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
@@ -791,6 +793,7 @@ function makeOutListener(infowindow) {
         infowindow.close();
     };
 }
+document.marke
 
 /* 아래와 같이도 할 수 있습니다 */
 /*
