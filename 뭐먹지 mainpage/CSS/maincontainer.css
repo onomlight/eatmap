@@ -60,3 +60,11 @@ form{display: block; margin-top: 0px;}
 #card {
     height: 500px;
 }
+
+    #null1{
+
+        height: 500px;
+    }
+    #main-logo{
+        cursor: pointer;
+    }

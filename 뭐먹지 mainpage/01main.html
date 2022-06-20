@@ -41,7 +41,7 @@
 -->
 </head>
 <body>
-    <div id="warpper">
+    
 
         <div  id="topmenu">
             <!-- header -->
@@ -59,13 +59,9 @@
                 </ul> -->
             </header>
             <!-- 2번째 로고창 // 크기조절할것  -->
-            <style>
-                #main-logo{
-                    cursor: pointer;
-                }
-            </style>
+           
             <a href="./01main.html">
-               <img id="main-logo" src="img/뭐먹지.png" >
+               <img id="main-logo" alt="" src="img/뭐먹지.png" >
             </a>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
@@ -75,11 +71,9 @@
             <div class="top_menu">
                 <div class="srch">
                     <div class="inr">
-                        <style>
-                            
-                        </style>
+                       
                         <div class="srch_wrap">
-                            <form name="searchFrom" action="" >
+                            <form name="searchFrom"  >
                                 <div class="srch_area">
                                     <label for="s_word" id="srch_keyword"></label>
                                     <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
@@ -103,10 +97,7 @@
                         <li><a href="#">맛집 리스트 보기</a></li>
                         <li><a href="./03mapping.html">키워드로 검색하기</a></li>
                     </div>
-                    <style>
-                       
-                        
-                    </style>
+                   
                     
 
               
@@ -119,31 +110,23 @@
         <!-- 가운데 메뉴 라인 // 이미지 슬라이드 // 카카오맵 // 날씨 영역-->
         <!-- 추가 -->
          
-        <style>
-           
-        </style>
+        
         <!-- end -->
         <div class="smt_area">
             <div class="menu_line1">
                 <h2 style="border-bottom: 5px solid rgb(42, 185, 194); ">눈으로 보는 뭐먹지!</h2>
                 <!-- 이런음식은 어떠세요? (날씨별 음식 추천 이미지 슬라이드로 한번 해볼것) -->
             </div>
-            <style>
-               
-            </style>
+           
             <div class="slide">
-                <style>
-                   
-                </style>
+                
                 <!-- 카카오맵 위치api  -->
                 <!-- 위치 이동을 위한 왼쪽 900px -->
                 <div id="map" style="width:500px;height:400px; left: 900px;"  >
                     
                 </div>
                 
-                <style>
-                   
-                </style>
+               
                 <!-- 이미지 슬라이드 위치 -->
                 <!-- 1번 슬라이드 위치 -->
                
@@ -157,10 +140,7 @@
 
                 </div> -->
                 <!-- 이미지 슬라이드 탑승 -->
-                <style>
-                    
-                     
-                </style>
+           
                 <div id="container">
                     <div class="tmp">
                         <ul class="slick">
@@ -209,9 +189,7 @@
           <!-- card -->
 
           <!-- 카드 스타일 -->
-          <style>
-              
-          </style>
+     
           <div class="cards">
 
             <div class="card">
@@ -273,9 +251,9 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/도마 29.jpg" alt="">
+                <img src="img/도마29.jpg" alt="">
                 <div class="iteminfo">
-                    <span>도마 29 || 연어세트</span>
+                    <span>도마29 || 연어세트</span>
                     <p>이 음식에 대한 한줄평 : 그냥 맛잇음</p>
                 </div>
             </div>
@@ -309,16 +287,9 @@
     </div>
             
 
-           <style>
-              
-           </style>
-<div id="null1"></div>
-<style>
-    #null1{
 
-        height: 500px;
-    }
-</style>
+<div id="null1"></div>
+
   
     <footer>
         <div id="top-element">
@@ -351,12 +322,14 @@
           </svg>
         </div>
      </footer>
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+<script src="./JS/app.js"></script>
 </body>
 
  
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
-<script src="./JS/app.js"></script>
+
+
 </html>
 
 
