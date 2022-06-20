@@ -35,8 +35,7 @@
     
         <script src="slick.js/slick.min.js"></script>
         
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
-        <script src="./JS/app.js"></script>
+       
        <!-- 수정진행중 
     
 -->
@@ -60,7 +59,14 @@
                 </ul> -->
             </header>
             <!-- 2번째 로고창 // 크기조절할것  -->
-        <div main-img><img id="main-logo" src="img/뭐먹지.png"></div>
+            <style>
+                #main-logo{
+                    cursor: pointer;
+                }
+            </style>
+            <a href="./01main.html">
+               <img id="main-logo" src="img/뭐먹지.png" >
+            </a>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
         <!-- 검색창 -->
@@ -92,10 +98,10 @@
                 
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
                     <div class="mid-menu">
-                        <li><a href="#">나의 현재 위치 맛집</a></li>
+                        <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
                         <li><a href="#">뭐먹지?</a></li>
                         <li><a href="#">맛집 리스트 보기</a></li>
-                        <li><a href="#">키워드로 검색하기</a></li>
+                        <li><a href="./03mapping.html">키워드로 검색하기</a></li>
                     </div>
                     <style>
                        
@@ -326,9 +332,6 @@
                 
             </div>
         </div>
-        <style>
-           
-        </style>
         <div id="body-element"></div>
         <!-- footer logo -->
         <!-- <div id="footer-logo"> <img id="footimg" src="./img/뭐먹지.png" alt=""></div> -->
@@ -351,7 +354,8 @@
 
  
 
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+<script src="./JS/app.js"></script>
 </html>
 
 
