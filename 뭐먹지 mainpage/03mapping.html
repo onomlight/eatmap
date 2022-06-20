@@ -12,10 +12,7 @@
      <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
      <!-- footer.css -->
      <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
-
-      <!-- font -->
-      <link rel="stylesheet" type="text/css" href="./CSS/font.css">
-  
+   
     <title>Document</title>
     
 </head>
@@ -78,9 +75,7 @@
                 </ul> -->
             </header>
             <!-- 2번째 로고창 // 크기조절할것  -->
-            <a href="./01main.html">
-                <img id="main-logo" src="img/뭐먹지.png" >
-             </a>
+        <div main-img><img id="main-logo" src="img/뭐먹지.png"></div>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
         <!-- 검색창 -->
@@ -112,10 +107,10 @@
                 
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
                     <div class="mid-menu">
-                        <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
+                        <li><a href="#">나의 현재 위치 맛집</a></li>
                         <li><a href="#">뭐먹지?</a></li>
                         <li><a href="#">맛집 리스트 보기</a></li>
-                        <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                        <li><a href="#">키워드로 검색하기</a></li>
                     </div>
             
 
@@ -123,6 +118,9 @@
         </nav>
     </div>
     </div>
+    <div class="menu_line2" > 
+        <h2 style="border-bottom: 5px solid rgb(42, 185, 194);">뭐먹지에서 보여주는 음식점 후기 </h2>
+        </div> 
 
     <style>
         .smt_area{
@@ -156,7 +154,7 @@
         .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
         .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
         .map_wrap {position:relative;width:100%;height:500px;}
-        #menu_wrap {position:absolute;top:15px;left:20px;bottom:0;height:495px ; width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+        #menu_wrap {position:absolute;top:15px;left:0;bottom:0;height:480px ; width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
         .bg_white {background:#fff;}
         #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
         #menu_wrap .option{text-align: center;}
@@ -192,9 +190,9 @@
         </style>
 
 
-<div class="menu_line2"  style="margin: 0px; margin-left: 100px; margin-top: 50px;"> 
-    <h1 style="border-bottom: 5px solid rgb(42, 185, 194);">키워드로 검색하기 </h1>
-    </div>
+<style>
+   
+</style>
        <div class="map_wrap">
         <div id="map" style="width:75%;height:100%;position:relative;overflow:hidden;"></div>
     
