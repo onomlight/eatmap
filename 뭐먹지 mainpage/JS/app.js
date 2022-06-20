@@ -27,579 +27,823 @@ var positions = [
 			, 128.596149)
     },
     {
-        title: '8번식당', 
+        content: '8번식당', 
         latlng: new kakao.maps.LatLng(35.87235875,128.5868833
 			)
     },
     {
-        title: '국밥', 
+        content: '국밥', 
         latlng: new kakao.maps.LatLng(35.8658874,	128.5935768
 			)
     },
     {
-        title: '가창식당',
+        content: '가창식당',
         latlng: new kakao.maps.LatLng( 35.86689141 , 128.5914228)
     },
 	{
-        title: '가창큰나무집약령시점', 
+        content: '가창큰나무집약령시점', 
         latlng: new kakao.maps.LatLng(35.86808
 			, 128.5897)
     },
 	{
-        title: '갈비탕집	', 
+        content: '갈비탕집	', 
         latlng: new kakao.maps.LatLng(35.87073671,	128.6065228 )
     },
 	{
-        title: '강구', 
+        content: '강구', 
         latlng: new kakao.maps.LatLng( 35.86896042,	128.586743)
     },
 	{
-        title: '강산면옥(교동점)	', 
+        content: '강산면옥(교동점)	', 
         latlng: new kakao.maps.LatLng( 35.873639,	128.5964)
     },
 	{
-        title: '개정', 
+        content: '개정', 
         latlng: new kakao.maps.LatLng( 	35.86766978,	128.5979854)
     },
 	{
-        title: '개정동성로점', 
+        content: '개정동성로점', 
         latlng: new kakao.maps.LatLng( 	35.870055,	128.596501)
     },
 	{
-        title: '거창식당', 
+        content: '거창식당', 
         latlng: new kakao.maps.LatLng(
 				35.86899006,	128.5865919 )
     },
 	{
-        title: '고전 한정식', 
+        content: '고전 한정식', 
         latlng: new kakao.maps.LatLng( 	35.864622,	128.603267)
     },
 	{
-        title: '고향뜰', 
+        content: '고향뜰', 
         latlng: new kakao.maps.LatLng( 	35.86860548,	128.5958952)
     },
 	{
-        title: '관음', 
+        content: '관음', 
         latlng: new kakao.maps.LatLng( 	35.87337779	,128.5927474)
     },
 	{
-        title: '교동따로식당', 
+        content: '교동따로식당', 
         latlng: new kakao.maps.LatLng(
 				35.87150803,	128.5928746 )
     },
 	{
-        title: '국대 닭곱새', 
+        content: '국대 닭곱새', 
         latlng: new kakao.maps.LatLng(	35.8676992,	128.5970876 )
     },
 	{
-        title: '국일삼계탕', 
+        content: '국일삼계탕', 
         latlng: new kakao.maps.LatLng( 	35.871727	,128.581944 )
     },
 
 	{
-        title: '국일생갈비', 
+        content: '국일생갈비', 
         latlng: new kakao.maps.LatLng(	35.8704232,	128.5845197 )
     },
 	{
-        title: '국일식당', 
+        content: '국일식당', 
         latlng: new kakao.maps.LatLng( 	35.87456198	,128.5964077 )
     },
 	{
-        title: '국화정원', 
+        content: '국화정원', 
         latlng: new kakao.maps.LatLng( 
 				35.8660323,	128.603)
     },
 	{
-        title: '굿또스시', 
+        content: '굿또스시', 
         latlng: new kakao.maps.LatLng( 	35.86408799	,128.6077011)
     },
 	{
-        title: '궁채', 
+        content: '궁채', 
         latlng: new kakao.maps.LatLng( 	35.866317,	128.591853)
     },
 	{
-        title: '근대골목단팥빵 커피인코나', 
+        content: '근대골목단팥빵 커피인코나', 
         latlng: new kakao.maps.LatLng( 	35.86780707,	128.5903444)
     },
 	{
-        title: '낙영식당별관', 
+        content: '낙영식당별관', 
         latlng: new kakao.maps.LatLng(	35.8718361,	128.60594 )
     },
 	{
-        title: '낙영찜갈비', 
+        content: '낙영찜갈비', 
         latlng: new kakao.maps.LatLng(	35.8712706,	128.6049424 )
     },
 
 	{
-        title: '낙원순두부', 
+        content: '낙원순두부', 
         latlng: new kakao.maps.LatLng( 	35.871415,	128.597565 )
     },
 	{
-        title: '남문납작만두', 
+        content: '남문납작만두', 
         latlng: new kakao.maps.LatLng( 	35.86045509,	128.5905952 )
     },
 	{
-        title: '남문주자', 
+        content: '남문주자', 
         latlng: new kakao.maps.LatLng(	35.86033095	,128.5911857 )
     },
 	{
-        title: '남산동이영옥할매보쌈', 
+        content: '남산동이영옥할매보쌈', 
         latlng: new kakao.maps.LatLng( 	35.861196	,128.5901)
     },
 	{
-        title: '녹양', 
+        content: '녹양', 
         latlng: new kakao.maps.LatLng(	35.87246163	,128.5940156 )
     },
 
 	{
-        title: '다금예전칼국수', 
+        content: '다금예전칼국수', 
         latlng: new kakao.maps.LatLng( 	35.86974768,	128.5861066)
     },
 	{
-        title: '다전칼국수', 
+        content: '다전칼국수', 
         latlng: new kakao.maps.LatLng(	35.86801234,	128.5920388 )
 		
     },
 	{
-		title: '달팽이식당', 
+		content: '달팽이식당', 
 		latlng: new kakao.maps.LatLng( 35.86968667,	128.5911889)
 	},
 	
 		
 	{
-		title: '닭한끼', 
+		content: '닭한끼', 
 		latlng: new kakao.maps.LatLng(35.86115439,	128.6067707 )
 	},
 		
 	{
-		title: '대구전통따로', 
+		content: '대구전통따로', 
 		latlng: new kakao.maps.LatLng(35.870967,	128.592411 )
 	},
 		
 	{
-		title: '대동면옥', 
+		content: '대동면옥', 
 		latlng: new kakao.maps.LatLng(35.86997245,	128.5857286 )
 	},
 		
 	{
-		title: '대한뉴스', 
+		content: '대한뉴스', 
 		latlng: new kakao.maps.LatLng(35.86202788	,128.6058124 )
 	},
 		
 	{
-		title: '덕영대반점', 
+		content: '덕영대반점', 
 		latlng: new kakao.maps.LatLng(35.875206,	128.588086 )
 	},
 		
 	{
-		title: '도쿄다이닝', 
+		content: '도쿄다이닝', 
 		latlng: new kakao.maps.LatLng( 35.8674152,	128.5964015)
 	},
 		
 	{
-		title: '동곡막걸리', 
+		content: '동곡막걸리', 
 		latlng: new kakao.maps.LatLng(35.86216754,	128.60615 )
 	},
 		
 	{
-		title: '동명', 
+		content: '동명', 
 		latlng: new kakao.maps.LatLng(35.86743225,	128.5985658 )
 	},
 		
 	{
-		title: '동원찜갈비', 
+		content: '동원찜갈비', 
 		latlng: new kakao.maps.LatLng(35.8705962,	128.6051721 )
 	},
 		
 	{
-		title: '동흥반점', 
+		content: '동흥반점', 
 		latlng: new kakao.maps.LatLng(35.869092,	128.608827 )
 	},
 		
 	{
-		title: '두찜 동성로점', 
+		content: '두찜 동성로점', 
 		latlng: new kakao.maps.LatLng(35.867854,	128.597589 )
 	},
 	
 		
 	{
-		title: '둥굴관', 
+		content: '둥굴관', 
 		latlng: new kakao.maps.LatLng(35.87199401,	128.6024761 )
 	},
 		
 	{
-		title: '뜨돈', 
+		content: '뜨돈', 
 		latlng: new kakao.maps.LatLng(35.86661679,	128.5941004 )
 	},
 		
 	{
-		title: '라루체', 
+		content: '라루체', 
 		latlng: new kakao.maps.LatLng( 35.86719925,	128.6034711)
 	},
 		
 	{
-		title: '루시드', 
+		content: '루시드', 
 		latlng: new kakao.maps.LatLng(35.8688477,	128.599667 )
 	},
 		
 	{
-		title: '마당갈비', 
+		content: '마당갈비', 
 		latlng: new kakao.maps.LatLng(35.86868613,	128.5875383 )
 	},
 		
 	{
-		title: '마시뜰(계산점)', 
+		content: '마시뜰(계산점)', 
 		latlng: new kakao.maps.LatLng( 35.8671204,	128.5874319)
 	},
 		
 	{
-		title: '만리장성', 
+		content: '만리장성', 
 		latlng: new kakao.maps.LatLng(35.86050439,	128.60248 )
 	},
 		
 	{
-		title: '명동통닭', 
+		content: '명동통닭', 
 		latlng: new kakao.maps.LatLng( 35.87120313,	128.5990025)
 	},
 		
 	{
-		title: '명성숯불갈비', 
+		content: '명성숯불갈비', 
 		latlng: new kakao.maps.LatLng(35.871699,	128.602383 )
 	},
 		
 	{
-		title: '묵돌이생고기', 
+		content: '묵돌이생고기', 
 		latlng: new kakao.maps.LatLng(35.8680597,	128.5920789 )
 	},
 		
 	{
-		title: '미도다방', 
+		content: '미도다방', 
 		latlng: new kakao.maps.LatLng( 35.86825347,	128.5925075)
 	},
 		
 	{
-		title: '미래징기스칸', 
+		content: '미래징기스칸', 
 		latlng: new kakao.maps.LatLng( 35.87134551	,128.5931379)
 	},
 		
 	{
-		title: '미림', 
+		content: '미림', 
 		latlng: new kakao.maps.LatLng(35.87091383,	128.5811388 )
 	},
 		
 	{
-		title: '미미네집', 
+		content: '미미네집', 
 		latlng: new kakao.maps.LatLng(35.8696717,	128.5905687 )
 	},
 		
 	{
-		title: '미성당', 
+		content: '미성당', 
 		latlng: new kakao.maps.LatLng(35.86321998,	128.5821898 )
 	},
 		
 	{
-		title: '미원회식당', 
+		content: '미원회식당', 
 		latlng: new kakao.maps.LatLng(35.874288,	128.595205 )
 	},
 		
 	{
-		title: '미진분식', 
+		content: '미진분식', 
 		latlng: new kakao.maps.LatLng(35.86742794,	128.5942801 )
 	},
 		
 	{
-		title: '바라지레스토랑', 
+		content: '바라지레스토랑', 
 		latlng: new kakao.maps.LatLng(35.87338684,	128.5956904 )
 	},
 		
 	{
-		title: '바스코', 
+		content: '바스코', 
 		latlng: new kakao.maps.LatLng( 35.86919339,	128.5997672)
 	},
 		
 	{
-		title: '밥을짓다', 
+		content: '밥을짓다', 
 		latlng: new kakao.maps.LatLng(35.86957049	,128.5946319 )
 	},
 		
 	{
-		title: '방천가족족발', 
+		content: '방천가족족발', 
 		latlng: new kakao.maps.LatLng(35.8616988,	128.60669 )
 	},
 		
 	{
-		title: '예전손국수', 
+		content: '예전손국수', 
 		latlng: new kakao.maps.LatLng( 35.86491363,	128.589735)
 	},
 		
 	{
-		title: '벙글벙글', 
+		content: '벙글벙글', 
 		latlng: new kakao.maps.LatLng( 35.8710018,	128.6051652)
 	},
 		
 	{
-		title: '베이글 닥터', 
+		content: '베이글 닥터', 
 		latlng: new kakao.maps.LatLng(35.86365839	,128.6017359 )
 	},
 		
 	{
-		title: '벽돌집', 
+		content: '벽돌집', 
 		latlng: new kakao.maps.LatLng(35.861139,	128.6047261 )
 	},
 		{
-		title: '복주', 
+		content: '복주', 
 		latlng: new kakao.maps.LatLng( 35.8644388,	128.5946243)
 	},
 	
 		
 	{
-		title: '본죽앤 비빔밥(동성로점)', 
+		content: '본죽앤 비빔밥(동성로점)', 
 		latlng: new kakao.maps.LatLng(35.871938,	128.595573 )
 	},
 		
 	{
-		title: '봉산찜갈비', 
+		content: '봉산찜갈비', 
 		latlng: new kakao.maps.LatLng(35.8708906,	128.6048786 )
 	},
 		
 	{
-		title: '부산안면옥', 
+		content: '부산안면옥', 
 		latlng: new kakao.maps.LatLng(35.87063522	,128.5989501 )
 	},
 		
 	{
-		title: '부엉이', 
+		content: '부엉이', 
 		latlng: new kakao.maps.LatLng(35.8738007,	128.5937457 )
 	},
 		
 	{
-		title: '블랙타코앤그릴', 
+		content: '블랙타코앤그릴', 
 		latlng: new kakao.maps.LatLng(35.86658076,	128.599526 )
 	},
 		
 	{
-		title: '삐에뜨라', 
+		content: '삐에뜨라', 
 		latlng: new kakao.maps.LatLng( 35.868402,	128.5891101)
 	},
 		
 	{
-		title: '사계절 한방굴국밥', 
+		content: '사계절 한방굴국밥', 
 		latlng: new kakao.maps.LatLng(35.868863,	128.58926 )
 	},
 		
 	{
-		title: '산', 
+		content: '산', 
 		latlng: new kakao.maps.LatLng( 35.8675825,	128.5926386)
 	},
 		
 	{
-		title: '산호찜갈비', 
+		content: '산호찜갈비', 
 		latlng: new kakao.maps.LatLng(35.8708906,	128.6048786 )
 	},
 		
 	{
-		title: '삼삼구이초밥', 
+		content: '삼삼구이초밥', 
 		latlng: new kakao.maps.LatLng(35.86441606,	128.5948419 )
 	},
 		
 	{
-		title: '삼삼구이초밥', 
+		content: '삼삼구이초밥', 
 		latlng: new kakao.maps.LatLng(35.86442286,	128.594848 )
 	},
 		
 	{
-		title: '상주식당', 
+		content: '상주식당', 
 		latlng: new kakao.maps.LatLng( 35.87019175,	128.5962148)
 	},
 		
 	{
-		title: '서영', 
+		content: '서영', 
 		latlng: new kakao.maps.LatLng(35.86816839,	128.5885905 )
 	},
 		
 	{
-		title: '선댄스팜', 
+		content: '선댄스팜', 
 		latlng: new kakao.maps.LatLng( 35.8603326,	128.6053907)
 	},
 		
 	{
-		title: '성주', 
+		content: '성주', 
 		latlng: new kakao.maps.LatLng(35.868194,	128.579243 )
 	},
 		
 	{
-		title: '성주숯불갈비', 
+		content: '성주숯불갈비', 
 		latlng: new kakao.maps.LatLng(35.8716607,	128.5836143 )
 	},
 		
 	{
-		title: '세연전통콩국', 
+		content: '세연전통콩국', 
 		latlng: new kakao.maps.LatLng(35.8612519,	128.5871093 )
 	},
 		
 	{
-		title: '수복찜갈비', 
+		content: '수복찜갈비', 
 		latlng: new kakao.maps.LatLng(35.8715051,	128.6054425 )
 	},
 		
 	{
-		title: '시안', 
+		content: '시안', 
 		latlng: new kakao.maps.LatLng(35.8699233,	128.5927842 )
 	},
 		
 	{
-		title: '신단설렁탕', 
+		content: '신단설렁탕', 
 		latlng: new kakao.maps.LatLng(35.8702211,	128.601784 )
 	},
 		
 	{
-		title: '신숙(신주쿠)', 
+		content: '신숙(신주쿠)', 
 		latlng: new kakao.maps.LatLng(35.86926527,	128.5926573 )
 	},
 		
 	{
-		title: '신짜오', 
+		content: '신짜오', 
 		latlng: new kakao.maps.LatLng(35.867187,	128.597888 )
 	},
 		
 	{
-		title: '실비찜갈비', 
+		content: '실비찜갈비', 
 		latlng: new kakao.maps.LatLng( 35.8706819,	128.6048017)
 	},
 		
 	{
-		title: '씨제이푸드빌(주)빕스수성교점', 
+		content: '씨제이푸드빌(주)빕스수성교점', 
 		latlng: new kakao.maps.LatLng(35.861814	,128.607394 )
 	},
 		
 	{
-		title: '아사다라', 
+		content: '아사다라', 
 		latlng: new kakao.maps.LatLng(35.85583,	128.606345 )
 	},
 		
 	{
-		title: '약전삼계탕', 
+		content: '약전삼계탕', 
 		latlng: new kakao.maps.LatLng(35.86883725,	128.5902751 )
 	},
 		
 	{
-		title: '약전식당', 
+		content: '약전식당', 
 		latlng: new kakao.maps.LatLng(35.86872415,	128.5908052 )
 	},
 		
 	{
-		title: '어청도회', 
+		content: '어청도회', 
 		latlng: new kakao.maps.LatLng(35.867371	,128.606166 )
 	},
 		
 	{
-		title: '에스파스', 
+		content: '에스파스', 
 		latlng: new kakao.maps.LatLng(35.87042649	,128.5910394 )
 	},
 		
 	{
-		title: '영발장', 
+		content: '영발장', 
 		latlng: new kakao.maps.LatLng(35.864194,	128.596719 )
 	},
 		
 	{
-		title: '영생덕', 
+		content: '영생덕', 
 		latlng: new kakao.maps.LatLng(35.86940203,	128.591383 )
+	},
+	{
+		content: '옛집 ', 
+		latlng: new kakao.maps.LatLng( 35.87212643,	128.5817801 )
+	},
+		
+	{
+		content: '오이쏘이 ', 
+		latlng: new kakao.maps.LatLng(35.86321859,	128.5959574  )
+	},
+		
+	{
+		content: ' 올가닉신라', 
+		latlng: new kakao.maps.LatLng(35.85657162,	128.603945  )
+	},
+		
+	{
+		content: '왕거미 ', 
+		latlng: new kakao.maps.LatLng(35.86851089,	128.6067071  )
+	},
+		
+	{
+		content: ' 우각식육식당', 
+		latlng: new kakao.maps.LatLng(35.8630643,	128.5870108  )
+	},
+		
+	{
+		content: '원도매 ', 
+		latlng: new kakao.maps.LatLng( 35.871021,	128.599161 )
+	},
+		
+	{
+		content: ' 원주통닭', 
+		latlng: new kakao.maps.LatLng(35.86836944,	128.5974819  )
+	},
+		
+	{
+		content: '월성찜갈비 ', 
+		latlng: new kakao.maps.LatLng( 35.8707754,	128.6048346 )
+	},
+		
+	{
+		content: '유경식당 ', 
+		latlng: new kakao.maps.LatLng( 35.87237778,	128.5931032 )
+	},
+	
+	{
+		content: ' 유닭스토리', 
+		latlng: new kakao.maps.LatLng(	35.86887,	128.587473  )
+	},
+		
+	{
+		content: ' 유진찜갈비', 
+		latlng: new kakao.maps.LatLng(35.8711067,	128.6049069  )
+	},
+		
+	{
+		content: '이모식당 ', 
+		latlng: new kakao.maps.LatLng( 35.872213,	128.586884 )
+	},
+		
+	{
+		content: ' 적두병', 
+		latlng: new kakao.maps.LatLng( 35.87336453,	128.5809976 )
+	},
+		
+	{
+		content: '전원 ', 
+		latlng: new kakao.maps.LatLng( 35.86796659	,128.5954866 )
+	},
+		
+	{
+		content: ' 전주맛집', 
+		latlng: new kakao.maps.LatLng( 35.855814,	128.606398 )
+	},
+		
+	{
+		content: '정담 ', 
+		latlng: new kakao.maps.LatLng( 35.8648012,	128.5916845 )
+	},
+		
+	{
+		content: ' 종로숯불갈비', 
+		latlng: new kakao.maps.LatLng(35.86825704,	128.5922734  )
+	},
+		
+	{
+		content: '중앙떡볶이 ', 
+		latlng: new kakao.maps.LatLng(35.86957552,	128.5967777  )
+	},
+		
+	{
+		content: '중화반점 ', 
+		latlng: new kakao.maps.LatLng( 35.8693,	128.594407 )
+	},
+		
+	{
+		content: '진골목 ', 
+		latlng: new kakao.maps.LatLng(35.86807272,	128.5922421  )
+	},
+		
+	{
+		content: '진주통닭 ', 
+		latlng: new kakao.maps.LatLng(35.86060191,	128.5919266  )
+	},
+		
+	{
+		content: '차이 ', 
+		latlng: new kakao.maps.LatLng(35.86677296,	128.5971357  )
+	},
+		
+	{
+		content: ' 착한다슬기', 
+		latlng: new kakao.maps.LatLng(35.8686107,	128.5892846  )
+	},
+		
+	{
+		content: ' 청기와양곱창식당', 
+		latlng: new kakao.maps.LatLng( 35.8696985,	128.5906788  )
+	},
+	{ 
+		content: ' 청라', 
+		latlng: new kakao.maps.LatLng(35.8692043,	128.5868781
+			 )
+	},
+		
+	{
+		content: '카마타케제면소 대구본점 ', 
+		latlng: new kakao.maps.LatLng( 35.8673558,	128.5932692 )
+	},
+		
+	{
+		content: '큐산 ', 
+		latlng: new kakao.maps.LatLng( 35.86842904,	128.5957971 )
+	},
+		
+	{
+		content: ' 태산만두', 
+		latlng: new kakao.maps.LatLng(35.8667294,	128.5940879  )
+	},
+		
+	{
+		content: ' 토끼정', 
+		latlng: new kakao.maps.LatLng( 35.868137,	128.5974984 )
+	},
+		
+	{
+		content: '통나무집 ', 
+		latlng: new kakao.maps.LatLng(35.86893422,	128.5927503  )
+	},
+		
+	{
+		content: '푸르다코리아 경성상회 ', 
+		latlng: new kakao.maps.LatLng(35.8666031,	128.6001843  )
+	},
+		
+	{
+		content: ' 풍기인삼갈비 단 ', 
+		latlng: new kakao.maps.LatLng(35.870485,	128.604012  )
+	},
+		
+	{
+		content: ' 프랑스싸롱', 
+		latlng: new kakao.maps.LatLng(35.87055052,	128.6023355  )
+	},
+		
+	{
+		content: '하이타이', 
+		latlng: new kakao.maps.LatLng(35.8679881,	128.6003575  )
+	},
+		
+	{
+		content: '한스델리 ', 
+		latlng: new kakao.maps.LatLng(35.8674811,	128.5938227  )
+	},
+		
+	{
+		content: ' 한옥집', 
+		latlng: new kakao.maps.LatLng( 35.86978106,	128.604788 )
+	},
+		
+	{
+		content: ' 함흥면옥', 
+		latlng: new kakao.maps.LatLng( 35.85579	,128.606377 )
+	},
+		
+	{
+		content: '해뜨는 아침 ', 
+		latlng: new kakao.maps.LatLng( 35.8670809,	128.5927323 )
+	},
+		
+	{
+		content: ' 행복식당', 
+		latlng: new kakao.maps.LatLng( 35.86567804	,128.5949508 )
+	},
+		
+	{
+		content: '현대옥 경대병원점 ', 
+		latlng: new kakao.maps.LatLng( 35.867254,	128.603396 )
+	},
+		
+	{
+		content: '현풍닭칼국수 동성로점 ', 
+		latlng: new kakao.maps.LatLng(35.8656403,	128.5969703  )
+	},
+		
+	{
+		content: ' 화림보쌈', 
+		latlng: new kakao.maps.LatLng( 35.861614,	128.589948 )
+	},
+		
+	{
+		content: '황소 ', 
+		latlng: new kakao.maps.LatLng(35.873839,	128.593975  )
+	},
+		
+	{
+		content: '황소식당 ', 
+		latlng: new kakao.maps.LatLng(35.87184868,	128.5946067  )
+	},
+		
+	{
+		content: ' 힛또 ', 
+		latlng: new kakao.maps.LatLng( 35.855809,	128.606378  )
 	}
+	
+	
 	
 ];
 
 // 마커 이미지의 이미지 주소입니다
-var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+// var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
     
+// for (var i = 0; i < positions.length; i ++) {
+    
+//     // 마커 이미지의 이미지 크기 입니다
+//     var imageSize = new kakao.maps.Size(24, 35); 
+    
+//     // 마커 이미지를 생성합니다    
+//     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
+//     // 마커를 생성합니다
+//     var marker = new kakao.maps.Marker({
+//         map: map, // 마커를 표시할 지도
+//         position: positions[i].latlng, // 마커를 표시할 위치
+//         title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+//         image : markerImage // 마커 이미지 
+//     });
+// }
+
+
+
+	
+	
 for (var i = 0; i < positions.length; i ++) {
-    
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
-        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        image : markerImage // 마커 이미지 
+        position: positions[i].latlng // 마커의 위치
     });
+
+    // 마커에 표시할 인포윈도우를 생성합니다 
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
+
+    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
 }
 
+// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
+}
+
+/* 아래와 같이도 할 수 있습니다 */
+/*
+for (var i = 0; i < positions.length; i ++) {
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng // 마커의 위치
+    });
+
+    // 마커에 표시할 인포윈도우를 생성합니다 
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
+
+    // 마커에 이벤트를 등록하는 함수 만들고 즉시 호출하여 클로저를 만듭니다
+    // 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    (function(marker, infowindow) {
+        // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
+        kakao.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.open(map, marker);
+        });
+
+        // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+        kakao.maps.event.addListener(marker, 'mouseout', function() {
+            infowindow.close();
+        });
+    })(marker, infowindow);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 	
-
-
-// 옛집	35.87212643,	128.5817801
-// 오이쏘이	35.86321859,	128.5959574
-// 올가닉신라	35.85657162,	128.603945
-// 왕거미	35.86851089,	128.6067071
-// 우각식육식당	35.8630643,	128.5870108
-// 원도매	35.871021,	128.599161
-// 원주통닭	35.86836944,	128.5974819
-// 월성찜갈비	35.8707754,	128.6048346
-// 유경식당	35.87237778,	128.5931032
-// 유닭스토리	35.86887,	128.587473
-// 유진찜갈비	35.8711067,	128.6049069
-// 이모식당	35.872213,	128.586884
-// 적두병	35.87336453,	128.5809976
-// 전원	35.86796659	,128.5954866
-// 전주맛집	35.855814,	128.606398
-// 정담	35.8648012,	128.5916845
-// 종로숯불갈비	35.86825704,	128.5922734
-// 중앙떡볶이	35.86957552,	128.5967777
-// 중화반점	35.8693,	128.594407
-// 진골목	35.86807272,	128.5922421
-// 진주통닭	35.86060191,	128.5919266
-// 차이	35.86677296,	128.5971357
-// 착한다슬기	35.8686107,	128.5892846
-// 청기와양곱창식당	35.8696985,	128.5906788
-// 청라	35.8692043,	128.5868781
-// 카마타케제면소 대구본점	35.8673558,	128.5932692
-// 큐산	35.86842904,	128.5957971
-// 태산만두	35.8667294,	128.5940879
-// 토끼정	35.868137,	128.5974984
-// 통나무집	35.86893422,	128.5927503
-// 푸르다코리아 경성상회	35.8666031,	128.6001843
-// 풍기인삼갈비 단	35.870485,	128.604012
-// 프랑스싸롱	35.87055052,	128.6023355
-// 하이타이	35.8679881,	128.6003575
-// 한스델리	35.8674811,	128.5938227
-// 한옥집	35.86978106,	128.604788
-// 함흥면옥	35.85579	,128.606377
-// 해뜨는 아침	35.8670809,	128.5927323
-// 행복식당	35.86567804	,128.5949508
-// 현대옥 경대병원점	35.867254,	128.603396
-// 현풍닭칼국수 동성로점	35.8656403,	128.5969703
-// 화림보쌈	35.861614,	128.589948
-// 황소	35.873839,	128.593975
-// 황소식당	35.87184868,	128.5946067
-// 힛또	35.855809,	128.606378
