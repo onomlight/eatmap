@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뭐먹지?</title>
+    
+</head>
+<body>
+    <style>
+        #warpper{
+            padding: 0px;
+            margin: 0px;
+            border: 1px solid gray;
+        }
+
+        #main-logo{
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        #mid-menu {
+            margin: 0px;
+            display: flex;
+            list-style: none;
+            border: 1px solid gray;
+            justify-content: space-around;
+        }
+
+        #mid-menu>li{
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            align-items: center;
+           
+        }
+    </style>
+
+    <div id="warpper">
+
+        <div  id="topmenu">
+            <!-- header -->
+            <!-- 퀵메뉴 // 제일 상단 -->
+            <header> 
+                <div id="main-logo"><img src="../Layout/뭐먹지.png">
+                    <p>내 취향과 이런집도 있어?
+                        확인을 위해!  
+                    </p>
+                </div>
+                <ul id="mid-menu">
+                    <li><a href="#">나의 현재 위치</a></li>
+                    <li><a href="#">뭐먹지?</a></li>
+                    <li><a href="#">맛집 리스트 보기</a></li>
+                </ul>
+            </header>
+        </div>
+    </div>
+
+    <style>
+        .smt_area{
+            width: 100%;
+            height: 2000px;
+            border: 1px solid gray;
+            position: relative;
+        }
+
+        #map{
+            max-width: 1500px;
+            margin: 5px;
+            width: 1100px;
+            height: 1100px;
+            border: 1px solid gray;
+            position: absolute;
+            top: 5%;
+            left: 20%;
+            right: 20%;
+        }
+        .smt_area>span{
+            display: block;
+            font-weight: 500;
+            font-size: 3rem;
+            text-align: center;
+            align-items: center;
+            border: 1px solid gray;
+        }
+    </style>
+    
+        <div class="smt_area">
+            <div id="map">
+                
+            </div>
+            <span>나의 위치정보</span>
+        </div>
+    </div>
+
+    <footer>
+        <div id="top-element">
+            <!-- 링크 -->
+            <ul id="footer-menu">
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>고객센터</li>
+                <li>ㅁㅁㅁ</li>
+                <li>ㅁㅁㅁ</li>
+                <li>ㅁㅁㅁ</li>
+                
+            </ul>
+        </div>
+        <div id="body-element"></div>
+        <!-- footer logo -->
+        <div id="footer-logo"> LOGO</div>
+        <!-- info -->
+        <div id="info"> 대표 ㅣ 홍길동... TEL:053-222-5555</div>
+        <!-- sns -->
+        <div id="sns">NOEBTUBE</div>
+    </footer>
+
+
+</body>
+</html>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+<script src="./js/app.js"></script>

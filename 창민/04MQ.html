@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- 네비게이션 바 스크롤시 같이 내리는거  -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- BS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <title>뭐먹지</title>
        <!-- common.css -->
        <link rel="stylesheet" type="text/css" href="./CSS/common.css">
        <!-- topmenu.css -->
@@ -20,42 +21,32 @@
        <!-- 이미지 슬라이드 -->
     
        <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
-    
+
+     <!-- BS Icon -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+
         <!-- font -->
         <link rel="stylesheet" type="text/css" href="./CSS/font.css">
     
        <!-- JQ -->
     
        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-      
-    
-       <!-- Silck -->
-    
-       <link rel="stylesheet" type="text/css" href="slick.js/slick.css">   
-    
-        <script src="slick.js/slick.min.js"></script>
-        
-       
-       <!-- 수정진행중 
-    
--->
 </head>
 <body>
     
 
-        <div  id="topmenu">
+ <div  id="topmenu">
             <!-- header -->
             <!-- 퀵메뉴 // 제일 상단 -->
             <header> 
                 <!-- quick -->
                 <!-- <a href=""> 1번창</a> -->
                 <!-- <ul id="quick">
-
                     <li><a href="#">나의 현재 위치</a></li>
                     <li><a href="#">뭐먹지?</a></li>
                     <li><a href="#">맛집 리스트 보기</a></li>
                     <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
-
                 </ul> -->
             </header>
             <!-- 2번째 로고창 // 크기조절할것  -->
@@ -87,26 +78,41 @@
             </div>
                
         </div>
-        <nav>
-            <ul id="depth1">
-                
-                <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
-                    <div class="mid-menu">
-                        <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                        <li><a href="#">뭐먹지?</a></li>
-                        <li><a href="#">맛집 리스트 보기</a></li>
-                        <li><a href="./03mapping.html">키워드로 검색하기</a></li>
-                    </div>
-                   
-                    
-
-              
-                 
-
-            </ul>
-        </nav>
+    <div id="nav">
+        <!-- 네이게이션&탭 -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="bi bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: space-around;">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item m-2">
+                        <a class="nav-link " aria-current="page" href="./02mapscr.html" >나의 현재 위치 맛집</a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" aria-current="page" id="navbarSupportedContent" href="#">
+                                뭐먹지?
+                            </a>
+                        </li>
+                        <li class="nav-item m-2">
+                        <a class="nav-link " href="#" id="navbarSupportedContent" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            맛집 리스트 보기
+                        </a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="./03mapping.html" id="navbarSupportedContent" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            id="navbarSupportedContent">
+                              눈으로 검색하기
+                            </a>
+                        </li>
+                   </ul>
+                  
+                </div>
+              </div>
+            </nav>
     </div>
-    <div class="main_cen">
+          <div class="main_cen">
         <!-- 가운데 메뉴 라인 // 이미지 슬라이드 // 카카오맵 // 날씨 영역-->
         <!-- 추가 -->
          
@@ -135,9 +141,7 @@
                     <div class="wt_group">
                         <a href="https://www.weather.go.kr/" target="_blank">
                             
-
                     </div>
-
                 </div> -->
                 <!-- 이미지 슬라이드 탑승 -->
            
@@ -334,4 +338,6 @@
 
 
 <!-- 체크박스 + 인풋 + div 박스해서 값이 나오게 출력하기 체크박스들할때해얄할것! -->
+</body>
 
+</html>

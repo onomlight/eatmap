@@ -1,0 +1,10 @@
+@font-face {
+
+    src : url("../font/TmonMonsori.ttf.ttf"); 
+    
+    font-family: "jua" ;
+    
+    }
+    *{
+    font-family: "jua";
+    }
