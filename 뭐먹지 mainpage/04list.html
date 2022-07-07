@@ -1,13 +1,104 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>뭐먹지</title>
+       <!-- common.css -->
+       <link rel="stylesheet" type="text/css" href="./CSS/common.css">
+       <!-- topmenu.css -->
+        <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css">
+       <!-- maincontainer.css -->
+       <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
+       <!-- footer.css -->
+       <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
+    
+       <!-- 이미지 슬라이드 -->
+    
+       <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
+    
+        <!-- font -->
+        <link rel="stylesheet" type="text/css" href="./CSS/font.css">
+    
+       <!-- JQ -->
+    
+       <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+      
+    
+       <!-- Silck -->
+    
+       <link rel="stylesheet" type="text/css" href="slick.js/slick.css">   
+    
+        <script src="slick.js/slick.min.js"></script>
+        
+       
+       <!-- 수정진행중 
+    
+-->
 </head>
 <body>
     
+
+        <div  id="topmenu">
+            <!-- header -->
+            <!-- 퀵메뉴 // 제일 상단 -->
+            <header> 
+                <!-- quick -->
+                <!-- <a href=""> 1번창</a> -->
+                <!-- <ul id="quick">
+
+                    <li><a href="#">나의 현재 위치</a></li>
+                    <li><a href="#">뭐먹지?</a></li>
+                    <li><a href="#">맛집 리스트 보기</a></li>
+                    <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
+
+                </ul> -->
+            </header>
+            <!-- 2번째 로고창 // 크기조절할것  -->
+           
+            <a href="./01main.html">
+               <img id="main-logo" alt="" src="img/뭐먹지.png" >
+            </a>
+        <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
+
+        <!-- 검색창 -->
+        <div class="main_top" >
+            <!-- 검색창 -->
+            <div class="top_menu">
+                <div class="srch">
+                    <div class="inr">
+                       
+                        <div class="srch_wrap">
+                            <form name="searchFrom"  >
+                                <div class="srch_area">
+                                    <label for="s_word" id="srch_keyword"></label>
+                                    <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
+                                    <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
+                                </div>
+                            </form>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+               
+        </div>
+        <nav>
+            <ul id="depth1">
+                
+                <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
+                    <div class="mid-menu">
+                        <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
+                        <li><a href="./04list.html">뭐먹지?</a></li>
+                        <li><a href="#">맛집 리스트 보기</a></li>
+                        <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                    </div>
+            </ul>
+        </nav>
+    </div>
+
+<body>
     <style>
         *{
             /* border: 1px solid gray;
@@ -47,7 +138,7 @@
             left: 0;
             width: 190px;
             border-right: 1px solid #ebedef;
-            font-size: 14px;
+            font-size: 20px;
             margin: 0;
             padding: 0; 
             display: block;
@@ -55,7 +146,7 @@
         }
         .filter1{
             font-weight: 700;
-            font-size: 14px;
+            font-size: 20px;
             line-height: 20px;
             color: #16181a;
             white-space: nowrap;
@@ -99,7 +190,7 @@
         }
         .filter_option_text
         {
-            font-size: 14px;
+            font-size: 20px;
             line-height: 20px;
             color: #16181a;
         }
@@ -176,29 +267,5 @@
     <div class="resultbox">
 
     </div>
-    <script>
-        var filter_option_box = $('.filter_option_top'); // 감싸주는 값 확인
-        var targetList = $('.filter_option_list li');
-
-        filter_option_box.click(function(){
-            filter_option_top.each(function(){
-                //벨류를 클릭하면 클릭한 값만 나오게 하기 
-                // 제이쿼리에서 체크된 인풋만 확인하는 방법
-                // input:checked
-                var targetValue= []; //클릭한 다음에 값 넣기
-                filter_option_top.filter(':checked').each(function(){
-                    targetValue.push('.'+$(this).val());//클릭의 this임 
-                });//each
-            });
-            var targetClass = targetValue.join(','); // 값을 '값'로 합쳐줌
-            targetList.hide();
-            $(targetClass).fadeIn();
-            //console.log(targetValue)
-          
-        });// filter_option_box.click
-    </script>
-<!-- value 말고 클래스로 출력하게 확인하기 
-    확인할게 li -> 클래스명이 정확하게 해야함  input-> value랑 똑같아야 함
--->
 </body>
 </html>
