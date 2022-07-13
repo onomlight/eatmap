@@ -177,25 +177,28 @@
 
     </div>
     <script>
-        var filter_option_box = $('.filter_option_top'); // 감싸주는 값 확인
-        var targetList = $('.filter_option_list li');
+        // var filter_option_box = $('.filter_option_top'); // 감싸주는 값 확인
+        // var targetList = $('.filter_option_list li');
 
-        filter_option_box.click(function(){
-            filter_option_top.each(function(){
-                //벨류를 클릭하면 클릭한 값만 나오게 하기 
-                // 제이쿼리에서 체크된 인풋만 확인하는 방법
-                // input:checked
-                var targetValue= []; //클릭한 다음에 값 넣기
-                filter_option_top.filter(':checked').each(function(){
-                    targetValue.push('.'+$(this).val());//클릭의 this임 
-                });//each
-            });
-            var targetClass = targetValue.join(','); // 값을 '값'로 합쳐줌
-            targetList.hide();
-            $(targetClass).fadeIn();
-            console.log(targetValue)
+        // filter_option_box.click(function(){
+        //     filter_option_top.each(function(){
+        //         //벨류를 클릭하면 클릭한 값만 나오게 하기 
+        //         // 제이쿼리에서 체크된 인풋만 확인하는 방법
+        //         // input:checked
+        //         var targetValue= []; //클릭한 다음에 값 넣기
+        //         filter_option_top.filter(':checked').each(function(){
+        //             targetValue.push('.'+$(this).val());//클릭의 this임 
+        //         });//each
+        //     });
+        //     var targetClass = targetValue.join(','); // 값을 '값'로 합쳐줌
+        //     targetList.hide();
+        //     $(targetClass).fadeIn();
+        //     console.log(targetValue)
           
-        });// filter_option_box.click
+        // });// filter_option_box.click
+       function check(checkbox){
+        alert("ㅇㅏㄹㅏㅁ")
+       };
     </script>
 <!-- value 말고 클래스로 출력하게 확인하기 
     확인할게 li -> 클래스명이 정확하게 해야함  input-> value랑 똑같아야 함

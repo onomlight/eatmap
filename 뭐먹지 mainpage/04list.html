@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>뭐먹지</title>
-       <!-- common.css -->
-       <link rel="stylesheet" type="text/css" href="./CSS/common.css">
-       <!-- topmenu.css -->
-        <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css">
-       <!-- maincontainer.css -->
-       <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
-       <!-- footer.css -->
-       <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
-    
-       <!-- 이미지 슬라이드 -->
-    
-       <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
-    
-        <!-- font -->
-        <link rel="stylesheet" type="text/css" href="./CSS/font.css">
-    
-       <!-- JQ -->
-    
-       <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-      
-    
-       <!-- Silck -->
-    
-       <link rel="stylesheet" type="text/css" href="slick.js/slick.css">   
-    
-        <script src="slick.js/slick.min.js"></script>
-        
-       
-       <!-- 수정진행중 
+    <!-- common.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/common.css">
+    <!-- topmenu.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css">
+    <!-- maincontainer.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
+    <!-- footer.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
+
+    <!-- 이미지 슬라이드 -->
+
+    <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
+
+    <!-- font -->
+    <link rel="stylesheet" type="text/css" href="./CSS/font.css">
+
+    <!-- JQ -->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+    <!-- Silck -->
+
+    <link rel="stylesheet" type="text/css" href="slick.js/slick.css">
+
+    <script src="slick.js/slick.min.js"></script>
+
+
+    <!-- 수정진행중 
     
 -->
 </head>
-<body>
-    
 
-        <div  id="topmenu">
-            <!-- header -->
-            <!-- 퀵메뉴 // 제일 상단 -->
-            <header> 
-                <!-- quick -->
-                <!-- <a href=""> 1번창</a> -->
-                <!-- <ul id="quick">
+<body>
+
+
+    <div id="topmenu">
+        <!-- header -->
+        <!-- 퀵메뉴 // 제일 상단 -->
+        <header>
+            <!-- quick -->
+            <!-- <a href=""> 1번창</a> -->
+            <!-- <ul id="quick">
 
                     <li><a href="#">나의 현재 위치</a></li>
                     <li><a href="#">뭐먹지?</a></li>
@@ -54,218 +56,235 @@
                     <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
 
                 </ul> -->
-            </header>
-            <!-- 2번째 로고창 // 크기조절할것  -->
-           
-            <a href="./01main.html">
-               <img id="main-logo" alt="" src="img/뭐먹지.png" >
-            </a>
+        </header>
+        <!-- 2번째 로고창 // 크기조절할것  -->
+
+        <a href="./01main.html">
+            <img id="main-logo" alt="" src="img/뭐먹지.png">
+        </a>
         <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
 
         <!-- 검색창 -->
-        <div class="main_top" >
+        <div class="main_top">
             <!-- 검색창 -->
             <div class="top_menu">
                 <div class="srch">
                     <div class="inr">
-                       
+
                         <div class="srch_wrap">
-                            <form name="searchFrom"  >
+                            <form name="searchFrom">
                                 <div class="srch_area">
                                     <label for="s_word" id="srch_keyword"></label>
-                                    <input type="text" id="s_word" name="query" value class="word" title="검색어" style="ime-mode:active" placeholder="검색어를 입력하세요">
-                                    <button type="submit" class="btn_srch" onclick= emptyChk();>검색</button>
+                                    <input type="text" id="s_word" name="query" value class="word" title="검색어"
+                                        style="ime-mode:active" placeholder="검색어를 입력하세요">
+                                    <button type="submit" class="btn_srch" onclick=emptyChk();>검색</button>
                                 </div>
                             </form>
-        
+
                         </div>
                     </div>
                 </div>
             </div>
-               
+
         </div>
         <nav>
             <ul id="depth1">
-                
+
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
-                    <div class="mid-menu">
-                        <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                        <li><a href="./04list.html">뭐먹지?</a></li>
-                        <li><a href="#">맛집 리스트 보기</a></li>
-                        <li><a href="./03mapping.html">키워드로 검색하기</a></li>
-                    </div>
+                <div class="mid-menu">
+                    <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
+                    <li><a href="./04list.html">뭐먹지?</a></li>
+                    <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+                    <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                </div>
             </ul>
         </nav>
     </div>
 
-<body>
-    <style>
-        *{
-            /* border: 1px solid gray;
+    <body>
+        <style>
+            * {
+                /* border: 1px solid gray;
             padding: 10px; */
-            
-        }
-        .filter_option_top{
-            display: block;
-            position: relative;
-            margin: 0;
-            padding: 0;
-            border: 1px solid #ebedef;
-            width: 1400px;
-            margin: auto;
-            
 
-        }
-        .filter_left{
-            overflow: hidden;
-            position:absolute ;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            white-space: nowrap;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            /* -webkit-transform: translate(-50%,-50%);
+            }
+
+            .filter_option_top {
+                display: block;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                border: 1px solid #ebedef;
+                width: 1400px;
+                margin: auto;
+
+
+            }
+
+            .filter_left {
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                white-space: nowrap;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                /* -webkit-transform: translate(-50%,-50%);
             -ms-transform: translate(-50%,-50%);
             -o-transform: translate(-50%,-50%); */
-            transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
 
-        }
-        .fliter_option_category{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 190px;
-            border-right: 1px solid #ebedef;
-            font-size: 20px;
-            margin: 0;
-            padding: 0; 
-            display: block;
-            text-align: center;
-        }
-        .filter1{
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 20px;
-            color: #16181a;
-            white-space: nowrap;
-        }
-        .filter2{
-            color: #959da6;
+            }
 
-        }
-        .filter_option_box{
-            margin-left: 190px;
-            padding: 9px 0 8px 14px;
-        }
-        dd {
-        display: block;
-        margin-inline-start: 40px;
-        }
-        ul 
-        {
-            display: block;
-            list-style-type: disc;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
-            text-align: center;
-            /* 가운데 정렬 */
-        }
-        li
-        {
-            list-style-type: none;
-            text-align: -webkit-match-parent;
-            display: inline-block; 
-            /* 가운데 정렬 */
-            margin: 50px;
+            .fliter_option_category {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 190px;
+                border-right: 1px solid #ebedef;
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                display: block;
+                text-align: center;
+            }
 
-        }
-        .filter_option_list 
-        {
-            font-size: 0;
-        }
-        .filter_option_text
-        {
-            font-size: 20px;
-            line-height: 20px;
-            color: #16181a;
-        }
-        label {
-            cursor: default;
-        }
-        .filter_option_button {
-            display: inline-block;
-            margin-top: 1px;
-            padding: 0 0 0 12px;
-            vertical-align: top;
-        }
-        .filter_option{
-            /* padding-bottom: 50px; */
-            font-family: "나눔고딕",NanumGothic,"Nanum Gothic",Dotum,Apple SD Gothic Neo,sans-serif;
-        }
-        dl
-        {
-            display: block;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-        }
-        .resultbox{
-            margin-left: 243px;
-        }
-    </style>
+            .filter1 {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 20px;
+                color: #16181a;
+                white-space: nowrap;
+            }
 
-    <div class="filter_option_top">
-        <dl class="filter_option">
-            <dt class="fliter_option_category">
-                <div class="filter_left">
-                    <span class="filert1">필터</span>
-                    <span class="filert2">(중복선택 가능)</span>
-                </div>
-            </dt>
-            <dd class="filter_option_box">
-                <ul class="filter_option_list ">
-                    <li class="filter_option_item">
-                        <!-- label for = 필드 클릭시 체크할수있도록 설정  -->
-                        <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter">
-                        <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span class="filter_option_text">가볍게</span></label>
-                    </li>
-                    <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="2" data-role="btn_filter">
-                        <label for="2" data-stragtegyfilter-no="2" class="filter_option_button_filter"> <span class="filter_option_text">무겁게</span></label>
-                    </li>
-                    <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="3" data-role="btn_filter">
-                        <label for="3" data-stragtegyfilter-no="3" class="filter_option_button_filter"> <span class="filter_option_text">달콤하게</span></label>
-                    </li>
-                    <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="4" data-role="btn_filter">
-                        <label for="4" data-stragtegyfilter-no="4" class="filter_option_button_filter"> <span class="filter_option_text">맵게</span></label>
-                    </li>
-                    <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="5" data-role="btn_filter">
-                        <label for="5" data-stragtegyfilter-no="5" class="filter_option_button_filter"> <span class="filter_option_text">새콤하게</span></label>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
-    </div>
+            .filter2 {
+                color: #959da6;
 
-    <style>
-        .resultbox
-        {
-            width: 1400px;
-            border: 1px solid gray;
-            height: 900px;
-        }
-    </style>
-    <div class="resultbox">
+            }
 
-    </div>
-</body>
+            .filter_option_box {
+                margin-left: 190px;
+                padding: 9px 0 8px 14px;
+            }
+
+            dd {
+                display: block;
+                margin-inline-start: 40px;
+            }
+
+            ul {
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+                text-align: center;
+                /* 가운데 정렬 */
+            }
+
+            li {
+                list-style-type: none;
+                text-align: -webkit-match-parent;
+                display: inline-block;
+                /* 가운데 정렬 */
+                margin: 50px;
+
+            }
+
+            .filter_option_list {
+                font-size: 0;
+            }
+
+            .filter_option_text {
+                font-size: 20px;
+                line-height: 20px;
+                color: #16181a;
+            }
+
+            label {
+                cursor: default;
+            }
+
+            .filter_option_button {
+                display: inline-block;
+                margin-top: 1px;
+                padding: 0 0 0 12px;
+                vertical-align: top;
+            }
+
+            .filter_option {
+                /* padding-bottom: 50px; */
+                font-family: "나눔고딕", NanumGothic, "Nanum Gothic", Dotum, Apple SD Gothic Neo, sans-serif;
+            }
+
+            dl {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+
+            .resultbox {
+                margin-left: 243px;
+            }
+        </style>
+
+        <div class="filter_option_top">
+            <dl class="filter_option">
+                <dt class="fliter_option_category">
+                    <div class="filter_left">
+                        <span class="filert1">필터</span>
+                        <span class="filert2">(중복선택 가능)</span>
+                    </div>
+                </dt>
+                <dd class="filter_option_box">
+                    <ul class="filter_option_list ">
+                        <li class="filter_option_item">
+                            <!-- label for = 필드 클릭시 체크할수있도록 설정  -->
+                            <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter">
+                            <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span
+                                    class="filter_option_text">가볍게</span></label>
+                        </li>
+                        <li class="filter_option_item">
+                            <input type="checkbox" class="filter_option_input" id="2" data-role="btn_filter">
+                            <label for="2" data-stragtegyfilter-no="2" class="filter_option_button_filter"> <span
+                                    class="filter_option_text">무겁게</span></label>
+                        </li>
+                        <li class="filter_option_item">
+                            <input type="checkbox" class="filter_option_input" id="3" data-role="btn_filter">
+                            <label for="3" data-stragtegyfilter-no="3" class="filter_option_button_filter"> <span
+                                    class="filter_option_text">달콤하게</span></label>
+                        </li>
+                        <li class="filter_option_item">
+                            <input type="checkbox" class="filter_option_input" id="4" data-role="btn_filter">
+                            <label for="4" data-stragtegyfilter-no="4" class="filter_option_button_filter"> <span
+                                    class="filter_option_text">맵게</span></label>
+                        </li>
+                        <li class="filter_option_item">
+                            <input type="checkbox" class="filter_option_input" id="5" data-role="btn_filter">
+                            <label for="5" data-stragtegyfilter-no="5" class="filter_option_button_filter"> <span
+                                    class="filter_option_text">새콤하게</span></label>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+        <style>
+            .resultbox {
+                width: 1400px;
+                border: 1px solid gray;
+                height: 900px;
+            }
+        </style>
+        <div class="resultbox">
+
+        </div>
+    </body>
+
 </html>
