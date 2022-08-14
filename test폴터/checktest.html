@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="ck" value="메세지1" onclick="showAlert();">
+
+    <style>
+        #ck {
+            width: 100px;
+            height: 100px;
+            outline: none;
+        }
+    </style>
+
+    <script>
+        function showAlert() {
+            //  alert("메시지 박스입니다.\n본 메시지는 두 줄 이상입니다\n\n감사합니다.");
+            if (confirm("어떤 버튼을 누르시겠습니까?")) {
+                alert("확인 버튼을 눌렀습니다.");
+            } else {
+                alert("취소 버튼을 눌렀습니다.");
+            }
+        }
+    </script>
+</body>
+
+<input type="checkbox" value="메시지3" onclick="showConfirm();" />
+
+<script>
+    function showConfirm() {
+        if (confirm("어떤 버튼을 누르시겠습니까?")) {
+            alert("확인 버튼을 눌렀습니다.");
+        } else {
+            alert("취소 버튼을 눌렀습니다.");
+        }
+    }
+</script>
+
+</html>

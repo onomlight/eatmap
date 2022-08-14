@@ -1,20 +1,23 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <style>
-        *{
+        * {
             /* border: 1px solid gray;
             padding: 10px; */
-            
+
         }
-        .filter_option_top{
+
+        .filter_option_top {
             display: block;
             position: relative;
             margin: 0;
@@ -22,12 +25,13 @@
             border: 1px solid #ebedef;
             width: 1400px;
             margin: auto;
-            
+
 
         }
-        .filter_left{
+
+        .filter_left {
             overflow: hidden;
-            position:absolute ;
+            position: absolute;
             top: 50%;
             left: 50%;
             width: 100%;
@@ -37,10 +41,11 @@
             /* -webkit-transform: translate(-50%,-50%);
             -ms-transform: translate(-50%,-50%);
             -o-transform: translate(-50%,-50%); */
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
 
         }
-        .fliter_option_category{
+
+        .fliter_option_category {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -49,31 +54,35 @@
             border-right: 1px solid #ebedef;
             font-size: 14px;
             margin: 0;
-            padding: 0; 
+            padding: 0;
             display: block;
             text-align: center;
         }
-        .filter1{
+
+        .filter1 {
             font-weight: 700;
             font-size: 14px;
             line-height: 20px;
             color: #16181a;
             white-space: nowrap;
         }
-        .filter2{
+
+        .filter2 {
             color: #959da6;
 
         }
-        .filter_option_box{
+
+        .filter_option_box {
             margin-left: 190px;
             padding: 9px 0 8px 14px;
         }
+
         dd {
-        display: block;
-        margin-inline-start: 40px;
+            display: block;
+            margin-inline-start: 40px;
         }
-        ul 
-        {
+
+        ul {
             display: block;
             list-style-type: disc;
             margin-block-start: 1em;
@@ -84,47 +93,51 @@
             text-align: center;
             /* 가운데 정렬 */
         }
-        li
-        {
+
+        li {
             list-style-type: none;
             text-align: -webkit-match-parent;
-            display: inline-block; 
+            display: inline-block;
             /* 가운데 정렬 */
             margin: 50px;
 
         }
-        .filter_option_list 
-        {
+
+        .filter_option_list {
             font-size: 0;
         }
-        .filter_option_text
-        {
+
+        .filter_option_text {
             font-size: 14px;
             line-height: 20px;
             color: #16181a;
         }
+
         label {
             cursor: default;
         }
+
         .filter_option_button {
             display: inline-block;
             margin-top: 1px;
             padding: 0 0 0 12px;
             vertical-align: top;
         }
-        .filter_option{
+
+        .filter_option {
             /* padding-bottom: 50px; */
-            font-family: "나눔고딕",NanumGothic,"Nanum Gothic",Dotum,Apple SD Gothic Neo,sans-serif;
+            font-family: "나눔고딕", NanumGothic, "Nanum Gothic", Dotum, Apple SD Gothic Neo, sans-serif;
         }
-        dl
-        {
+
+        dl {
             display: block;
             margin-block-start: 1em;
             margin-block-end: 1em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
         }
-        .resultbox{
+
+        .resultbox {
             margin-left: 243px;
         }
     </style>
@@ -141,24 +154,34 @@
                 <ul class="filter_option_list ">
                     <li class="filter_option_item">
                         <!-- label for = 필드 클릭시 체크할수있도록 설정  -->
-                        <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter">
-                        <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span class="filter_option_text">가볍게</span></label>
+                        <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter"
+                            onclick="test();">
+                        <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span
+                                class="filter_option_text">가볍게</span></label>
                     </li>
                     <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="2" data-role="btn_filter">
-                        <label for="2" data-stragtegyfilter-no="2" class="filter_option_button_filter"> <span class="filter_option_text">무겁게</span></label>
+                        <input type="checkbox" class="filter_option_input" id="2" data-role="btn_filter"
+                            onclick="test();">
+                        <label for="2" data-stragtegyfilter-no="2" class="filter_option_button_filter"> <span
+                                class="filter_option_text">무겁게</span></label>
                     </li>
                     <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="3" data-role="btn_filter">
-                        <label for="3" data-stragtegyfilter-no="3" class="filter_option_button_filter"> <span class="filter_option_text">달콤하게</span></label>
+                        <input type="checkbox" class="filter_option_input" id="3" data-role="btn_filter"
+                            onclick="test();">
+                        <label for="3" data-stragtegyfilter-no="3" class="filter_option_button_filter"> <span
+                                class="filter_option_text">달콤하게</span></label>
                     </li>
                     <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="4" data-role="btn_filter">
-                        <label for="4" data-stragtegyfilter-no="4" class="filter_option_button_filter"> <span class="filter_option_text">맵게</span></label>
+                        <input type="checkbox" class="filter_option_input" id="4" data-role="btn_filter"
+                            onclick="test();">
+                        <label for="4" data-stragtegyfilter-no="4" class="filter_option_button_filter"> <span
+                                class="filter_option_text">맵게</span></label>
                     </li>
                     <li class="filter_option_item">
-                        <input type="checkbox" class="filter_option_input" id="5" data-role="btn_filter">
-                        <label for="5" data-stragtegyfilter-no="5" class="filter_option_button_filter"> <span class="filter_option_text">새콤하게</span></label>
+                        <input type="checkbox" class="filter_option_input" id="5" data-role="btn_filter"
+                            onclick="test();">
+                        <label for="5" data-stragtegyfilter-no="5" class="filter_option_button_filter"> <span
+                                class="filter_option_text">새콤하게</span></label>
                     </li>
                 </ul>
             </dd>
@@ -166,8 +189,7 @@
     </div>
 
     <style>
-        .resultbox
-        {
+        .resultbox {
             width: 1400px;
             border: 1px solid gray;
             height: 900px;
@@ -194,14 +216,15 @@
         //     targetList.hide();
         //     $(targetClass).fadeIn();
         //     console.log(targetValue)
-          
+
         // });// filter_option_box.click
-       function check(checkbox){
-        alert("ㅇㅏㄹㅏㅁ")
-       };
+        function test() {
+            alert("ㅇㅏㄹㅏㅁ");
+        };
     </script>
-<!-- value 말고 클래스로 출력하게 확인하기 
+    <!-- value 말고 클래스로 출력하게 확인하기 
     확인할게 li -> 클래스명이 정확하게 해야함  input-> value랑 똑같아야 함
 -->
 </body>
+
 </html>
