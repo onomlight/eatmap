@@ -12,17 +12,9 @@
 
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
-    center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+    center: new kakao.maps.LatLng(35.86719, 128.5961), // 지도의 중심좌표
     level: 4, // 지도의 확대 레벨
   };
-
-var latitude;
-var longitude;
-navigator.geolocation.getCurrentPosition(function (pos) {
-  latitude = pos.coords.latitude;
-  longitude = pos.coords.longitude;
-  //alert("현위 위도 경도 : " + latitude + "," + longitude);
-});
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
