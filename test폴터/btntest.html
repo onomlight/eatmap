@@ -7,14 +7,45 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- 
+      
+$("input:radio[name=host_chk]").click(function(){ 
+                 if($("input:radio[name=host_chk]:checked").val()=='select'){      
+      $("#hostOption").attr("disabled",false);       
+    
+     $("#hostOption").removeClass("readonly");    
+  }else{       
+     $("#hostOption").attr("disabled",true);     
+    
+                          $("#hostOption").addClass("readonly");    }});
+
+    이거 한번 생각해보기
+     -->
+    <script>
+      function push1() {
+        alert("안매운맛이 클릭됨");
+      }
+    </script>
     <style>
-      input {
-      }
       #hot {
-        background-image: url(매운맛.jpg);
+        height: 200px;
+        width: 200px;
+        background-image: url(매운맛.png);
+        background-size: 100%;
+        background-color: red;
       }
-      #not {
-        background-image: url(순한맛.jpg);
+
+      #nhot {
+        background-image: url(순한맛.png);
+        background-size: 100%;
+      }
+      #ncool {
+        background-image: url(/test폴터/따뜻한.png);
+        background-size: 100%;
+      }
+      #cool {
+        background-image: url(/test폴터/시원한.png);
+        background-size: 100%;
       }
     </style>
     <div style="display: flex; left: 200px; padding: 10px; margin: 10px">
@@ -28,20 +59,33 @@
           left: 100px;
           padding: auto;
         "
+        name="frm1"
       >
         <table border="1">
           <tr>
             <td>
+              <input type="button" value="매운" name="hot" id="hot" />
               <input
-                type="text"
-                value="매운"
-                name="hot"
-                style="height: 200px; width: 200px"
-              />
-              <input
-                type="checkbox"
+                type="button"
                 value="안매운"
-                name="nhot"
+                id="nhot"
+                style="height: 200px; width: 200px"
+                onclick="push1()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                value="따뜻한"
+                id="ncool"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="시원한"
+                id="cool"
                 style="height: 200px; width: 200px"
               />
             </td>
@@ -49,13 +93,23 @@
           <tr>
             <td>
               <input
-                type="checkbox"
-                value="매운"
+                type="button"
+                value="한식"
                 style="height: 200px; width: 200px"
               />
               <input
-                type="checkbox"
-                value="안매운"
+                type="button"
+                value="양식"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="중식"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="일식"
                 style="height: 200px; width: 200px"
               />
             </td>
@@ -63,49 +117,31 @@
           <tr>
             <td>
               <input
-                type="checkbox"
-                value=""
+                type="button"
+                value="빵"
                 style="height: 200px; width: 200px"
               />
               <input
-                type="checkbox"
-                value=""
+                type="button"
+                value="밥"
                 style="height: 200px; width: 200px"
               />
               <input
-                type="checkbox"
-                value=""
+                type="button"
+                value="면"
                 style="height: 200px; width: 200px"
               />
               <input
-                type="checkbox"
-                value=""
+                type="button"
+                value="떡"
                 style="height: 200px; width: 200px"
               />
             </td>
           </tr>
           <tr>
-            <td>
-              <input
-                type="checkbox"
-                value=""
-                style="height: 200px; width: 200px"
-              />
-              <input
-                type="checkbox"
-                value=""
-                style="height: 200px; width: 200px"
-              />
-              <input
-                type="checkbox"
-                value=""
-                style="height: 200px; width: 200px"
-              />
-              <input
-                type="checkbox"
-                value=""
-                style="height: 200px; width: 200px"
-              />
+            <td colspan="2">
+              <input type="button" value="조회하기" />
+              <input type="button" value="다시하기 " />
             </td>
           </tr>
         </table>
@@ -113,3 +149,4 @@
     </div>
   </body>
 </html>
+<!-- 랜덤값넣기 https://velog.io/@woosungkim0123/%EC%9D%B8%EC%9A%A9%EB%AC%B8%EA%B5%AC-%EB%9E%9C%EB%8D%A4%ED%95%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5 -->
