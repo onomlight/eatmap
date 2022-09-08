@@ -234,7 +234,7 @@
             }
         </style>
 
-        <div class="filter_option_top">
+        <!-- <div class="filter_option_top">
             <dl class="filter_option">
                 <dt class="fliter_option_category">
                     <div class="filter_left">
@@ -245,7 +245,8 @@
                 <dd class="filter_option_box">
                     <ul class="filter_option_list ">
                         <li class="filter_option_item">
-                            <!-- label for = 필드 클릭시 체크할수있도록 설정  -->
+                             label for = 필드 클릭시 체크할수있도록 설정  -->
+                            <!--
                             <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter">
                             <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span
                                     class="filter_option_text">가볍게</span></label>
@@ -273,7 +274,7 @@
                     </ul>
                 </dd>
             </dl>
-        </div>
+        </div> -->
 
         <style>
             .resultbox {
@@ -283,6 +284,201 @@
             }
         </style>
         <div class="resultbox">
+            <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      
+$("input:radio[name=host_chk]").click(function(){ 
+                 if($("input:radio[name=host_chk]:checked").val()=='select'){      
+      $("#hostOption").attr("disabled",false);       
+    
+     $("#hostOption").removeClass("readonly");    
+  }else{       
+     $("#hostOption").attr("disabled",true);     
+    
+                          $("#hostOption").addClass("readonly");    }});
+
+    이거 한번 생각해보기
+     -->
+    <script>
+      function push1() {
+        alert("안매운맛이 클릭됨");
+      }
+      function check(){
+        alert("등록버튼이 푸시");
+      }
+    </script>
+    <style>
+      #hot {
+        height: 200px;
+        width: 200px;
+        background-image: url(매운맛.png);
+        background-size: 100%;
+        background-color: red;
+      }
+
+      #nhot {
+        background-image: url(순한맛.png);
+        background-size: 100%;
+      }
+      #ncool {
+        background-image: url(/test폴터/따뜻한.png);
+        background-size: 100%;
+      }
+      #cool {
+        background-image: url(/test폴터/시원한.png);
+        background-size: 100%;
+      }
+      #han {
+        background-image: url(/test폴터/한식.png);
+        background-size: 100%;
+      }
+      #yang {
+        background-image: url(/test폴터/양식.png);
+        background-size: 100%;
+      }
+      #jong {
+        background-image: url(/test폴터/중식.png);
+        background-size: 100%;
+      }
+      #lul {
+        background-image: url(/test폴터/일식.png);
+        background-size: 100%;
+      }
+      #br {
+        background-image: url(/test폴터/빵.png);
+        background-size: 100%;
+      }
+      #ri {
+        background-image: url(/test폴터/밥.png);
+        background-size: 100%;
+      }
+      #nu {
+        background-image: url(/test폴터/면.png);
+        background-size: 100%;
+      }
+      #D {
+        background-image: url(/test폴터/떡.png);
+        background-size: 100%;
+      }
+    </style>
+    <div style="display: flex; left: 200px; padding: 10px; margin: 10px">
+      <form
+        action=""
+        style="
+          width: 100%;
+          justify-items: center;
+          text-align: center;
+          align-items: center;
+          left: 100px;
+          padding: auto;
+        "
+        name="frm1"
+      >
+        <table border="1" style="justify-content: center; display: flex; align-items: center;">
+          <tr>
+            <td>
+              <input type="button" value="매운" name="hot" id="hot" />
+              <input
+                type="button"
+                value="안매운"
+                id="nhot"
+                style="height: 200px; width: 200px"
+                onclick="push1()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                value="따뜻한"
+                id="ncool"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="시원한"
+                id="cool"
+                style="height: 200px; width: 200px"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                value="한식"
+                id="han"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="양식"
+                id="yang"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="중식"
+                id="jong"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="일식"
+                id="lul"
+                style="height: 200px; width: 200px"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                value="빵"
+                id="br"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="밥"
+                id="ri"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="면"
+                id="nu"
+                style="height: 200px; width: 200px"
+              />
+              <input
+                type="button"
+                value="떡"
+                id="D"
+                style="height: 200px; width: 200px"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="button" value="조회하기" onclick="check()"/>
+              <input type="button" value="다시하기 " />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
+<!-- 랜덤값넣기 https://velog.io/@woosungkim0123/%EC%9D%B8%EC%9A%A9%EB%AC%B8%EA%B5%AC-%EB%9E%9C%EB%8D%A4%ED%95%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5 -->
 
         </div>
     </body>
