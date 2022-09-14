@@ -27,6 +27,19 @@ $("input:radio[name=host_chk]").click(function(){ 
       }
     </script>
     <style>
+      [type=radio]{
+        position: fixed;
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+      }
+      [type=radio]+div{
+        cursor: pointer;
+      }
+      [type=radio]:checked+div{
+        outline: 5px solid indigo;
+      }
       #hot {
         height: 200px;
         width: 200px;
@@ -40,11 +53,14 @@ $("input:radio[name=host_chk]").click(function(){ 
         background-size: 100%;
       }
       #ncool {
+        height: 200px; width: 200px;
         background-image: url(/test폴터/따뜻한.png);
         background-size: 100%;
       }
       #cool {
-        background-image: url(/test폴터/시원한.png);
+        height: 200px; width: 200px;
+        background-image: url();
+        content: url(/test폴터/시원한.png);
         background-size: 100%;
       }
       #han {
@@ -109,17 +125,23 @@ $("input:radio[name=host_chk]").click(function(){ 
           <tr>
             <td>
               <input
-                type="button"
+                type="radio"
                 value="따뜻한"
-                id="ncool"
+                
                 style="height: 200px; width: 200px"
-              />
+              >
+              <div id="ncool">
+
+              </div>
+              </input>
               <input
-                type="button"
+                type="radio"
                 value="시원한"
-                id="cool"
                 style="height: 200px; width: 200px"
-              />
+                
+              >
+              <div id="cool"></div>
+            </input>
             </td>
           </tr>
           <tr>

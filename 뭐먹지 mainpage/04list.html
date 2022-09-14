@@ -314,6 +314,12 @@ $("input:radio[name=host_chk]").click(function(){ 
       function check(){
         alert("등록버튼이 푸시");
       }
+      function check(){
+        if(frm1.hot.value.checked==false){
+          alert("맛이 체크가 되지 않았습니다.")
+          frm1.hot.focus();
+        }
+      }
     </script>
     <style>
       #hot {
@@ -389,6 +395,7 @@ $("input:radio[name=host_chk]").click(function(){ 
               <input
                 type="button"
                 value="안매운"
+                name="hot"
                 id="nhot"
                 style="height: 200px; width: 200px"
                 onclick="push1()"
@@ -401,12 +408,14 @@ $("input:radio[name=host_chk]").click(function(){ 
                 type="button"
                 value="따뜻한"
                 id="ncool"
+                name="best"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="시원한"
                 id="cool"
+                name="best"
                 style="height: 200px; width: 200px"
               />
             </td>
@@ -417,24 +426,28 @@ $("input:radio[name=host_chk]").click(function(){ 
                 type="button"
                 value="한식"
                 id="han"
+                name="food"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="양식"
                 id="yang"
+                name="food"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="중식"
                 id="jong"
+                name="food"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="일식"
                 id="lul"
+                name="food"
                 style="height: 200px; width: 200px"
               />
             </td>
@@ -445,24 +458,28 @@ $("input:radio[name=host_chk]").click(function(){ 
                 type="button"
                 value="빵"
                 id="br"
+                name="carbohydrate"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="밥"
                 id="ri"
+                name="carbohydrate"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="면"
                 id="nu"
+                name="carbohydrate"
                 style="height: 200px; width: 200px"
               />
               <input
                 type="button"
                 value="떡"
                 id="D"
+                name="carbohydrate"
                 style="height: 200px; width: 200px"
               />
             </td>
