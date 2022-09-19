@@ -27,38 +27,44 @@ $("input:radio[name=host_chk]").click(function(){ 
       }
     </script>
     <style>
-      [type=radio]{
-        position: fixed;
+      [type="radio"] {
+        position: absolute;
         opacity: 0;
-        width: 0;
-        height: 0;
-
+        width: 50px;
+        height: 50px;
       }
-      [type=radio]+div{
+      [type="radio"] + img {
         cursor: pointer;
       }
-      [type=radio]:checked+div{
+      [type="radio"] + div {
+        cursor: pointer;
+      }
+      [type="radio"]:checked + div {
         outline: 5px solid indigo;
       }
-      #hot {
+      .hot {
         height: 200px;
         width: 200px;
         background-image: url(매운맛.png);
         background-size: 100%;
-        background-color: red;
+       
       }
 
-      #nhot {
+      .nhot {
+        height: 200px;
+        width: 200px;
         background-image: url(순한맛.png);
         background-size: 100%;
       }
       #ncool {
-        height: 200px; width: 200px;
+        height: 200px;
+        width: 200px;
         background-image: url(/test폴터/따뜻한.png);
         background-size: 100%;
       }
       #cool {
-        height: 200px; width: 200px;
+        height: 200px;
+        width: 200px;
         background-image: url();
         content: url(/test폴터/시원한.png);
         background-size: 100%;
@@ -95,6 +101,10 @@ $("input:radio[name=host_chk]").click(function(){ 
         background-image: url(/test폴터/떡.png);
         background-size: 100%;
       }
+      .divtag {
+        /* margin: 0;  */
+        /* display: grid; */
+      }
     </style>
     <div style="display: flex; left: 200px; padding: 10px; margin: 10px">
       <form
@@ -112,36 +122,40 @@ $("input:radio[name=host_chk]").click(function(){ 
         <table>
           <tr>
             <td>
-              <input type="button" value="매운" name="hot" id="hot" />
+              <input type="radio" value="매운" name="hot" id="hot" ><div class="hot"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="안매운"
                 id="nhot"
-                style="height: 200px; width: 200px"
+                
+                name="hot"
                 onclick="push1()"
-              />
+              ><div class="nhot"></div></input>
             </td>
           </tr>
           <tr>
-            <td>
-              <input
-                type="radio"
-                value="따뜻한"
-                
-                style="height: 200px; width: 200px"
-              >
-              <div id="ncool">
+            <td style="">
+              <div>
+                <div class="divtag" id="ncool">
+                  <input
+                    type="button"
+                    value="따뜻한"
+                    name="test"
+                    style="height: 50px; width: 50px"
+                  />
+                </div>
+              </td>
 
+                <td>
+                <div class="divtag" id="cool">
+                  <input
+                  type="button"
+                  value="따뜻한"
+                  name="test"
+                  style="height: 50px; width: 50px"
+                />
+                </div>
               </div>
-              </input>
-              <input
-                type="radio"
-                value="시원한"
-                style="height: 200px; width: 200px"
-                
-              >
-              <div id="cool"></div>
-            </input>
             </td>
           </tr>
           <tr>

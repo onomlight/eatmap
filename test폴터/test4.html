@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    	
+    <form action = "cardSelect">
+      <div class = "cardBox">
+          <div class = "cardItem">
+            <input type = "radio" name = "major" value = "The Fool">
+            <div class="insertCardImg"></div>
+          </input>
+        </div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Magician"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The High Priestess"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Emperess"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Emperor"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Hieropthont"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Lovers"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The chariot"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Strength"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Hermit"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "Wheel of Fortune"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "Justice"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Hanged Man"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "Death"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "Temperance"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Devil"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Tower"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Star"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Moon"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The Sun"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "Judgement"> <div class="insertCardImg"></div></input></div>
+          <div class = "cardItem"><input type = "radio" name = "major" value = "The World"> <div class="insertCardImg"></div></input></div>
+      </div>
+      <div id = "cardChoose"><input type="submit" value= "선택"/>
+  </form>
+  
+  </body>
+
+  <style>
+    .cardBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 10px;
+}
+
+    .insertCardImg{
+    content:url(/test폴터/따뜻한.png);
+    height:100px;
+    width:70px;
+}
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 70px;
+  height: 90px;
+}
+[type=radio] + div {
+  cursor: pointer;
+}
+[type=radio]:checked + div {
+  outline: 2px solid indigo;
+}
+  </style>
+</html>

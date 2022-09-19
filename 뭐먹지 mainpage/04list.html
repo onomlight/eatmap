@@ -319,174 +319,227 @@ $("input:radio[name=host_chk]").click(function(){ 
           alert("맛이 체크가 되지 않았습니다.")
           frm1.hot.focus();
         }
+        alert("조회버튼이 클릳됨");
       }
     </script>
     <style>
-      #hot {
-        height: 200px;
-        width: 200px;
-        background-image: url(매운맛.png);
+      .hot {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/매운맛.png);
         background-size: 100%;
-        background-color: red;
+        margin: 0;
       }
 
-      #nhot {
-        background-image: url(순한맛.png);
+      .nhot {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/순한맛.png);
         background-size: 100%;
       }
-      #ncool {
-        background-image: url(/test폴터/따뜻한.png);
+      .ncool {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/따뜻한.png);
         background-size: 100%;
       }
-      #cool {
-        background-image: url(/test폴터/시원한.png);
+      .cool {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/시원한.png);
         background-size: 100%;
       }
-      #han {
-        background-image: url(/test폴터/한식.png);
+      .han {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/한식.png);
         background-size: 100%;
       }
-      #yang {
-        background-image: url(/test폴터/양식.png);
+      .yang {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/양식.png);
         background-size: 100%;
       }
-      #jong {
-        background-image: url(/test폴터/중식.png);
+      .jong {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/중식.png);
         background-size: 100%;
       }
-      #lul {
-        background-image: url(/test폴터/일식.png);
+      .lul {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/일식.png);
         background-size: 100%;
       }
-      #br {
-        background-image: url(/test폴터/빵.png);
+      .br {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/빵.png);
         background-size: 100%;
       }
-      #ri {
-        background-image: url(/test폴터/밥.png);
+      .ri {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/밥.png);
         background-size: 100%;
       }
-      #nu {
-        background-image: url(/test폴터/면.png);
+      .nu {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/면.png);
         background-size: 100%;
       }
-      #D {
-        background-image: url(/test폴터/떡.png);
+      .D {
+        height: 100px;
+        width: 100px;
+        background-image: url(./img/떡.png);
         background-size: 100%;
       }
+
+
+      [type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+      }
+      [type="radio"] + img {
+        cursor: pointer;
+      }
+      [type="radio"] + div {
+        cursor: pointer;
+      }
+      [type="radio"]:checked + div {
+        outline: 5px solid indigo;
+      }
+      
     </style>
-    <div style="display: flex; left: 200px; padding: 10px; margin: 10px">
+    <div style="display: grid; left: 200px; padding: 10px; margin: 10px" >
       <form
-        action=""
+        
         style="
           width: 100%;
           justify-items: center;
           text-align: center;
           align-items: center;
-          left: 100px;
-          padding: auto;
+          
+        
         "
         name="frm1"
       >
         <table border="1" style="justify-content: center; display: flex; align-items: center;">
           <tr>
             <td>
-              <input type="button" value="매운" name="hot" id="hot" />
+              <input type="radio" value="매운" name="hot" id="hot"><div class="hot"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="안매운"
                 name="hot"
                 id="nhot"
-                style="height: 200px; width: 200px"
+                
                 onclick="push1()"
-              />
+              ><div class="nhot"></div></input>
             </td>
           </tr>
           <tr>
             <td>
               <input
-                type="button"
+                type="radio"
                 value="따뜻한"
                 id="ncool"
                 name="best"
-                style="height: 200px; width: 200px"
-              />
+                
+              >
+              <div class="ncool"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="시원한"
                 id="cool"
                 name="best"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="cool"></div></input>
             </td>
           </tr>
           <tr>
             <td>
               <input
-                type="button"
+                type="radio"
                 value="한식"
                 id="han"
                 name="food"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="han"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="양식"
                 id="yang"
                 name="food"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+                
+              >
+              <div class="yang"></div>
+              </input>
               <input
-                type="button"
+                type="radio"
                 value="중식"
                 id="jong"
                 name="food"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="jong"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="일식"
                 id="lul"
                 name="food"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="lul"></div></input>
             </td>
           </tr>
           <tr>
             <td>
               <input
-                type="button"
+                type="radio"
                 value="빵"
                 id="br"
                 name="carbohydrate"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="br"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="밥"
                 id="ri"
                 name="carbohydrate"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="ri"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="면"
                 id="nu"
                 name="carbohydrate"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="nu"></div></input>
               <input
-                type="button"
+                type="radio"
                 value="떡"
                 id="D"
                 name="carbohydrate"
-                style="height: 200px; width: 200px"
-              />
+                style="height: 100px; width: 100px"
+              >
+              <div class="D"></div></input>
             </td>
           </tr>
           <tr>
             <td colspan="2">
-              <input type="button" value="조회하기" onclick="check()"/>
+              <input type="button" value="조회하기" onclick="check()" style="width: 100px; height: 100px; ;"/>
               <input type="button" value="다시하기 " />
             </td>
           </tr>
