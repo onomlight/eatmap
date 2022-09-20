@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <style>
-        *{
-            border: 1px solid gray;
-        }
-        .p{
-            width: 50px;
-            height: 100px;
-            padding: 10px auto;
-        }
+      input[type="radio"] {
+        appearance: none;
+      }
     </style>
-    <div id="main">
-        <div id="o" class="p"></div>
-        <div id="e" class="p"></div>
-        <div id="t" class="p"></div>
+    <script>
+      function check1() {
+        alert("1번이 클릭되었음");
+      }
+      function check2() {
+        alert("2번이 클릭되었음");
+      }
+    </script>
+
+    <div>
+      <div style="display: flex">
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check1()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check2()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
