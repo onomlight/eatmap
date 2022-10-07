@@ -15,9 +15,10 @@
     <!-- footer.css -->
     <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
 
+    
     <!-- 이미지 슬라이드 -->
 
-    <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css">
+    
 
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="./CSS/font.css">
@@ -93,7 +94,7 @@
                 <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
                 <div class="mid-menu">
                     <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html">뭐먹지?</a></li>
+                    <li><a href="./test5.html">뭐먹지?</a></li>
                     <li><a href="./05pop.html">맛집 리스트 보기</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
                 </div>
@@ -284,15 +285,7 @@
             }
         </style>
         <div class="resultbox">
-            <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+            
     <!-- 
       
 $("input:radio[name=host_chk]").click(function(){ 
@@ -323,87 +316,85 @@ $("input:radio[name=host_chk]").click(function(){ 
       }
     </script>
     <style>
-      .hot {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/매운맛.png);
-        background-size: 100%;
-        margin: 0;
-      }
+     .hot {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/매운맛.png);
+  background-size: 100%;
+  margin: 0;
+}
 
-      .nhot {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/순한맛.png);
-        background-size: 100%;
-      }
-      .ncool {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/따뜻한.png);
-        background-size: 100%;
-      }
-      .cool {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/시원한.png);
-        background-size: 100%;
-      }
-      .han {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/한식.png);
-        background-size: 100%;
-      }
-      .yang {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/양식.png);
-        background-size: 100%;
-      }
-      .jong {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/중식.png);
-        background-size: 100%;
-      }
-      .lul {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/일식.png);
-        background-size: 100%;
-      }
-      .br {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/빵.png);
-        background-size: 100%;
-      }
-      .ri {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/밥.png);
-        background-size: 100%;
-      }
-      .nu {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/면.png);
-        background-size: 100%;
-      }
-      .D {
-        height: 100px;
-        width: 100px;
-        background-image: url(./img/떡.png);
-        background-size: 100%;
-      }
+.nhot {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/순한맛.png);
+  background-size: 100%;
+}
+.ncool {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/따뜻한.png);
+  background-size: 100%;
+}
+.cool {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/시원한.png);
+  background-size: 100%;
+}
+.han {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/한식.png);
+  background-size: 100%;
+}
+.yang {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/양식.png);
+  background-size: 100%;
+}
+.jong {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/중식.png);
+  background-size: 100%;
+}
+.lul {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/일식.png);
+  background-size: 100%;
+}
+.br {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/빵.png);
+  background-size: 100%;
+}
+.ri {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/밥.png);
+  background-size: 100%;
+}
+.nu {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/면.png);
+  background-size: 100%;
+}
+.D {
+  height: 100px;
+  width: 100px;
+  background-image: url(./img/떡.png);
+  background-size: 100%;
+}
 
 
-      [type="radio"] {
-        position: absolute;
-        opacity: 0;
-        width: 50px;
-        height: 50px;
+
+      input[type="radio"] {
+        appearance: none;
       }
       [type="radio"] + img {
         cursor: pointer;
@@ -411,144 +402,103 @@ $("input:radio[name=host_chk]").click(function(){ 
       [type="radio"] + div {
         cursor: pointer;
       }
-      [type="radio"]:checked + div {
-        outline: 5px solid indigo;
+      [type="radio"]:checked {
+        outline: 10px solid royalblue;
       }
+     
+      #onetag {
+      display: flex;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding: 10px;
       
+    }
+    #twotag {
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+    }
     </style>
     <!-- table td tr ==> div로 전환진행중 -->
-    <div style="display: grid; left: 200px; padding: 10px; margin: 10px" >
-      <form
-        
-        style="
-          width: 100%;
-          justify-items: center;
-          text-align: center;
-          align-items: center;
-          
-        
-        "
-        name="frm1"
-      >
-        <table border="1" style="justify-content: center; display: flex; align-items: center;">
-          <tr>
-            <td>
-              <input type="radio" value="매운" name="hot" id="hot"><div class="hot"></div></input>
-              <input
-                type="radio"
-                value="안매운"
-                name="hot"
-                id="nhot"
-                
-                onclick="push1()"
-              ><div class="nhot"></div></input>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="radio"
-                value="따뜻한"
-                id="ncool"
-                name="best"
-                
-              >
-              <div class="ncool"></div></input>
-              <input
-                type="radio"
-                value="시원한"
-                id="cool"
-                name="best"
-                style="height: 100px; width: 100px"
-              >
-              <div class="cool"></div></input>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="radio"
-                value="한식"
-                id="han"
-                name="food"
-                style="height: 100px; width: 100px"
-              >
-              <div class="han"></div></input>
-              <input
-                type="radio"
-                value="양식"
-                id="yang"
-                name="food"
-                style="height: 100px; width: 100px"
-                
-              >
-              <div class="yang"></div>
-              </input>
-              <input
-                type="radio"
-                value="중식"
-                id="jong"
-                name="food"
-                style="height: 100px; width: 100px"
-              >
-              <div class="jong"></div></input>
-              <input
-                type="radio"
-                value="일식"
-                id="lul"
-                name="food"
-                style="height: 100px; width: 100px"
-              >
-              <div class="lul"></div></input>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="radio"
-                value="빵"
-                id="br"
-                name="carbohydrate"
-                style="height: 100px; width: 100px"
-              >
-              <div class="br"></div></input>
-              <input
-                type="radio"
-                value="밥"
-                id="ri"
-                name="carbohydrate"
-                style="height: 100px; width: 100px"
-              >
-              <div class="ri"></div></input>
-              <input
-                type="radio"
-                value="면"
-                id="nu"
-                name="carbohydrate"
-                style="height: 100px; width: 100px"
-              >
-              <div class="nu"></div></input>
-              <input
-                type="radio"
-                value="떡"
-                id="D"
-                name="carbohydrate"
-                style="height: 100px; width: 100px"
-              >
-              <div class="D"></div></input>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <input type="button" value="조회하기" onclick="check()" style="width: 100px; height: 100px; ;"/>
-              <input type="button" value="다시하기 " />
-            </td>
-          </tr>
-        </table>
-      </form>
+    <div>
+      <div id="onetag">
+        <div class="hot" id="twotag">
+          <input type="radio" value="매운" name="hot" id="hot" />
+        </div>
+        <div class="nhot" id="twotag">
+          <input
+            type="radio"
+            value="안매운"
+            name="hot"
+            id="nhot"
+            onclick="push1()"
+          />
+        </div>
+      </div>
     </div>
-  </body>
-</html>
+    <div id="onetag">
+      <div class="ncool" id="twotag">
+        <input type="radio" value="따뜻한" id="ncool" name="best" />
+      </div>
+
+      <div class="cool" id="twotag">
+        <input type="radio" value="시원한" id="cool" name="best" style="" />
+      </div>
+    </div>
+    <div id="onetag">
+      <div class="han" id="twotag">
+        <input type="radio" value="한식" id="han" name="food" />
+      </div>
+
+      <div class="yang" id="twotag">
+        <input type="radio" value="양식" id="yang" name="food" />
+      </div>
+
+      <div class="jong" id="twotag">
+        <input type="radio" value="중식" id="jong" name="food" />
+      </div>
+
+      <div class="lul" id="twotag">
+        <input type="radio" value="일식" id="lul" name="food" />
+      </div>
+    </div>
+    <div id="onetag">
+      <div class="br" id="twotag">
+        <input type="radio" value="빵" id="br" name="carbohydrate" />
+      </div>
+
+      <div class="ri" id="twotag">
+        <input type="radio" value="밥" id="ri" name="carbohydrate" />
+      </div>
+
+      <div class="nu" id="twotag">
+        <input type="radio" value="면" id="nu" name="carbohydrate" />
+      </div>
+
+      <div class="D" id="twotag">
+        <input type="radio" value="떡" id="D" name="carbohydrate" />
+      </div>
+    </div>
+    <div>
+      <div id="onetag" colspan="2">
+        <input
+          type="button"
+          value="조회하기"
+          onclick="check()"
+          style="width: 100px; height: 30px"
+        />
+        
+        <input
+          type="button"
+          value="다시하기 "
+          onclick="reset()"
+          style="width: 100px; height: 30px"
+        />
+      </div>
+    </div>
+
 <!-- 랜덤값넣기 https://velog.io/@woosungkim0123/%EC%9D%B8%EC%9A%A9%EB%AC%B8%EA%B5%AC-%EB%9E%9C%EB%8D%A4%ED%95%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5 -->
 
         </div>
