@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- common.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/common.css" />
+    <!-- topmenu.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css" />
+    <!-- maincontainer.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css" />
+    <!-- footer.css -->
+    <link rel="stylesheet" type="text/css" href="./CSS/footer.css" />
+
+    <!-- 이미지 슬라이드 -->
+
+    <link rel="stylesheet" type="text/css" href="./CSS/imgslid.css" />
+
+    <!-- font -->
+    <link rel="stylesheet" type="text/css" href="./CSS/font.css" />
+
+    <!-- JQ -->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <style>
+    .hot {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/매운맛.png);
+      background-size: 100%;
+      margin: 0;
+    }
+
+    .nhot {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/순한맛.png);
+      background-size: 100%;
+    }
+    .ncool {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/따뜻한.png);
+      background-size: 100%;
+    }
+    .cool {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/시원한.png);
+      background-size: 100%;
+    }
+    .han {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/한식.png);
+      background-size: 100%;
+    }
+    .yang {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/양식.png);
+      background-size: 100%;
+    }
+    .jong {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/중식.png);
+      background-size: 100%;
+    }
+    .lul {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/일식.png);
+      background-size: 100%;
+    }
+    .br {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/빵.png);
+      background-size: 100%;
+    }
+    .ri {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/밥.png);
+      background-size: 100%;
+    }
+    .nu {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/면.png);
+      background-size: 100%;
+    }
+    .D {
+      height: 100px;
+      width: 100px;
+      background-image: url(./img/떡.png);
+      background-size: 100%;
+    }
+
+    div {
+    }
+    #onetag {
+      display: flex;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+    }
+    #twotag {
+      width: 150px;
+      height: 150px;
+      padding: 15px;
+    }
+    .cre {
+      height: 150px;
+      width: 150px;
+      margin: 0;
+    }
+    input[type="radio"] {
+      appearance: none;
+    }
+    [type="radio"] + img {
+      cursor: pointer;
+    }
+    [type="radio"] + div {
+      cursor: pointer;
+    }
+    [type="radio"]:checked {
+      outline: 5px solid royalblue;
+    }
+  </style>
+  <script>
+    function push1() {
+      alert("안매운맛이 클릭됨");
+    }
+    function check1() {
+      //  name 값 넣기
+      //   if (frm1.hot[0].checked == false && frm1.hot[1].checked == false) {
+      //     alert("맵기가 설정되지 않았습니다.");
+      //     return false;
+      //   } else if (
+      //     frm1.best[0].checked == false &&
+      //     frm1.best[1].checked == false
+      //   ) {
+      //     alert("온도가 설정되지 않았습니다.");
+      //     return false;
+      //   } else if (
+      //     frm1.food[0].checked == false &&
+      //     frm1.food[1].checked == false &&
+      //     frm1.food[2].checked == false &&
+      //     frm1.food[3].checked == false
+      //   ) {
+      //     alert("*식 설정되지 않았습니다.");
+      //     return false;
+      //   } else if (
+      //     frm1.carbohydrate[0].checked == false &&
+      //     frm1.carbohydrate[1].checked == false &&
+      //     frm1.carbohydrate[2].checked == false &&
+      //     frm1.carbohydrate[3].checked == false
+      //   ) {
+      //     alert("음식종류가 설정되지 않았습니다.");
+      //     return false;
+      //   } else alert("결과가 곧 나옵니다");
+      //   document.frm1.submit();
+      //   return true;
+      // }
+      function reset1() {
+        alert("리셋 합니다.");
+        document.frm1.reset1();
+      }
+      // function check() {
+      //   if (frm1.hot.value.checked == false) {
+      //     alert("맛이 체크가 되지 않았습니다.");
+      //     frm1.hot.focus();
+      //   }
+      //   alert("조회버튼이 클릳됨");
+      if (frm1.hot[0].checked == false && frm1.hot[1].checked == false) {
+        alert();
+      }
+    }
+  </script>
+
+  <body>
+    <div id="topmenu">
+      <!-- header -->
+      <!-- 퀵메뉴 // 제일 상단 -->
+      <header>
+        <!-- quick -->
+        <!-- <a href=""> 1번창</a> -->
+        <!-- <ul id="quick">
+
+                  <li><a href="#">나의 현재 위치</a></li>
+                  <li><a href="#">뭐먹지?</a></li>
+                  <li><a href="#">맛집 리스트 보기</a></li>
+                  <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
+
+              </ul> -->
+      </header>
+      <!-- 2번째 로고창 // 크기조절할것  -->
+
+      <a href="./01main.html">
+        <img id="main-logo" alt="" src="img/뭐먹지.png" />
+      </a>
+      <h3 style="text-align: center">내 취향과 맛집 확인을 위해!</h3>
+
+      <!-- 검색창 -->
+      <div class="main_top">
+        <!-- 검색창 -->
+        <div class="top_menu">
+          <div class="srch">
+            <div class="inr">
+              <div class="srch_wrap">
+                <form name="searchFrom">
+                  <div class="srch_area">
+                    <label for="s_word" id="srch_keyword"></label>
+                    <input
+                      type="text"
+                      id="s_word"
+                      name="query"
+                      value
+                      class="word"
+                      title="검색어"
+                      style="ime-mode: active"
+                      placeholder="검색어를 입력하세요"
+                    />
+                    <button
+                      type="submit"
+                      class="btn_srch"
+                      onclick="emptyChk();"
+                    >
+                      검색
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul id="depth1">
+          <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
+          <div class="mid-menu">
+            <div class="mid-menu">
+              <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
+              <li><a href="./test5.html">뭐먹지?</a></li>
+              <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+              <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+
+    <div name="frm1">
+      <div id="onetag">
+        <div class="hot" id="twotag">
+          <input type="radio" value="매운" name="hot" id="hot" class="cre" />
+        </div>
+        <div class="nhot" id="twotag">
+          <input
+            type="radio"
+            value="안매운"
+            name="hot"
+            id="nhot"
+            onclick="push1()"
+            class="cre"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="onetag">
+      <div class="ncool" id="twotag">
+        <input type="radio" value="따뜻한" id="ncool" name="best" class="cre" />
+      </div>
+
+      <div class="cool" id="twotag">
+        <input type="radio" value="시원한" id="cool" name="best" class="cre" />
+      </div>
+    </div>
+    <div id="onetag">
+      <div class="han" id="twotag">
+        <input type="radio" value="한식" class="cre" id="han" name="food" />
+      </div>
+
+      <div class="yang" id="twotag">
+        <input type="radio" value="양식" class="cre" id="yang" name="food" />
+      </div>
+
+      <div class="jong" id="twotag">
+        <input type="radio" value="중식" class="cre" id="jong" name="food" />
+      </div>
+
+      <div class="lul" id="twotag">
+        <input type="radio" value="일식" class="cre" id="lul" name="food" />
+      </div>
+    </div>
+    <div id="onetag">
+      <div class="br" id="twotag">
+        <input
+          type="radio"
+          value="빵"
+          class="cre"
+          id="br"
+          name="carbohydrate"
+        />
+      </div>
+
+      <div class="ri" id="twotag">
+        <input
+          type="radio"
+          value="밥"
+          class="cre"
+          id="ri"
+          name="carbohydrate"
+        />
+      </div>
+
+      <div class="nu" id="twotag">
+        <input type="radio" value="면" id="nu" name="carbohydrate" />
+      </div>
+
+      <div class="D" id="twotag">
+        <input type="radio" value="떡" id="D" name="carbohydrate" />
+      </div>
+    </div>
+    <div>
+      <div id="onetag" colspan="2">
+        <input
+          type="button"
+          value="조회하기"
+          onclick="check1()"
+          style="width: 100px; height: 30px"
+        />
+        &nbsp;
+        <input
+          type="button"
+          value="다시하기 "
+          style="width: 100px; height: 30px"
+          onclick="reset1()"
+        />
+      </div>
+    </div>
+  </body>
+</html>

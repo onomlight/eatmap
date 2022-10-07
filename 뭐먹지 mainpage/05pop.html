@@ -110,117 +110,100 @@
         <ul id="depth1">
           <!-- <li id="logo"><img src="/page/뭐먹지.png"></li> -->
           <div class="mid-menu">
-            <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-            <li><a href="./04list.html">뭐먹지?</a></li>
-            <li><a href="./05pop.html">맛집 리스트 보기</a></li>
-            <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+            <div class="mid-menu">
+              <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
+              <li><a href="./test5.html">뭐먹지?</a></li>
+              <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+              <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+            </div>
           </div>
         </ul>
       </nav>
     </div>
-    <div class="row_main" style="overflow: scroll; height: 800px">
-      <ul class="list_many">
-        <li>
-          <a href="#">수락산시로</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">남문납작만두</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">낙원순두부</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">낙영찜갈비</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">낙영식당별관</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">근대골목단팥빵 커피인코나</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">궁채</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">굿또스시</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">국화정원</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">국일식당</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">국일생갈비</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">국일삼계탕</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">국대 닭곱새</a>
-          <span>대구시 북구</span>
-        </li>
+    <style>
+      td {
+        text-align-last: auto;
+        padding: 10px;
+        border-bottom: 1px solid gray;
+      }
+      table {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+    <table>
+      <tr>
+        <td>순번</td>
+        <td>도로명주소</td>
+        <td>업태</td>
+        <td>상호</td>
+        <td>전화번호</td>
+        <td>이용시간</td>
+        <td>좌석수</td>
 
-        <li>
-          <a href="#">교동따로식당</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">관음</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">고향뜰</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">고전 한정식</a>
-          <span>대구시 북구</span>
-        </li>
+        <td>주차장유무</td>
 
-        <li>
-          <a href="#">거창식당</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">개정</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">강산면옥(교동점)</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">강구</a>
-          <span>대구시 북구</span>
-        </li>
+        <td>메뉴</td>
+        <td>간단소개</td>
+        <td>지하철 위치</td>
+        <td>버스 위치</td>
+      </tr>
 
-        <li>
-          <a href="#">국밥</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">가창큰나무집약령시점</a>
-          <span>대구시 북구</span>
-        </li>
-        <li>
-          <a href="#">갈비탕집 </a>
-          <span>대구시 북구</span>
-        </li>
-      </ul>
-    </div>
+      <tbody class="table_body"></tbody>
+      <button type="button" onclick="getJSON()" style="display: none">
+        json 불러오는 버튼
+      </button>
+    </table>
+    <script>
+      // function getJSON() {
+      $.ajax({
+        type: "get",
+        url: "data.json",
+        dataType: "json",
+        success: function (data) {
+          console.log("통신성공");
+          console.log(data);
+          str = "<tr>";
+          $.each(data, function (i) {
+            str +=
+              "<td>" +
+              data[i].cnt +
+              "</td><hr><td>" +
+              data[i].GNG_CS +
+              "</td><td>" +
+              data[i].FD_CS +
+              "</td>" +
+              "<td>" +
+              data[i].BZ_NM +
+              "</td><td>" +
+              data[i].TLNO +
+              "</td><td>" +
+              data[i].MBZ_HR +
+              "</td>" +
+              "<td>" +
+              data[i].SEAT_CNT +
+              "</td><td>" +
+              data[i].PKPL +
+              "</td><td>" +
+              data[i].MNU +
+              "</td><td>" +
+              data[i].SMPL_DESC +
+              "</td>" +
+              "<td>" +
+              data[i].SBW +
+              "</td><td>" +
+              data[i].BUS +
+              "</td>";
+            str += "</tr>";
+          });
+          $(".table_body").append(str);
+        },
+        error: function () {
+          console.log("통신에러");
+        },
+      });
+      // }
+    </script>
     <footer>
       <div id="top-element">
         <!-- 링크 -->

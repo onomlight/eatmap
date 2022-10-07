@@ -11,6 +11,15 @@
       input[type="radio"] {
         appearance: none;
       }
+      [type="radio"] + img {
+        cursor: pointer;
+      }
+      [type="radio"] + div {
+        cursor: pointer;
+      }
+      [type="radio"]:checked {
+        outline: 10px solid royalblue;
+      }
     </style>
     <script>
       function check1() {
@@ -29,6 +38,44 @@
             name="check"
             id=""
             onclick="check1()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check2()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+      </div>
+      <div style="display: flex">
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check1()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check2()"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+        <div style="border: 1px solid gray; width: 100px; height: 100px">
+          <input
+            type="radio"
+            name="check"
+            id=""
+            onclick="check2()"
             style="width: 100px; height: 100px"
           />
         </div>
