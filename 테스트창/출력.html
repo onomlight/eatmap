@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Choice</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div>
+          <input type="radio" checked name="spice" id="spicy" />
+          <label class="box" for="spicy">매운맛</label>
+        </div>
+        <div>
+          <input type="radio" name="spice" id="not-spicy" />
+          <label class="box" for="not-spicy">순한맛</label>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <input type="radio" checked name="temp" id="warm" />
+          <label class="box" for="warm">따듯한</label>
+        </div>
+        <div>
+          <input type="radio" name="temp" id="chill" />
+          <label class="box" for="chill">시원한</label>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <input type="radio" checked name="food-by-country" id="k-food" />
+          <label class="box" for="k-food">한식</label>
+        </div>
+        <div>
+          <input type="radio" name="food-by-country" id="western-food" />
+          <label class="box" for="western-food">양식</label>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <input type="radio" checked name="material" id="bread" />
+          <label class="box" for="bread">빵</label>
+        </div>
+        <div>
+          <input type="radio" name="material" id="rice" />
+          <label class="box" for="rice">밥</label>
+        </div>
+      </div>
+    </div>
+    <div class="apply-recipe" onclick="applyRecipe();">접수</div>
+    <ul class="recipe-list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="final-result"></div>
+  </body>
+
+  <script>
+    let recipeList = document.querySelectorAll("ul.recipe-list li");
+    let finalResult = document.querySelector(".final-result");
+
+    function arrayEquals(a, b) {
+      return (
+        Array.isArray(a) &&
+        Array.isArray(b) &&
+        a.length === b.length &&
+        a.every((val, index) => val === b[index])
+      );
+    }
+
+    function applyRecipe() {
+      recipeList.forEach((el) => {
+        el.innerHTML = null;
+      });
+      finalResult.innerHTML = null;
+      let radios = document.querySelectorAll("input[type=radio]:checked");
+      let words = [];
+      radios.forEach((el, idx) => {
+        let idVal = el.getAttribute("id");
+        let label = document.querySelector(`label[for='${idVal}']`);
+        words.push(label.innerHTML);
+
+        recipeList[idx].innerHTML = label.innerHTML;
+      });
+
+      const recipeMap = [
+        {
+          name: "매운 떡볶이",
+          recipe: ["매운맛", "따듯한", "한식", "빵"],
+        },
+        {
+          name: "순한맛 떡볶이",
+          recipe: ["순한맛", "따듯한", "한식", "빵"],
+        },
+      ];
+
+      recipeMap.forEach((el) => {
+        if (arrayEquals(words, el.recipe)) {
+          finalResult.innerHTML = el.name;
+        }
+      });
+    }
+  </script>
+</html>
+<style>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  .container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  label.box {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    display: inline-block;
+  }
+
+  input[type="radio"]:checked ~ label.box {
+    border: 2px solid royalblue;
+  }
+
+  .row {
+    display: flex;
+    margin: 4px;
+  }
+
+  .row div:first-child {
+    margin-right: 4px;
+  }
+
+  .recipe-list {
+    margin-top: 20px;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+
+  .apply-recipe {
+    padding: 16px;
+    background: royalblue;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .final-result {
+    text-align: center;
+  }
+</style>
