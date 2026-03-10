@@ -8,6 +8,7 @@
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/pop.css" />
     <!-- 카카오맵 커스텀 스타일 (필요시 추가) -->
     <style>
         .map_wrap {
@@ -63,6 +64,13 @@
         <div class="map_wrap">
             <div id="map" style="width:100%;height:100%;"></div>
         </div>
+
+        <div class="menu_line2" style="margin-top: 50px;">
+            <h2 class="section-title">근처 맛집 둘러보기</h2>
+        </div>
+        <div class="pop-container" id="nearby-list-container">
+            <!-- 자바스크립트를 통해 data.json 의 데이터가 동적으로 렌더링 됩니다. -->
+        </div>
     </div>
 
     <!-- ===== 푸터 ===== -->
@@ -87,8 +95,44 @@
     <!-- ===== 스크립트 ===== -->
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
     <script src="./JS/app.js"></script>
-</body>
-    //     $('img *').css('text-align','center');
-    // })
+    <script>
+        $(document).ready(function() {
+            // data.json 비동기 호출
+            $.getJSON("./data.json", function(data) {
+                var container = $("#nearby-list-container");
+                // 주변 맛집 컨셉으로 랜덤하게 8개 정도만 노출 (섞기)
+                let shuffled = data.sort(() => 0.5 - Math.random());
+                var maxItems = Math.min(shuffled.length, 8);
 
-</script>
+                for (let i = 0; i < maxItems; i++) {
+                    let item = shuffled[i];
+                    let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
+                    // 1~8.jpg 임의 식당 이미지
+                    let imgNum = (i % 8) + 1;
+                    
+                    let cardHtml = `
+                        <div class="pop-card">
+                            <img src="./img/${imgNum}.jpg" class="pop-image" onerror="this.src='https://via.placeholder.com/600x400?text=Food+Image'">
+                            <div class="pop-content">
+                                <div class="pop-header">
+                                    <h2 class="pop-title">${item.BZ_NM}</h2>
+                                    <div class="pop-rating">★★★★★ <span style="color:var(--text-muted); font-size:1rem;">(${rating})</span></div>
+                                </div>
+                                <ul class="pop-info">
+                                    <li><strong>분류</strong> <span class="card-tag">${item.FD_CS}</span></li>
+                                    <li><strong>메뉴</strong> ${item.MNU}</li>
+                                    <li><strong>위치</strong> ${item.GNG_CS}</li>
+                                    <li><strong>매장소개</strong> ${item.SMPL_DESC}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    container.append(cardHtml);
+                }
+            }).fail(function() {
+                $("#nearby-list-container").html("<p style='text-align:center; padding: 50px;'>데이터를 불러오는데 실패했습니다.</p>");
+            });
+        });
+    </script>
+</body>
+</html>

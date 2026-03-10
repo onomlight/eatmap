@@ -36,7 +36,7 @@
             <ul id="depth1">
                 <div class="mid-menu">
                     <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">뭐먹지?</a></li>
+                    <li><a href="./04list.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">추천 맛집 찾기</a></li>
                     <li><a href="./05pop.html">맛집 리스트 보기</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
                 </div>
@@ -47,7 +47,7 @@
     <!-- ===== 메인 컨텐츠 ===== -->
     <div class="main_cen">
         <div class="menu_line2">
-            <h2 class="section-title">식감과 맛 조합으로 오늘 뭐먹지?</h2>
+            <h2 class="section-title">식감과 맛 조합으로 내 취향 찾기</h2>
         </div>
 
         <div class="filter-box">
@@ -172,17 +172,54 @@
             $("#recommendForm").submit(function(e) {
                 e.preventDefault();
                 
+                var spicy = $("input[name='spicy']:checked").val();
+                var temp = $("input[name='temp']:checked").val();
                 var type = $("input[name='type']:checked").val();
-                if (!type) {
-                    alert('모든 조합을 선택해주세요!');
+                var carb = $("input[name='carb']:checked").val();
+
+                if (!spicy || !temp || !type || !carb) {
+                    alert('4가지 조합을 모두 선택해주세요!');
                     return;
                 }
 
-                // data.json을 바탕으로 필터링
-                var filtered = restaurantsData.filter(function(item) {
-                    // 카테고리(FD_CS) 문자열 포함 여부 등 필터링 로직 구현 (단순화)
-                    return item.FD_CS && item.FD_CS.includes(type);
+                // 각 선택지에 따른 검색 키워드 매핑
+                var queryKeywords = [];
+                
+                if (spicy === '매운') queryKeywords.push('매운', '불', '매콤', '얼큰', '짬뽕', '찜', '마라');
+                else if (spicy === '안매운') queryKeywords.push('순한', '담백', '맑은', '달콤', '크림');
+                
+                if (temp === '따뜻한') queryKeywords.push('탕', '국', '찌개', '전골', '따뜻', '국밥', '철판', '구이');
+                else if (temp === '시원한') queryKeywords.push('냉', '시원', '빙수', '물회', '초밥', '샐러드');
+
+                if (type) queryKeywords.push(type);
+
+                if (carb === '빵') queryKeywords.push('빵', '샌드위치', '베이커리', '토스트', '버거', '피자');
+                else if (carb === '밥') queryKeywords.push('밥', '국밥', '덮밥', '볶음밥', '리조또', '비빔밥');
+                else if (carb === '면') queryKeywords.push('면', '국수', '파스타', '스파게티', '우동', '소바');
+                else if (carb === '떡') queryKeywords.push('떡', '떡볶이', '찰떡');
+
+                // data.json을 바탕으로 스코어링 (점수 부여)를 통한 추천 알고리즘
+                restaurantsData.forEach(function(item) {
+                    let score = 0;
+                    let textToSearch = ((item.FD_CS || '') + " " + (item.MNU || '') + " " + (item.SMPL_DESC || '')).toLowerCase();
+                    
+                    queryKeywords.forEach(function(kw) {
+                        if (textToSearch.includes(kw)) {
+                            score += 1; // 키워드가 포함될 때마다 점수 추가
+                        }
+                    });
+                    
+                    // 핵심 조건(음식 타입)이 일치하면 대폭 보너스
+                    if (item.FD_CS && item.FD_CS.includes(type)) {
+                        score += 3; 
+                    }
+                    
+                    item._score = score; // 임시 저장
                 });
+
+                // 점수 기반 정렬 후 점수가 0보단 큰 곳만 필터링
+                var filtered = restaurantsData.filter(function(item) { return item._score > 0; });
+                filtered.sort(function(a, b) { return b._score - a._score; });
 
                 // 만약 결과가 없으면 임의로 몇 개 뽑아오기 (fallback)
                 if (filtered.length === 0 && restaurantsData.length > 0) {
@@ -194,8 +231,8 @@
                 
                 if (filtered.length > 0) {
                     $("#result-title").show();
-                    // 최대 8개까지만 추천
-                    for (let i = 0; i < Math.min(filtered.length, 8); i++) {
+                    // 상위 최대 12개까지만 노출
+                    for (let i = 0; i < Math.min(filtered.length, 12); i++) {
                         let item = filtered[i];
                         // 1~8.jpg 임의 이미지 사용
                         let imgNum = (i % 8) + 1;
