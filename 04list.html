@@ -9,67 +9,8 @@
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
     <link rel="stylesheet" type="text/css" href="./CSS/img.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/list.css" />
     
-    <!-- 카카오맵 스크립트 (목록에서 팝업용으로 사용) -->
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
-
-    <style>
-        .list-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .list-card {
-            background: white;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .list-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .list-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-info {
-            padding: 15px;
-        }
-
-        .card-info h3 {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .card-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-
-        .card-tag {
-            display: inline-block;
-            background: #f0f9fa;
-            color: var(--main-color);
-            padding: 4px 8px;
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-    </style>
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -103,401 +44,70 @@
         </nav>
     </div>
 
+    <!-- ===== 메인 컨텐츠 ===== -->
+    <div class="main_cen">
+        <div class="menu_line2">
+            <h2 class="section-title">오늘은 이거 먹자! 추천 리스트</h2>
+        </div>
 
-            }
+        <div class="list-container">
+            <!-- 임시 리스트 데이터 (실제 데이터 연동 필요) -->
+            <div class="list-card">
+                <img src="./img/donkatsu.jpg" alt="돈까스 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                <div class="card-info">
+                    <h3>바삭한 돈까스</h3>
+                    <p>겉바속촉의 정석</p>
+                    <span class="card-tag">#돈까스</span> <span class="card-tag">#일식</span>
+                </div>
+            </div>
 
-            .filter_option_top {
-                display: block;
-                position: relative;
-                margin: 0;
-                padding: 0;
-                border: 1px solid #ebedef;
-                width: 1400px;
-                margin: auto;
+            <div class="list-card">
+                <img src="./img/pasta.jpg" alt="크림 파스타 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                <div class="card-info">
+                    <h3>크림 파스타</h3>
+                    <p>꾸덕한 크림이 일품</p>
+                    <span class="card-tag">#파스타</span> <span class="card-tag">#양식</span>
+                </div>
+            </div>
 
-
-            }
-
-            .filter_left {
-                overflow: hidden;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                white-space: nowrap;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                /* -webkit-transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-            -o-transform: translate(-50%,-50%); */
-                transform: translate(-50%, -50%);
-
-            }
-
-            .fliter_option_category {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                width: 190px;
-                border-right: 1px solid #ebedef;
-                font-size: 20px;
-                margin: 0;
-                padding: 0;
-                display: block;
-                text-align: center;
-            }
-
-            .filter1 {
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 20px;
-                color: #16181a;
-                white-space: nowrap;
-            }
-
-            .filter2 {
-                color: #959da6;
-
-            }
-
-            .filter_option_box {
-                margin-left: 190px;
-                padding: 9px 0 8px 14px;
-            }
-
-            dd {
-                display: block;
-                margin-inline-start: 40px;
-            }
-
-            ul {
-                display: block;
-                list-style-type: disc;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-                padding-inline-start: 40px;
-                text-align: center;
-                /* 가운데 정렬 */
-            }
-
-            li {
-                list-style-type: none;
-                text-align: -webkit-match-parent;
-                display: inline-block;
-                /* 가운데 정렬 */
-                margin: 50px;
-
-            }
-
-            .filter_option_list {
-                font-size: 0;
-            }
-
-            .filter_option_text {
-                font-size: 20px;
-                line-height: 20px;
-                color: #16181a;
-            }
-
-            label {
-                cursor: default;
-            }
-
-            .filter_option_button {
-                display: inline-block;
-                margin-top: 1px;
-                padding: 0 0 0 12px;
-                vertical-align: top;
-            }
-
-            .filter_option {
-                /* padding-bottom: 50px; */
-                font-family: "나눔고딕", NanumGothic, "Nanum Gothic", Dotum, Apple SD Gothic Neo, sans-serif;
-            }
-
-            dl {
-                display: block;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-            }
-
-            .resultbox {
-                margin-left: 243px;
-            }
-        </style>
-
-        <!-- <div class="filter_option_top">
-            <dl class="filter_option">
-                <dt class="fliter_option_category">
-                    <div class="filter_left">
-                        <span class="filert1">필터</span>
-                        <span class="filert2">(중복선택 가능)</span>
-                    </div>
-                </dt>
-                <dd class="filter_option_box">
-                    <ul class="filter_option_list ">
-                        <li class="filter_option_item">
-                             label for = 필드 클릭시 체크할수있도록 설정  -->
-                            <!--
-                            <input type="checkbox" class="filter_option_input" id="1" data-role="btn_filter">
-                            <label for="1" data-stragtegyfilter-no="1" class="filter_option_button_filter"> <span
-                                    class="filter_option_text">가볍게</span></label>
-                        </li>
-                        <li class="filter_option_item">
-                            <input type="checkbox" class="filter_option_input" id="2" data-role="btn_filter">
-                            <label for="2" data-stragtegyfilter-no="2" class="filter_option_button_filter"> <span
-                                    class="filter_option_text">무겁게</span></label>
-                        </li>
-                        <li class="filter_option_item">
-                            <input type="checkbox" class="filter_option_input" id="3" data-role="btn_filter">
-                            <label for="3" data-stragtegyfilter-no="3" class="filter_option_button_filter"> <span
-                                    class="filter_option_text">달콤하게</span></label>
-                        </li>
-                        <li class="filter_option_item">
-                            <input type="checkbox" class="filter_option_input" id="4" data-role="btn_filter">
-                            <label for="4" data-stragtegyfilter-no="4" class="filter_option_button_filter"> <span
-                                    class="filter_option_text">맵게</span></label>
-                        </li>
-                        <li class="filter_option_item">
-                            <input type="checkbox" class="filter_option_input" id="5" data-role="btn_filter">
-                            <label for="5" data-stragtegyfilter-no="5" class="filter_option_button_filter"> <span
-                                    class="filter_option_text">새콤하게</span></label>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </div> -->
-
-        <style>
-            .resultbox {
-                width: 1400px;
-                border: 1px solid gray;
-                height: 900px;
-            }
-        </style>
-        <div class="resultbox">
+            <div class="list-card">
+                <img src="./img/sulbing.jpg" alt="빙수 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                <div class="card-info">
+                    <h3>시원한 빙수</h3>
+                    <p>여름엔 역시 빙수</p>
+                    <span class="card-tag">#디저트</span> <span class="card-tag">#빙수</span>
+                </div>
+            </div>
             
-    <!-- 
-      
-$("input:radio[name=host_chk]").click(function(){ 
-                 if($("input:radio[name=host_chk]:checked").val()=='select'){      
-      $("#hostOption").attr("disabled",false);       
-    
-     $("#hostOption").removeClass("readonly");    
-  }else{       
-     $("#hostOption").attr("disabled",true);     
-    
-                          $("#hostOption").addClass("readonly");    }});
-
-    이거 한번 생각해보기
-     -->
-    <script>
-      function push1() {
-        alert("안매운맛이 클릭됨");
-      }
-      function check(){
-        alert("등록버튼이 푸시");
-      }
-      function check(){
-        if(frm1.hot.value.checked==false){
-          alert("맛이 체크가 되지 않았습니다.")
-          frm1.hot.focus();
-        }
-        alert("조회버튼이 클릳됨");
-      }
-    </script>
-    <style>
-     .hot {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/spicy.png);
-  background-size: 100%;
-  margin: 0;
-}
-
-.nhot {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/mild.png);
-  background-size: 100%;
-}
-.ncool {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/warm.png);
-  background-size: 100%;
-}
-.cool {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/cool.png);
-  background-size: 100%;
-}
-.han {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/korean.png);
-  background-size: 100%;
-}
-.yang {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/western.png);
-  background-size: 100%;
-}
-.jong {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/chinese.png);
-  background-size: 100%;
-}
-.lul {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/japanese.png);
-  background-size: 100%;
-}
-.br {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/bread.png);
-  background-size: 100%;
-}
-.ri {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/rice.png);
-  background-size: 100%;
-}
-.nu {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/noodle.png);
-  background-size: 100%;
-}
-.D {
-  height: 100px;
-  width: 100px;
-  background-image: url(./img/ricecake.png);
-  background-size: 100%;
-}
-
-
-
-      input[type="radio"] {
-        appearance: none;
-      }
-      [type="radio"] + img {
-        cursor: pointer;
-      }
-      [type="radio"] + div {
-        cursor: pointer;
-      }
-      [type="radio"]:checked {
-        outline: 10px solid royalblue;
-      }
-     
-      #onetag {
-      display: flex;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-      margin: 0 auto;
-      padding: 10px;
-      
-    }
-    #twotag {
-      width: 150px;
-      height: 150px;
-      margin: 20px;
-    }
-    </style>
-    <!-- table td tr ==> div로 전환진행중 -->
-    <div>
-      <div id="onetag">
-        <div class="hot" id="twotag">
-          <input type="radio" value="매운" name="hot" id="hot" />
+            <div class="list-card">
+                <img src="./img/soba.jpg" alt="냉소바 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                <div class="card-info">
+                    <h3>냉소바</h3>
+                    <p>시원하고 깔끔한 맛</p>
+                    <span class="card-tag">#소바</span> <span class="card-tag">#일식</span>
+                </div>
+            </div>
         </div>
-        <div class="nhot" id="twotag">
-          <input
-            type="radio"
-            value="안매운"
-            name="hot"
-            id="nhot"
-            onclick="push1()"
-          />
+    </div>
+
+    <!-- ===== 푸터 ===== -->
+    <footer>
+        <div id="footer-menu">
+            <span>회사소개 &nbsp;|&nbsp; </span>
+            <span>서비스 소개 &nbsp;|&nbsp; </span>
+            <span>개인정보처리방침 &nbsp;|&nbsp; </span>
+            <span>이용약관 &nbsp;|&nbsp; </span>
+            <span>도움말</span>
         </div>
-      </div>
-    </div>
-    <div id="onetag">
-      <div class="ncool" id="twotag">
-        <input type="radio" value="따뜻한" id="ncool" name="best" />
-      </div>
-
-      <div class="cool" id="twotag">
-        <input type="radio" value="시원한" id="cool" name="best" style="" />
-      </div>
-    </div>
-    <div id="onetag">
-      <div class="han" id="twotag">
-        <input type="radio" value="한식" id="han" name="food" />
-      </div>
-
-      <div class="yang" id="twotag">
-        <input type="radio" value="양식" id="yang" name="food" />
-      </div>
-
-      <div class="jong" id="twotag">
-        <input type="radio" value="중식" id="jong" name="food" />
-      </div>
-
-      <div class="lul" id="twotag">
-        <input type="radio" value="일식" id="lul" name="food" />
-      </div>
-    </div>
-    <div id="onetag">
-      <div class="br" id="twotag">
-        <input type="radio" value="빵" id="br" name="carbohydrate" />
-      </div>
-
-      <div class="ri" id="twotag">
-        <input type="radio" value="밥" id="ri" name="carbohydrate" />
-      </div>
-
-      <div class="nu" id="twotag">
-        <input type="radio" value="면" id="nu" name="carbohydrate" />
-      </div>
-
-      <div class="D" id="twotag">
-        <input type="radio" value="떡" id="D" name="carbohydrate" />
-      </div>
-    </div>
-    <div>
-      <div id="onetag" colspan="2">
-        <input
-          type="button"
-          value="조회하기"
-          onclick="check()"
-          style="width: 100px; height: 30px"
-        />
-        
-        <input
-          type="button"
-          value="다시하기 "
-          onclick="reset()"
-          style="width: 100px; height: 30px"
-        />
-      </div>
-    </div>
-
-<!-- 랜덤값넣기 https://velog.io/@woosungkim0123/%EC%9D%B8%EC%9A%A9%EB%AC%B8%EA%B5%AC-%EB%9E%9C%EB%8D%A4%ED%95%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5 -->
-
+        <div id="info">
+            대표 ㅣ 뭐먹지컨텐츠즈<br>
+            연락처 | 053-222-5555 &nbsp;&nbsp;&nbsp; 위치 | 대구시 중구 중앙대로 999
         </div>
-    </body>
-
+        <div id="sns">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
+        </div>
+    </footer>
+</body>
 </html>
