@@ -81,17 +81,16 @@
             // data.json 비동기 호출
             $.getJSON("./data.json", function(data) {
                 var container = $("#pop-list-container");
+                container.empty();
 
-                for (let i = 0; i < data.length; i++) {
-                    let item = data[i];
-                    // 랜덤 리뷰 별점 (임시 방편)
+                data.forEach(function(item, index) {
                     let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
-                    // 1~8.jpg 임의 식당 이미지 순환 배정
-                    let imgNum = (i % 8) + 1;
                     
                     let cardHtml = `
                         <div class="pop-card">
-                            <img src="./img/${imgNum}.jpg" class="pop-image" onerror="this.src='https://via.placeholder.com/600x400?text=Food+Image'">
+                            <div class="pop-image-area" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 200px;">
+                                <img src="img/logo.png" style="width: 80px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
+                            </div>
                             <div class="pop-content">
                                 <div class="pop-header">
                                     <h2 class="pop-title">${item.BZ_NM}</h2>
@@ -101,14 +100,14 @@
                                     <li><strong>분류</strong> <span class="card-tag">${item.FD_CS}</span></li>
                                     <li><strong>메뉴</strong> ${item.MNU}</li>
                                     <li><strong>위치</strong> ${item.GNG_CS}</li>
-                                    <li><strong>영업시간</strong> ${item.MBZ_HR}</li>
-                                    <li><strong>매장소개</strong> ${item.SMPL_DESC}</li>
+                                    <li><strong>영업시간</strong> ${item.MBZ_HR || '정보 없음'}</li>
+                                    <li><strong>매장소개</strong> ${item.SMPL_DESC || '소개 정보가 없습니다.'}</li>
                                 </ul>
                             </div>
                         </div>
                     `;
                     container.append(cardHtml);
-                }
+                });
             }).fail(function() {
                 $("#pop-list-container").html("<p style='text-align:center; padding: 50px;'>데이터를 불러오는데 실패했습니다.</p>");
             });

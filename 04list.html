@@ -224,11 +224,11 @@
                     // 상위 최대 12개까지만 노출
                     for (let i = 0; i < Math.min(filtered.length, 12); i++) {
                         let item = filtered[i];
-                        // 1~8.jpg 임의 이미지 사용
-                        let imgNum = (i % 8) + 1;
                         let cardHtml = `
                             <div class="list-card">
-                                <img src="./img/${imgNum}.jpg" alt="${item.BZ_NM}" onerror="this.src='https://via.placeholder.com/300x200?text=Food'">
+                                <div class="card-image-placeholder" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 180px;">
+                                    <img src="img/logo.png" style="width: 60px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
+                                </div>
                                 <div class="card-info">
                                     <h3>${item.BZ_NM}</h3>
                                     <p>${item.GNG_CS}</p>
