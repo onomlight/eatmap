@@ -164,10 +164,16 @@ ul, li { list-style: none; }
 }
 #container {
     flex: 1;
-    min-width: 300px;
+    min-width: 0; /* 슬라이더 오버플로우 방지 핵심 */
+    width: 100%;
+    margin: 0 auto;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+}
+.slick {
+    width: 100%; /* 부모 밖으로 안 나가게 강제 */
+    overflow: hidden;
 }
 .slick img {
     width: 100%;
@@ -273,9 +279,15 @@ footer {
     }
     .slide-map-container {
         flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+    }
+    #container {
+        width: 100%;
     }
     #map {
         min-height: 300px;
+        width: 100%;
     }
     .section-title {
         font-size: 20px;
