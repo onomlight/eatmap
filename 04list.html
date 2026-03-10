@@ -1,100 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>뭐먹지</title>
-    <!-- common.css -->
-    <link rel="stylesheet" type="text/css" href="./CSS/common.css">
-    <!-- topmenu.css -->
-    <link rel="stylesheet" type="text/css" href="./CSS/topmenu.css">
-    <!-- maincontainer.css -->
-    <link rel="stylesheet" type="text/css" href="./CSS/maincontainer.css">
-    <!-- footer.css -->
-    <link rel="stylesheet" type="text/css" href="./CSS/footer.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뭐먹지? 추천 리스트 - 뭐먹지</title>
 
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/img.css" />
     
-    <!-- 이미지 슬라이드 -->
+    <!-- 카카오맵 스크립트 (목록에서 팝업용으로 사용) -->
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
 
-    
+    <style>
+        .list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
 
-    <!-- font -->
-    <link rel="stylesheet" type="text/css" href="./CSS/font.css">
+        .list-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-    <!-- JQ -->
+        .list-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        .list-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
+        .card-info {
+            padding: 15px;
+        }
 
-    <!-- Silck -->
+        .card-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
 
-    <link rel="stylesheet" type="text/css" href="slick.js/slick.css">
+        .card-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
 
-    <script src="slick.js/slick.min.js"></script>
+        .card-tag {
+            display: inline-block;
+            background: #f0f9fa;
+            color: var(--main-color);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+    </style>
 
-
-    <!-- 수정진행중 
-    
--->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-
-
+    <!-- ===== 상단 네비게이션 ===== -->
     <div id="topmenu">
-        <!-- header -->
-        <!-- 퀵메뉴 // 제일 상단 -->
-        <header>
-            <!-- quick -->
-            <!-- <a href=""> 1번창</a> -->
-            <!-- <ul id="quick">
-
-                    <li><a href="#">나의 현재 위치</a></li>
-                    <li><a href="#">뭐먹지?</a></li>
-                    <li><a href="#">맛집 리스트 보기</a></li>
-                    <li><input id="searchbox" placeholder="검색어를 입력하세요"></li>
-
-                </ul> -->
+        <header class="header-top">
+            <a href="./01main.html">
+                <img id="main-logo" alt="뭐먹지 로고" src="img/logo.png" />
+            </a>
+            <h3>내 취향과 맛집 확인을 위해!</h3>
         </header>
-        <!-- 2번째 로고창 // 크기조절할것  -->
 
-        <a href="./01main.html">
-            <img id="main-logo" alt="" src="img/logo.png">
-        </a>
-        <h3 style="text-align: center;">내 취향과 맛집 확인을 위해!</h3>
-
-        <!-- 검색창 -->
-        <div class="main_top">
-            <!-- 검색창 -->
-            <div class="top_menu">
-                <div class="srch">
-                    <div class="inr">
-
-                        <div class="srch_wrap">
-                            <form name="searchFrom">
-                                <div class="srch_area">
-                                    <label for="s_word" id="srch_keyword"></label>
-                                    <input type="text" id="s_word" name="query" value class="word" title="검색어"
-                                        style="ime-mode:active" placeholder="검색어를 입력하세요">
-                                    <button type="submit" class="btn_srch" onclick=emptyChk();>검색</button>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="srch_area">
+            <form name="searchFrom" onsubmit="event.preventDefault();">
+                <input type="text" id="s_word" name="query" placeholder="어떤 맛집을 찾으시나요?" />
+                <button type="submit">검색</button>
+            </form>
         </div>
+
         <nav>
             <ul id="depth1">
-
-                <!-- <li id="logo"><img src="/page/logo.png"></li> -->
                 <div class="mid-menu">
                     <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./test5.html">뭐먹지?</a></li>
+                    <li><a href="./04list.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">뭐먹지?</a></li>
                     <li><a href="./05pop.html">맛집 리스트 보기</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
                 </div>
@@ -102,11 +103,6 @@
         </nav>
     </div>
 
-    <body>
-        <style>
-            * {
-                /* border: 1px solid gray;
-            padding: 10px; */
 
             }
 
