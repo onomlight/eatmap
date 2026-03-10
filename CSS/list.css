@@ -150,6 +150,24 @@
     }
 }
 @media (max-width: 480px) {
+    .filter-box {
+        padding: 15px;
+    }
+    .filter-group {
+        gap: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .filter-item img {
+        width: 45px;
+        height: 45px;
+    }
+    .btn-search-recommend {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 1rem;
+    }
     .list-container {
         grid-template-columns: 1fr;
     }
