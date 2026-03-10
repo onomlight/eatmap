@@ -285,3 +285,43 @@ footer {
         gap: 15px;
     }
 }
+
+@media (max-width: 480px) {
+    .header-top {
+        padding: 10px 0;
+    }
+    #main-logo {
+        height: 45px;
+    }
+    .header-top h3 {
+        font-size: 14px;
+    }
+    .srch_area form {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .srch_area input {
+        flex: 1;
+        width: auto;
+    }
+    .srch_area button {
+        padding: 12px 15px;
+    }
+    #depth1 .mid-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 0.9rem;
+        text-align: center;
+        gap: 10px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    .slick img {
+        height: 250px;
+    }
+    #map {
+        height: 250px;
+    }
+}

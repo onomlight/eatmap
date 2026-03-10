@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>뭐먹지? 추천 리스트 - 뭐먹지</title>
+    <title>뭐먹지? 추천 맛집 리스트 - 뭐먹지</title>
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
@@ -22,7 +22,7 @@
             <a href="./01main.html">
                 <img id="main-logo" alt="뭐먹지 로고" src="img/logo.png" />
             </a>
-            <h3>내 취향과 맛집 확인을 위해!</h3>
+            <h3 class="header-slogan" style="text-align:center;">내 취향과 맛집 확인을 위해!</h3>
         </header>
 
         <div class="srch_area">
@@ -47,46 +47,96 @@
     <!-- ===== 메인 컨텐츠 ===== -->
     <div class="main_cen">
         <div class="menu_line2">
-            <h2 class="section-title">오늘은 이거 먹자! 추천 리스트</h2>
+            <h2 class="section-title">식감과 맛 조합으로 오늘 뭐먹지?</h2>
         </div>
 
-        <div class="list-container">
-            <!-- 임시 리스트 데이터 (실제 데이터 연동 필요) -->
-            <div class="list-card">
-                <img src="./img/donkatsu.jpg" alt="돈까스 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                <div class="card-info">
-                    <h3>바삭한 돈까스</h3>
-                    <p>겉바속촉의 정석</p>
-                    <span class="card-tag">#돈까스</span> <span class="card-tag">#일식</span>
+        <div class="filter-box">
+            <form id="recommendForm">
+                <!-- 맵기 선택 -->
+                <div class="filter-group">
+                    <label class="filter-item">
+                        <input type="radio" name="spicy" value="매운" required>
+                        <img src="./img/spicy.png" alt="매운맛" onerror="this.src='https://via.placeholder.com/80?text=Spicy'">
+                        <span>매운맛</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="spicy" value="안매운">
+                        <img src="./img/mild.png" alt="안매운맛" onerror="this.src='https://via.placeholder.com/80?text=Mild'">
+                        <span>순한맛</span>
+                    </label>
                 </div>
-            </div>
 
-            <div class="list-card">
-                <img src="./img/pasta.jpg" alt="크림 파스타 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                <div class="card-info">
-                    <h3>크림 파스타</h3>
-                    <p>꾸덕한 크림이 일품</p>
-                    <span class="card-tag">#파스타</span> <span class="card-tag">#양식</span>
+                <!-- 온도 선택 -->
+                <div class="filter-group">
+                    <label class="filter-item">
+                        <input type="radio" name="temp" value="따뜻한" required>
+                        <img src="./img/warm.png" alt="따뜻한" onerror="this.src='https://via.placeholder.com/80?text=Warm'">
+                        <span>따뜻한</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="temp" value="시원한">
+                        <img src="./img/cool.png" alt="시원한" onerror="this.src='https://via.placeholder.com/80?text=Cool'">
+                        <span>시원한</span>
+                    </label>
                 </div>
-            </div>
 
-            <div class="list-card">
-                <img src="./img/sulbing.jpg" alt="빙수 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                <div class="card-info">
-                    <h3>시원한 빙수</h3>
-                    <p>여름엔 역시 빙수</p>
-                    <span class="card-tag">#디저트</span> <span class="card-tag">#빙수</span>
+                <!-- 종류 선택 -->
+                <div class="filter-group">
+                    <label class="filter-item">
+                        <input type="radio" name="type" value="한식" required>
+                        <img src="./img/korean.png" alt="한식" onerror="this.src='https://via.placeholder.com/80?text=KOR'">
+                        <span>한식</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="type" value="양식">
+                        <img src="./img/western.png" alt="양식" onerror="this.src='https://via.placeholder.com/80?text=WES'">
+                        <span>양식</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="type" value="중식">
+                        <img src="./img/chinese.png" alt="중식" onerror="this.src='https://via.placeholder.com/80?text=CHN'">
+                        <span>중식</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="type" value="일식">
+                        <img src="./img/japanese.png" alt="일식" onerror="this.src='https://via.placeholder.com/80?text=JPN'">
+                        <span>일식</span>
+                    </label>
                 </div>
-            </div>
-            
-            <div class="list-card">
-                <img src="./img/soba.jpg" alt="냉소바 이미지" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                <div class="card-info">
-                    <h3>냉소바</h3>
-                    <p>시원하고 깔끔한 맛</p>
-                    <span class="card-tag">#소바</span> <span class="card-tag">#일식</span>
+
+                <!-- 탄수화물 선택 -->
+                <div class="filter-group">
+                    <label class="filter-item">
+                        <input type="radio" name="carb" value="빵" required>
+                        <img src="./img/bread.png" alt="빵" onerror="this.src='https://via.placeholder.com/80?text=Bread'">
+                        <span>빵</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="carb" value="밥">
+                        <img src="./img/rice.png" alt="밥" onerror="this.src='https://via.placeholder.com/80?text=Rice'">
+                        <span>밥</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="carb" value="면">
+                        <img src="./img/noodle.png" alt="면" onerror="this.src='https://via.placeholder.com/80?text=Noodle'">
+                        <span>면</span>
+                    </label>
+                    <label class="filter-item">
+                        <input type="radio" name="carb" value="떡">
+                        <img src="./img/ricecake.png" alt="떡" onerror="this.src='https://via.placeholder.com/80?text=Ricecake'">
+                        <span>떡</span>
+                    </label>
                 </div>
-            </div>
+
+                <button type="submit" class="btn-search-recommend">추천 맛집 조회하기</button>
+                <button type="reset" class="btn-search-recommend" style="background-color:var(--text-muted); margin-left:10px;">다시하기</button>
+            </form>
+        </div>
+
+        <!-- 추천 결과 표시 영역 -->
+        <h3 id="result-title" style="display:none; text-align:center; color:var(--text-dark); margin-bottom:20px;">당신을 위한 추천 맛집입니다!</h3>
+        <div class="list-container" id="recommend-result-container">
+            <!-- 조회 클릭 시 관련 데이터가 여기에 나타납니다. -->
         </div>
     </div>
 
@@ -109,5 +159,68 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            var restaurantsData = [];
+
+            // data.json 로드
+            $.getJSON("./data.json", function(data) {
+                restaurantsData = data;
+            });
+
+            $("#recommendForm").submit(function(e) {
+                e.preventDefault();
+                
+                var type = $("input[name='type']:checked").val();
+                if (!type) {
+                    alert('모든 조합을 선택해주세요!');
+                    return;
+                }
+
+                // data.json을 바탕으로 필터링
+                var filtered = restaurantsData.filter(function(item) {
+                    // 카테고리(FD_CS) 문자열 포함 여부 등 필터링 로직 구현 (단순화)
+                    return item.FD_CS && item.FD_CS.includes(type);
+                });
+
+                // 만약 결과가 없으면 임의로 몇 개 뽑아오기 (fallback)
+                if (filtered.length === 0 && restaurantsData.length > 0) {
+                    filtered = restaurantsData.slice(0, 3);
+                }
+
+                var container = $("#recommend-result-container");
+                container.empty();
+                
+                if (filtered.length > 0) {
+                    $("#result-title").show();
+                    // 최대 8개까지만 추천
+                    for (let i = 0; i < Math.min(filtered.length, 8); i++) {
+                        let item = filtered[i];
+                        // 1~8.jpg 임의 이미지 사용
+                        let imgNum = (i % 8) + 1;
+                        let cardHtml = `
+                            <div class="list-card">
+                                <img src="./img/${imgNum}.jpg" alt="${item.BZ_NM}" onerror="this.src='https://via.placeholder.com/300x200?text=Food'">
+                                <div class="card-info">
+                                    <h3>${item.BZ_NM}</h3>
+                                    <p>${item.GNG_CS}</p>
+                                    <span class="card-tag">#${type}</span> <span class="card-tag">#추천</span>
+                                </div>
+                            </div>
+                        `;
+                        container.append(cardHtml);
+                    }
+                } else {
+                    container.html("<p style='text-align:center; padding: 20px; width:100%; color:var(--text-muted);'>추천 결과가 없습니다. 다시 시도해주세요.</p>");
+                }
+            });
+
+            $("#recommendForm").on("reset", function() {
+                $("#recommend-result-container").empty();
+                $("#result-title").hide();
+            });
+        });
+    </script>
 </body>
 </html>

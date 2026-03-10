@@ -49,42 +49,8 @@
             <h2 class="section-title">인기 맛집 상세 보기</h2>
         </div>
 
-        <div class="pop-container">
-            <!-- 임시 상세 데이터 1 -->
-            <div class="pop-card">
-                <img src="./img/doma29.jpg" class="pop-image" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'">
-                <div class="pop-content">
-                    <div class="pop-header">
-                        <h2 class="pop-title">도마29</h2>
-                        <div class="pop-rating">★★★★★ <span style="color:var(--text-muted); font-size:1rem;">(4.8)</span></div>
-                    </div>
-                    <ul class="pop-info">
-                        <li><strong>메뉴</strong> 연어초밥, 광어초밥, 흐트러진 덮밥</li>
-                        <li><strong>위치</strong> 대구 중구 동성로1길 46-2</li>
-                        <li><strong>영업시간</strong> 11:30 ~ 21:00 (브레이크타임 15:30~17:00)</li>
-                        <li><strong>특징</strong> 웨이팅 필수! 두툼하고 싱싱한 연어의 맛</li>
-                    </ul>
-                    <div class="pop-map-container" id="map1"></div>
-                </div>
-            </div>
-
-            <!-- 임시 상세 데이터 2 -->
-            <div class="pop-card">
-                <img src="./img/napoleon.jpg" class="pop-image" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'">
-                <div class="pop-content">
-                    <div class="pop-header">
-                        <h2 class="pop-title">나폴레옹 과자점</h2>
-                        <div class="pop-rating">★★★★☆ <span style="color:var(--text-muted); font-size:1rem;">(4.5)</span></div>
-                    </div>
-                    <ul class="pop-info">
-                        <li><strong>메뉴</strong> 사라다빵, 크로와상, 마카롱</li>
-                        <li><strong>위치</strong> 서울 성북구 성북로 7</li>
-                        <li><strong>영업시간</strong> 08:30 ~ 21:30</li>
-                        <li><strong>특징</strong> 서울 3대 빵집 중 하나, 속이 꽉 찬 전통적인 맛</li>
-                    </ul>
-                    <div class="pop-map-container" id="map2"></div>
-                </div>
-            </div>
+        <div class="pop-container" id="pop-list-container">
+            <!-- 자바스크립트를 통해 data.json 의 데이터가 동적으로 렌더링 됩니다. -->
         </div>
     </div>
 
@@ -111,23 +77,40 @@
     <!-- 스크립트: 카카오맵 SDK (팝업의 소형 지도 구현용) -->
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
     <script>
-        // 간단한 초기화 코드. 실제 좌표로 변경 가능.
         $(document).ready(function() {
-            var mapContainer1 = document.getElementById('map1');
-            if(mapContainer1) {
-                var mapOption1 = { center: new kakao.maps.LatLng(35.867958, 128.595674), level: 3 };
-                var map1 = new kakao.maps.Map(mapContainer1, mapOption1);
-                var marker1 = new kakao.maps.Marker({ position: mapOption1.center });
-                marker1.setMap(map1);
-            }
+            // data.json 비동기 호출
+            $.getJSON("./data.json", function(data) {
+                var container = $("#pop-list-container");
+                var maxItems = Math.min(data.length, 10); // 최대 10개만 표시 (예시)
 
-            var mapContainer2 = document.getElementById('map2');
-            if(mapContainer2) {
-                var mapOption2 = { center: new kakao.maps.LatLng(37.588513, 127.001648), level: 3 };
-                var map2 = new kakao.maps.Map(mapContainer2, mapOption2);
-                var marker2 = new kakao.maps.Marker({ position: mapOption2.center });
-                marker2.setMap(map2);
-            }
+                for (let i = 0; i < maxItems; i++) {
+                    let item = data[i];
+                    // 랜덤 리뷰 별점 (임시 방편)
+                    let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
+                    
+                    let cardHtml = `
+                        <div class="pop-card">
+                            <img src="./img/${i+1}.jpg" class="pop-image" onerror="this.src='https://via.placeholder.com/600x400?text=Food+Image'">
+                            <div class="pop-content">
+                                <div class="pop-header">
+                                    <h2 class="pop-title">${item.BZ_NM}</h2>
+                                    <div class="pop-rating">★★★★★ <span style="color:var(--text-muted); font-size:1rem;">(${rating})</span></div>
+                                </div>
+                                <ul class="pop-info">
+                                    <li><strong>분류</strong> <span class="card-tag">${item.FD_CS}</span></li>
+                                    <li><strong>메뉴</strong> ${item.MNU}</li>
+                                    <li><strong>위치</strong> ${item.GNG_CS}</li>
+                                    <li><strong>영업시간</strong> ${item.MBZ_HR}</li>
+                                    <li><strong>매장소개</strong> ${item.SMPL_DESC}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    container.append(cardHtml);
+                }
+            }).fail(function() {
+                $("#pop-list-container").html("<p style='text-align:center; padding: 50px;'>데이터를 불러오는데 실패했습니다.</p>");
+            });
         });
     </script>
 </body>
