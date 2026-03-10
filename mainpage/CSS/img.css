@@ -1,7 +1,7 @@
 .hot {
   height: 100px;
   width: 100px;
-  background-image: url(../img/매운맛.png);
+  background-image: url(../img/spicy.png);
   background-size: 100%;
   margin: 0;
 }
@@ -9,66 +9,66 @@
 .nhot {
   height: 100px;
   width: 100px;
-  background-image: url(../img/순한맛.png);
+  background-image: url(../img/mild.png);
   background-size: 100%;
 }
 .ncool {
   height: 100px;
   width: 100px;
-  background-image: url(../img/따뜻한.png);
+  background-image: url(../img/warm.png);
   background-size: 100%;
 }
 .cool {
   height: 100px;
   width: 100px;
-  background-image: url(../img/시원한.png);
+  background-image: url(../img/cool.png);
   background-size: 100%;
 }
 .han {
   height: 100px;
   width: 100px;
-  background-image: url(../img/한식.png);
+  background-image: url(../img/korean.png);
   background-size: 100%;
 }
 .yang {
   height: 100px;
   width: 100px;
-  background-image: url(../img/양식.png);
+  background-image: url(../img/western.png);
   background-size: 100%;
 }
 .jong {
   height: 100px;
   width: 100px;
-  background-image: url(../img/중식.png);
+  background-image: url(../img/chinese.png);
   background-size: 100%;
 }
 .lul {
   height: 100px;
   width: 100px;
-  background-image: url(../img/일식.png);
+  background-image: url(../img/japanese.png);
   background-size: 100%;
 }
 .br {
   height: 100px;
   width: 100px;
-  background-image: url(../img/빵.png);
+  background-image: url(../img/bread.png);
   background-size: 100%;
 }
 .ri {
   height: 100px;
   width: 100px;
-  background-image: url(../img/밥.png);
+  background-image: url(../img/rice.png);
   background-size: 100%;
 }
 .nu {
   height: 100px;
   width: 100px;
-  background-image: url(../img/면.png);
+  background-image: url(../img/noodle.png);
   background-size: 100%;
 }
 .D {
   height: 100px;
   width: 100px;
-  background-image: url(../img/떡.png);
+  background-image: url(../img/ricecake.png);
   background-size: 100%;
 }
