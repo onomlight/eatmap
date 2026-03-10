@@ -72,6 +72,12 @@
     color: var(--main-color);
 }
 
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 .btn-search-recommend {
     background-color: var(--main-color);
     color: white;
@@ -81,10 +87,15 @@
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: background 0.3s;
-    margin-top: 20px;
 }
 .btn-search-recommend:hover {
     background-color: var(--hover-color);
+}
+.btn-reset {
+    background-color: var(--text-muted);
+}
+.btn-reset:hover {
+    background-color: #333;
 }
 
 /* 카드 리스트 스타일 */
@@ -162,9 +173,12 @@
         width: 45px;
         height: 45px;
     }
+    .filter-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
     .btn-search-recommend {
         width: 100%;
-        margin-top: 10px;
         padding: 10px;
         font-size: 1rem;
     }
