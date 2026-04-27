@@ -4,15 +4,97 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>뭐먹지? 추천 맛집 리스트 - 뭐먹지</title>
+    <title>추천 맛집 리스트 - eatmap</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="전국 맛집 검색 및 추천 서비스 eatmap - 내 취향에 맞는 맛집을 찾아보세요!" />
+    <meta name="keywords" content="맛집, 맛집추천, 전국맛집, 대구맛집, 뭐먹지, eatmap, 맛집지도" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph (카카오톡, 페이스북 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="eatmap - 취향 저격 맛집 찾기" />
+    <meta property="og:description" content="오늘 뭐 먹지? 내 취향과 위치를 기반으로 최고의 맛집을 추천해드립니다." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
-    <link rel="stylesheet" type="text/css" href="./CSS/img.css" />
-    <link rel="stylesheet" type="text/css" href="./CSS/list.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/pop.css" />
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./JS/main.js"></script>
+    <style>
+        .filter-box {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 50px;
+        }
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .filter-item {
+            cursor: pointer;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            max-width: 150px;
+            position: relative;
+        }
+        .filter-item input[type="radio"] {
+            display: none;
+        }
+        .filter-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            padding: 12px;
+            background: #fdfdfd;
+            border-radius: 50%;
+            border: 2px solid #eee;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .filter-item:hover img {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-color: #ddd;
+        }
+        .filter-item span {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #888;
+            transition: all 0.3s ease;
+        }
+        .filter-item input[type="radio"]:checked + img {
+            border-color: var(--main-color);
+            background: #fff;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 20px rgba(42, 185, 194, 0.15);
+        }
+        .filter-item input[type="radio"]:checked ~ span {
+            color: var(--main-color);
+            font-weight: 800;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,10 +117,11 @@
         <nav>
             <ul id="depth1">
                 <div class="mid-menu">
-                    <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">추천 맛집 찾기</a></li>
-                    <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+                    <li><a href="./02mapscr.html">나의 현재 위치</a></li>
+                    <li><a href="./04list.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">맞춤 추천 (뭐먹지?)</a></li>
+                    <li><a href="./05pop.html">인기 맛집 리스트</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                    <li><a href="./06wish.html">나의 찜 목록</a></li>
                 </div>
             </ul>
         </nav>
@@ -57,10 +140,12 @@
                     <label class="filter-item">
                         <input type="radio" name="spicy" value="매운" required>
                         <img src="./img/spicy.png" alt="매운맛" onerror="this.src='https://via.placeholder.com/80?text=Spicy'">
+                        <span>매운맛</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="spicy" value="안매운">
                         <img src="./img/mild.png" alt="안매운맛" onerror="this.src='https://via.placeholder.com/80?text=Mild'">
+                        <span>안매운맛</span>
                     </label>
                 </div>
 
@@ -69,10 +154,12 @@
                     <label class="filter-item">
                         <input type="radio" name="temp" value="따뜻한" required>
                         <img src="./img/warm.png" alt="따뜻한" onerror="this.src='https://via.placeholder.com/80?text=Warm'">
+                        <span>따뜻한</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="temp" value="시원한">
                         <img src="./img/cool.png" alt="시원한" onerror="this.src='https://via.placeholder.com/80?text=Cool'">
+                        <span>시원한</span>
                     </label>
                 </div>
 
@@ -81,18 +168,22 @@
                     <label class="filter-item">
                         <input type="radio" name="type" value="한식" required>
                         <img src="./img/korean.png" alt="한식" onerror="this.src='https://via.placeholder.com/80?text=KOR'">
+                        <span>한식</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="type" value="양식">
                         <img src="./img/western.png" alt="양식" onerror="this.src='https://via.placeholder.com/80?text=WES'">
+                        <span>양식</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="type" value="중식">
                         <img src="./img/chinese.png" alt="중식" onerror="this.src='https://via.placeholder.com/80?text=CHN'">
+                        <span>중식</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="type" value="일식">
                         <img src="./img/japanese.png" alt="일식" onerror="this.src='https://via.placeholder.com/80?text=JPN'">
+                        <span>일식</span>
                     </label>
                 </div>
 
@@ -101,18 +192,22 @@
                     <label class="filter-item">
                         <input type="radio" name="carb" value="빵" required>
                         <img src="./img/bread.png" alt="빵" onerror="this.src='https://via.placeholder.com/80?text=Bread'">
+                        <span>빵/버거</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="carb" value="밥">
                         <img src="./img/rice.png" alt="밥" onerror="this.src='https://via.placeholder.com/80?text=Rice'">
+                        <span>밥/덮밥</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="carb" value="면">
                         <img src="./img/noodle.png" alt="면" onerror="this.src='https://via.placeholder.com/80?text=Noodle'">
+                        <span>면 요리</span>
                     </label>
                     <label class="filter-item">
                         <input type="radio" name="carb" value="떡">
                         <img src="./img/ricecake.png" alt="떡" onerror="this.src='https://via.placeholder.com/80?text=Ricecake'">
+                        <span>분식/떡</span>
                     </label>
                 </div>
 
@@ -124,8 +219,8 @@
         </div>
 
         <!-- 추천 결과 표시 영역 -->
-        <h3 id="result-title" style="display:none; text-align:center; color:var(--text-dark); margin-bottom:20px;">당신을 위한 추천 맛집입니다!</h3>
-        <div class="list-container" id="recommend-result-container">
+        <h3 id="result-title" style="display:none; text-align:center; color:var(--text-dark); margin-bottom:40px; font-size: 1.5rem; font-weight: 700;">✨ 당신을 위한 맞춤 추천 결과 ✨</h3>
+        <div class="pop-container" id="recommend-result-container">
             <!-- 조회 클릭 시 관련 데이터가 여기에 나타납니다. -->
         </div>
     </div>
@@ -154,9 +249,21 @@
         $(document).ready(function() {
             var restaurantsData = [];
 
-            // data.json 로드
-            $.getJSON("./data.json", function(data) {
-                restaurantsData = data;
+            const DAEGU_API_URL = "https://www.daegufood.go.kr/kor/api/tasty.html?mode=json&addr=%EC%A4%91%EA%B5%AC";
+
+            // 라이브 API 데이터 호출
+            $.ajax({
+                url: DAEGU_API_URL,
+                dataType: "json",
+                success: function(response) {
+                    restaurantsData = response.data;
+                },
+                error: function() {
+                    console.warn("라이브 API 호출 실패. 로컬 데이터를 사용합니다.");
+                    $.getJSON("./data.json", function(data) {
+                        restaurantsData = data;
+                    });
+                }
             });
 
             $("#recommendForm").submit(function(e) {
@@ -213,7 +320,7 @@
 
                 // 만약 결과가 없으면 임의로 몇 개 뽑아오기 (fallback)
                 if (filtered.length === 0 && restaurantsData.length > 0) {
-                    filtered = restaurantsData.slice(0, 3);
+                    filtered = restaurantsData.slice(0, 4);
                 }
 
                 var container = $("#recommend-result-container");
@@ -224,19 +331,36 @@
                     // 상위 최대 12개까지만 노출
                     for (let i = 0; i < Math.min(filtered.length, 12); i++) {
                         let item = filtered[i];
+                        let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
                         let cardHtml = `
-                            <div class="list-card">
-                                <div class="card-image-placeholder" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 180px;">
-                                    <img src="img/logo.png" style="width: 60px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
+                            <div class="pop-card">
+                                <button class="wish-btn" data-name="${item.BZ_NM}">
+                                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </button>
+                                <div class="pop-image-area" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 200px;">
+                                    <img src="img/logo.png" style="width: 80px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
                                 </div>
-                                <div class="card-info">
-                                    <h3>${item.BZ_NM}</h3>
-                                    <p>${item.GNG_CS}</p>
+                                <div class="pop-content">
+                                    <div class="pop-header">
+                                        <h2 class="pop-title">${item.BZ_NM}</h2>
+                                        <div class="pop-rating">★★★★★ <span style="color:var(--text-muted); font-size:1rem;">(${rating})</span></div>
+                                    </div>
+                                    <ul class="pop-info">
+                                        <li><strong>분류</strong> <span class="card-tag">${item.FD_CS}</span></li>
+                                        <li><strong>메뉴</strong> ${item.MNU}</li>
+                                        <li><strong>위치</strong> ${item.GNG_CS}</li>
+                                        <li><strong>매장소개</strong> ${item.SMPL_DESC || '소개 정보가 없습니다.'}</li>
+                                    </ul>
+                                    <div class="pop-footer" style="margin-top:auto;">
+                                        <a href="https://map.kakao.com/link/search/${encodeURIComponent(item.BZ_NM)}" target="_blank" class="btn-search-recommend" style="display:inline-block; text-decoration:none; text-align:center; width:100%; box-sizing:border-box;">길찾기 / 지도보기</a>
+                                    </div>
                                 </div>
                             </div>
                         `;
                         container.append(cardHtml);
                     }
+                    // 찜 상태 업데이트
+                    if (typeof updateWishStatus === 'function') updateWishStatus();
                 } else {
                     container.html("<p style='text-align:center; padding: 20px; width:100%; color:var(--text-muted);'>추천 결과가 없습니다. 다시 시도해주세요.</p>");
                 }

@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>키워드로 검색하기 - 뭐먹지</title>
+    <title>키워드로 검색하기 - eatmap</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="전국 맛집 검색 및 추천 서비스 eatmap - 내 취향에 맞는 맛집을 찾아보세요!" />
+    <meta name="keywords" content="맛집, 맛집추천, 전국맛집, 대구맛집, 뭐먹지, eatmap, 맛집지도" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph (카카오톡, 페이스북 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="eatmap - 취향 저격 맛집 찾기" />
+    <meta property="og:description" content="오늘 뭐 먹지? 내 취향과 위치를 기반으로 최고의 맛집을 추천해드립니다." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
@@ -87,29 +102,67 @@
             background-color: #f0f9fa;
         }
 
-        #placesList .item h5, #placesList .item .info {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        
-        #placesList .item h5 {
-            font-size: 15px;
-            color: var(--main-color);
-            margin-bottom: 5px;
-            font-weight: bold;
+        #placesList {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        #placesList .info .gray { color: #8a8a8a; font-size: 12px; }
-        #placesList .info .tel { color: #009900; font-size: 13px; margin-top: 3px; display:block; }
-        
-        #placesList .item .markerbg {
-            position: absolute;
-            left: 0;
-            top: 15px;
-            width: 36px;
-            height: 37px;
-            background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+        #placesList .item {
+            position: relative;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #placesList .item:hover {
+            background-color: #f8f9fa;
+        }
+
+        #placesList .item h5 {
+            font-size: 16px;
+            color: var(--main-color);
+            margin-bottom: 5px;
+            font-weight: 700;
+            padding-right: 30px; /* 찜 버튼 공간 */
+        }
+
+        #placesList .item .info {
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+
+        #placesList .info .gray { color: #888; margin-top: 2px; display: block; }
+        #placesList .info .tel { color: #555; font-size: 12px; margin-top: 3px; }
+
+        #placesList .item .wish-btn {
+            top: 10px;
+            right: 0px;
+            width: 30px;
+            height: 30px;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        #placesList .item .wish-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .markerbg {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: var(--main-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 8px;
+            vertical-align: middle;
         }
 
         /* Pagination... 간단히 */
@@ -150,6 +203,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./JS/main.js"></script>
 </head>
 
 <body>
@@ -172,10 +226,11 @@
         <nav>
             <ul id="depth1">
                 <div class="mid-menu">
-                    <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html">뭐먹지?</a></li>
-                    <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+                    <li><a href="./02mapscr.html">나의 현재 위치</a></li>
+                    <li><a href="./04list.html">맞춤 추천 (뭐먹지?)</a></li>
+                    <li><a href="./05pop.html">인기 맛집 리스트</a></li>
                     <li><a href="./03mapping.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">키워드로 검색하기</a></li>
+                    <li><a href="./06wish.html">나의 찜 목록</a></li>
                 </div>
             </ul>
         </nav>
@@ -227,171 +282,6 @@
 
     <!-- 카카오맵 스크립트 -->
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f&libraries=services"></script>
-    <script>
-        var markers = [];
-        var mapContainer = document.getElementById('map'),
-            mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567),
-                level: 3
-            };
-        var map = new kakao.maps.Map(mapContainer, mapOption);
-        var ps = new kakao.maps.services.Places();
-        var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
-        searchPlaces();
-
-        function searchPlaces() {
-            var keyword = document.getElementById('keyword').value;
-            if (!keyword.replace(/^\s+|\s+$/g, '')) {
-                alert('키워드를 입력해주세요!');
-                return false;
-            }
-            ps.keywordSearch(keyword, placesSearchCB);
-        }
-
-        function placesSearchCB(data, status, pagination) {
-            if (status === kakao.maps.services.Status.OK) {
-                displayPlaces(data);
-                displayPagination(pagination);
-            } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-                alert('검색 결과가 존재하지 않습니다.');
-                return;
-            } else if (status === kakao.maps.services.Status.ERROR) {
-                alert('검색 결과 중 오류가 발생했습니다.');
-                return;
-            }
-        }
-
-        function displayPlaces(places) {
-            var listEl = document.getElementById('placesList'),
-                menuEl = document.getElementById('menu_wrap'),
-                fragment = document.createDocumentFragment(),
-                bounds = new kakao.maps.LatLngBounds();
-
-            removeAllChildNods(listEl);
-            removeMarker();
-
-            for (var i = 0; i < places.length; i++) {
-                var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
-                    marker = addMarker(placePosition, i),
-                    itemEl = getListItem(i, places[i]);
-
-                bounds.extend(placePosition);
-
-                (function (marker, title) {
-                    kakao.maps.event.addListener(marker, 'mouseover', function () {
-                        displayInfowindow(marker, title);
-                    });
-                    kakao.maps.event.addListener(marker, 'mouseout', function () {
-                        infowindow.close();
-                    });
-                    itemEl.onmouseover = function () {
-                        displayInfowindow(marker, title);
-                    };
-                    itemEl.onmouseout = function () {
-                        infowindow.close();
-                    };
-                })(marker, places[i].place_name);
-
-                fragment.appendChild(itemEl);
-            }
-            listEl.appendChild(fragment);
-            menuEl.scrollTop = 0;
-            map.setBounds(bounds);
-        }
-
-        function getListItem(index, places) {
-            var el = document.createElement('li'),
-                itemStr = '<span class="markerbg marker_' + (index + 1) + '"></span>' +
-                    '<div class="info">' +
-                    '   <h5>' + places.place_name + '</h5>';
-            if (places.road_address_name) {
-                itemStr += '    <span class="gray">' + places.road_address_name + '</span><br>' +
-                    '   <span class="gray">' + places.address_name + '</span>';
-            } else {
-                itemStr += '    <span class="gray">' + places.address_name + '</span>';
-            }
-            itemStr += '  <span class="tel">' + places.phone + '</span></div>';
-            el.innerHTML = itemStr;
-            el.className = 'item';
-            return el;
-        }
-
-        function addMarker(position, idx) {
-            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png',
-                imageSize = new kakao.maps.Size(36, 37),
-                imgOptions = {
-                    spriteSize: new kakao.maps.Size(36, 691),
-                    spriteOrigin: new kakao.maps.Point(0, (idx * 46) + 10),
-                    offset: new kakao.maps.Point(13, 37)
-                },
-                markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-                marker = new kakao.maps.Marker({
-                    position: position,
-                    image: markerImage
-                });
-            marker.setMap(map);
-            markers.push(marker);
-            return marker;
-        }
-
-        function removeMarker() {
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-            markers = [];
-        }
-
-        function displayPagination(pagination) {
-            var paginationEl = document.getElementById('pagination'),
-                fragment = document.createDocumentFragment(), i;
-
-            while (paginationEl.hasChildNodes()) {
-                paginationEl.removeChild(paginationEl.lastChild);
-            }
-
-            for (i = 1; i <= pagination.last; i++) {
-                var el = document.createElement('a');
-                el.innerHTML = i;
-                if (i === pagination.current) {
-                    el.className = 'on';
-                } else {
-                    el.onclick = (function (i) {
-                        return function () {
-                            pagination.gotoPage(i);
-                        }
-                    })(i);
-                }
-                fragment.appendChild(el);
-            }
-            paginationEl.appendChild(fragment);
-        }
-
-        function displayInfowindow(marker, title) {
-            var content = '<div style="padding:5px;z-index:1;color:#333;font-size:14px;font-weight:bold;">' + title + '</div>';
-            infowindow.setContent(content);
-            infowindow.open(map, marker);
-        }
-
-        function removeAllChildNods(el) {
-            while (el.hasChildNodes()) {
-                el.removeChild(el.lastChild);
-            }
-        }
-    </script>
+    <script src="./JS/mapapp.js"></script>
 </body>
-</html>s="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-youtube"
-                viewBox="0 0 16 16">
-                <path
-                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-twitter"
-                viewBox="0 0 16 16">
-                <path
-                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-            </svg>
-        </div>
-    </footer>
-</body>
-
 </html>

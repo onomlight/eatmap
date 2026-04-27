@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 찜 목록 - eatmap</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="내가 찜한 맛집들을 한눈에 확인하세요! eatmap 나의 찜 목록" />
+    <meta name="keywords" content="맛집, 찜목록, 즐겨찾기, 맛집추천, eatmap" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="나의 찜 목록 - eatmap" />
+    <meta property="og:description" content="내가 선택한 최고의 맛집들, 여기서 확인하세요." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/06wish.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
+
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/pop.css" />
+
+    <!-- jQuery & 공통 JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./JS/main.js"></script>
+</head>
+
+<body>
+    <!-- ===== 상단 네비게이션 ===== -->
+    <div id="topmenu">
+        <header class="header-top">
+            <a href="./01main.html">
+                <img id="main-logo" alt="뭐먹지 로고" src="img/logo.png" />
+            </a>
+            <h3>내가 찜한 맛집들을 확인하세요!</h3>
+        </header>
+
+        <div class="srch_area">
+            <form name="searchFrom" onsubmit="event.preventDefault();">
+                <input type="text" id="s_word" name="query" placeholder="어떤 맛집을 찾으시나요?" />
+                <button type="submit">검색</button>
+            </form>
+        </div>
+
+        <nav>
+            <ul id="depth1">
+                <div class="mid-menu">
+                    <li><a href="./02mapscr.html">나의 현재 위치</a></li>
+                    <li><a href="./04list.html">맞춤 추천 (뭐먹지?)</a></li>
+                    <li><a href="./05pop.html">인기 맛집 리스트</a></li>
+                    <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                    <li><a href="./06wish.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">나의 찜 목록</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ===== 메인 컨텐츠 ===== -->
+    <div class="main_cen">
+        <div class="menu_line2">
+            <h2 class="section-title">나의 찜 목록 (Favorites)</h2>
+        </div>
+
+        <div class="pop-container" id="wish-list-container">
+            <!-- 자바스크립트를 통해 찜한 데이터가 동적으로 렌더링 됩니다. -->
+        </div>
+    </div>
+
+    <!-- ===== 푸터 ===== -->
+    <footer>
+        <div id="footer-menu">
+            <span>회사소개 &nbsp;|&nbsp; </span>
+            <span>서비스 소개 &nbsp;|&nbsp; </span>
+            <span>개인정보처리방침 &nbsp;|&nbsp; </span>
+            <span>이용약관 &nbsp;|&nbsp; </span>
+            <span>도움말</span>
+        </div>
+        <div id="info">
+            대표 ㅣ 뭐먹지컨텐츠즈<br>
+            연락처 | 053-222-5555 &nbsp;&nbsp;&nbsp; 위치 | 대구시 중구 중앙대로 999
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            function renderWishList() {
+                const wishList = getWishList();
+                const container = $("#wish-list-container");
+                container.empty();
+
+                if (wishList.length === 0) {
+                    container.html("<div style='text-align:center; padding: 100px 20px; width:100%; color:var(--text-muted);'><p style='font-size:1.2rem; margin-bottom:15px;'>아직 찜한 맛집이 없습니다. 💔</p><p>맛집 리스트에서 하트를 눌러보세요!</p><br><a href='./05pop.html' class='btn-search-recommend' style='display:inline-block; text-decoration:none;'>맛집 보러가기</a></div>");
+                    return;
+                }
+
+                $.getJSON("./data.json", function(data) {
+                    const wishData = data.filter(item => wishList.includes(item.BZ_NM));
+                    
+                    if (wishData.length === 0) {
+                        // 만약 로컬스토리지에는 있는데 data.json에 없는 경우 (데이터 변경 등)
+                        container.html("<p style='text-align:center; padding: 50px; width:100%;'>찜한 맛집을 찾을 수 없습니다.</p>");
+                        return;
+                    }
+
+                    wishData.forEach(function(item) {
+                        let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
+                        let cardHtml = `
+                            <div class="pop-card">
+                                <button class="wish-btn active" data-name="${item.BZ_NM}">
+                                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </button>
+                                <div class="pop-image-area" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 200px;">
+                                    <img src="img/logo.png" style="width: 80px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
+                                </div>
+                                <div class="pop-content">
+                                    <div class="pop-header">
+                                        <h2 class="pop-title">${item.BZ_NM}</h2>
+                                        <div class="pop-rating">★★★★★ <span style="color:var(--text-muted); font-size:1rem;">(${rating})</span></div>
+                                    </div>
+                                    <ul class="pop-info">
+                                        <li><strong>분류</strong> <span class="card-tag">${item.FD_CS}</span></li>
+                                        <li><strong>메뉴</strong> ${item.MNU}</li>
+                                        <li><strong>위치</strong> ${item.GNG_CS}</li>
+                                        <li><strong>매장소개</strong> ${item.SMPL_DESC || '소개 정보가 없습니다.'}</li>
+                                    </ul>
+                                    <div class="pop-footer" style="margin-top:auto;">
+                                        <a href="https://map.kakao.com/link/search/${encodeURIComponent(item.BZ_NM)}" target="_blank" class="btn-search-recommend" style="display:inline-block; text-decoration:none; text-align:center; width:100%; box-sizing:border-box;">길찾기 / 지도보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.append(cardHtml);
+                    });
+                });
+            }
+
+            renderWishList();
+
+            // 찜 버튼 클릭 시 해당 페이지에서 즉시 삭제 반영을 위한 오버라이딩 느낌의 이벤트 처리
+            $(document).on("click", ".wish-btn", function() {
+                // 약간의 시간차를 두어 localStorage가 먼저 업데이트 되게 하거나, 내부 로직 재호출
+                setTimeout(renderWishList, 100);
+            });
+        });
+    </script>
+</body>
+</html>

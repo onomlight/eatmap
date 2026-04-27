@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>맛집 - 부딪히는 포크와 숟가락</title>
+    <title>eatmap - 취향 저격 맛집 찾기</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="전국 맛집 검색 및 추천 서비스 eatmap - 내 취향에 맞는 맛집을 찾아보세요!" />
+    <meta name="keywords" content="맛집, 맛집추천, 전국맛집, 대구맛집, 뭐먹지, eatmap, 맛집지도" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph (카카오톡, 페이스북 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="eatmap - 취향 저격 맛집 찾기" />
+    <meta property="og:description" content="오늘 뭐 먹지? 내 취향과 위치를 기반으로 최고의 맛집을 추천해드립니다." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body, html {
@@ -167,9 +182,37 @@
             0%, 100% { opacity: 0.4; }
             50% { opacity: 0.8; }
         }
+        .skip-intro {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fade-in 0.5s 1.5s forwards;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .skip-intro:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateX(-50%) translateY(-2px);
+        }
+        
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-amber-50">
+    <a href="01main.html" class="skip-intro">인트로 건너뛰기 ➔</a>
     <div id="intro-wrapper" style="width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer;">
         
         <!-- 포크 캐릭터 -->

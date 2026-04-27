@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>나의 현재 위치 맛집 - 뭐먹지</title>
+    <title>나의 현재 위치 맛집 - eatmap</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="전국 맛집 검색 및 추천 서비스 eatmap - 내 취향에 맞는 맛집을 찾아보세요!" />
+    <meta name="keywords" content="맛집, 맛집추천, 전국맛집, 대구맛집, 뭐먹지, eatmap, 맛집지도" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph (카카오톡, 페이스북 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="eatmap - 취향 저격 맛집 찾기" />
+    <meta property="og:description" content="오늘 뭐 먹지? 내 취향과 위치를 기반으로 최고의 맛집을 추천해드립니다." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
@@ -24,6 +39,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./JS/main.js"></script>
 </head>
 
 <body>
@@ -46,10 +62,11 @@
         <nav>
             <ul id="depth1">
                 <div class="mid-menu">
-                    <li><a href="./02mapscr.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html">뭐먹지?</a></li>
-                    <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+                    <li><a href="./02mapscr.html" style="color:var(--main-color); border-bottom: 2px solid var(--main-color);">나의 현재 위치</a></li>
+                    <li><a href="./04list.html">맞춤 추천 (뭐먹지?)</a></li>
+                    <li><a href="./05pop.html">인기 맛집 리스트</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                    <li><a href="./06wish.html">나의 찜 목록</a></li>
                 </div>
             </ul>
         </nav>
@@ -93,7 +110,7 @@
     </footer>
 
     <!-- ===== 스크립트 ===== -->
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f&libraries=services,clusterer"></script>
     <script src="./JS/app.js"></script>
     <script>
         $(document).ready(function() {
@@ -109,6 +126,9 @@
                     let rating = (Math.random() * (5.0 - 4.0) + 4.0).toFixed(1);
                     let cardHtml = `
                         <div class="pop-card">
+                            <button class="wish-btn" data-name="${item.BZ_NM}">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            </button>
                             <div class="pop-image-area" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 200px;">
                                 <img src="img/logo.png" style="width: 80px; opacity: 0.3; object-fit: contain;" alt="뭐먹지 로고">
                             </div>
@@ -123,11 +143,16 @@
                                     <li><strong>위치</strong> ${item.GNG_CS}</li>
                                     <li><strong>매장소개</strong> ${item.SMPL_DESC}</li>
                                 </ul>
+                                <div class="pop-footer" style="margin-top:auto;">
+                                    <a href="https://map.kakao.com/link/search/${encodeURIComponent(item.BZ_NM)}" target="_blank" class="btn-search-recommend" style="display:inline-block; text-decoration:none; text-align:center; width:100%; box-sizing:border-box;">길찾기 / 지도보기</a>
+                                </div>
                             </div>
                         </div>
                     `;
                     container.append(cardHtml);
                 }
+                // 찜 상태 업데이트
+                if (typeof updateWishStatus === 'function') updateWishStatus();
             }).fail(function() {
                 $("#nearby-list-container").html("<p style='text-align:center; padding: 50px;'>데이터를 불러오는데 실패했습니다.</p>");
             });

@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>뭐먹지 - 내 취향과 맛집 확인!</title>
+    <title>eatmap - 취향 저격 맛집 찾기</title>
+
+    <!-- SEO 및 소셜 공유 설정 -->
+    <meta name="description" content="전국 맛집 검색 및 추천 서비스 eatmap - 내 취향에 맞는 맛집을 찾아보세요!" />
+    <meta name="keywords" content="맛집, 맛집추천, 전국맛집, 대구맛집, 뭐먹지, eatmap, 맛집지도" />
+    <meta name="author" content="onomlight" />
+
+    <!-- Open Graph (카카오톡, 페이스북 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="eatmap - 취향 저격 맛집 찾기" />
+    <meta property="og:description" content="오늘 뭐 먹지? 내 취향과 위치를 기반으로 최고의 맛집을 추천해드립니다." />
+    <meta property="og:image" content="https://onomlight.github.io/eatmap/img/logo.png" />
+    <meta property="og:url" content="https://onomlight.github.io/eatmap/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
@@ -35,10 +50,11 @@
         <nav>
             <ul id="depth1">
                 <div class="mid-menu">
-                    <li><a href="./02mapscr.html">나의 현재 위치 맛집</a></li>
-                    <li><a href="./04list.html">뭐먹지?</a></li>
-                    <li><a href="./05pop.html">맛집 리스트 보기</a></li>
+                    <li><a href="./02mapscr.html">나의 현재 위치</a></li>
+                    <li><a href="./04list.html">맞춤 추천 (뭐먹지?)</a></li>
+                    <li><a href="./05pop.html">인기 맛집 리스트</a></li>
                     <li><a href="./03mapping.html">키워드로 검색하기</a></li>
+                    <li><a href="./06wish.html">나의 찜 목록</a></li>
                 </div>
             </ul>
         </nav>
@@ -161,6 +177,37 @@
             </div>
         </div>
     </div>
+    
+    <!-- ===== 지역 선택 필터 (전국구 확장용) ===== -->
+    <div class="main_cen region-filter-section" style="padding-top:20px; text-align:center;">
+        <div class="region-selectors" style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+            <select id="sido-select" class="custom-select" style="padding:10px; border-radius:8px; border:1px solid #ddd; font-family:'Pretendard';">
+                <option value="대구광역시">대구광역시</option>
+                <option value="서울특별시">서울특별시</option>
+                <option value="부산광역시">부산광역시</option>
+                <option value="인천광역시">인천광역시</option>
+                <option value="광주광역시">광주광역시</option>
+                <option value="대전광역시">대전광역시</option>
+                <option value="울산광역시">울산광역시</option>
+                <option value="세종특별자치시">세종특별자치시</option>
+                <option value="경기도">경기도</option>
+            </select>
+            <select id="gugun-select" class="custom-select" style="padding:10px; border-radius:8px; border:1px solid #ddd; font-family:'Pretendard';">
+                <option value="">전체 구/군</option>
+                <option value="중구" selected>중구</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- ===== 큐레이션 추천 섹션 ===== -->
+    <div class="main_cen curation-section" style="padding-top:0; margin-top:-20px;">
+        <div class="menu_line2">
+            <h2 class="section-title" id="curation-title">지금 이 시간, 추천 맛집</h2>
+        </div>
+        <div class="cards" id="curation-container">
+            <!-- JS로 동적 로드 -->
+        </div>
+    </div>
 
     <!-- ===== 푸터 ===== -->
     <footer>
@@ -182,8 +229,120 @@
     </footer>
 
     <!-- ===== 스크립트 ===== -->
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f"></script>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1f78091e886236c7d30ebe98181dd94f&libraries=services,clusterer"></script>
     <script src="./JS/app.js"></script>
     <script src="./JS/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            const hour = new Date().getHours();
+            let title = "지금 이 시간, 추천 맛집";
+            let targetCats = [];
+
+            if (hour >= 6 && hour < 11) {
+                title = "☀️ 상큼한 아침을 여는 브런치 & 카페";
+                targetCats = ["카페", "디저트", "양식"];
+            } else if (hour >= 11 && hour < 15) {
+                title = "🍴 든든한 점심 한 끼 어때요?";
+                targetCats = ["한식", "중식", "일식"];
+            } else if (hour >= 15 && hour < 18) {
+                title = "☕ 나른한 오후, 달콤한 디저트 타임";
+                targetCats = ["카페", "디저트", "제과"];
+            } else if (hour >= 18 && hour < 22) {
+                title = "🌙 특별한 저녁 만찬을 위해";
+                targetCats = ["한식", "양식", "일식", "중식"];
+            } else {
+                title = "🍕 야식이 생각나는 이 밤";
+                targetCats = ["중식", "분식", "치킨", "일식"]; 
+            }
+
+            $("#curation-title").text(title);
+
+            const DAEGU_API_URL = "https://www.daegufood.go.kr/kor/api/tasty.html?mode=json&addr=%EC%A4%91%EA%B5%AC";
+
+            $.ajax({
+                url: DAEGU_API_URL,
+                dataType: "json",
+                success: function(response) {
+                    renderCuration(response.data);
+                },
+                error: function() {
+                    console.warn("라이브 API 호출 실패. 로컬 데이터를 사용합니다.");
+                    $.getJSON("./data.json", function(data) {
+                        renderCuration(data);
+                    });
+                }
+            });
+
+            // 지역 선택 로직
+            const regionData = {
+                "대구광역시": ["중구", "동구", "서구", "남구", "북구", "수성구", "달서구", "달성군"],
+                "서울특별시": ["종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구", "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구", "강남구", "송파구", "강동구"],
+                "부산광역시": ["중구", "서구", "동구", "영도구", "부산진구", "동래구", "남구", "북구", "강서구", "해운대구", "사하구", "금정구", "연제구", "수영구", "사상구", "기장군"]
+            };
+
+            const sidoSelect = $("#sido-select");
+            const gugunSelect = $("#gugun-select");
+
+            sidoSelect.change(function() {
+                const sido = $(this).val();
+                const guguns = regionData[sido] || [];
+                
+                gugunSelect.empty().append('<option value="">전체 구/군</option>');
+                guguns.forEach(g => {
+                    gugunSelect.append(`<option value="${g}">${g}</option>`);
+                });
+
+                // 지도 이동 (예시 좌표 - 실제로는 지오코더 활용)
+                const cityCoords = {
+                    "대구광역시": new kakao.maps.LatLng(35.8714, 128.6014),
+                    "서울특별시": new kakao.maps.LatLng(37.5665, 126.9780),
+                    "부산광역시": new kakao.maps.LatLng(35.1796, 129.0756)
+                };
+                if (cityCoords[sido]) map.setCenter(cityCoords[sido]);
+            });
+
+            gugunSelect.change(function() {
+                const sido = sidoSelect.val();
+                const gugun = $(this).val();
+                if (sido && gugun) {
+                    geocoder.addressSearch(sido + " " + gugun, function(result, status) {
+                        if (status === kakao.maps.services.Status.OK) {
+                            map.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
+                        }
+                    });
+                }
+            });
+
+            function renderCuration(data) {
+                // 카테고리 필터링
+                let filtered = data.filter(item => 
+                    targetCats.some(cat => item.FD_CS.includes(cat))
+                );
+                
+                if (filtered.length < 4) filtered = data;
+
+                // 랜덤하게 4개 추출
+                let shuffled = filtered.sort(() => 0.5 - Math.random());
+                let selected = shuffled.slice(0, 4);
+
+                const container = $("#curation-container");
+                container.empty();
+                selected.forEach(item => {
+                    let cardHtml = `
+                        <div class="card" data-name="${item.BZ_NM}">
+                            <div class="pop-image-area" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; height: 180px;">
+                                <img src="img/logo.png" style="width: 60px; opacity: 0.2; object-fit: contain;" alt="뭐먹지 로고">
+                            </div>
+                            <div class="iteminfo">
+                                <span>${item.BZ_NM}</span>
+                                <p>${item.FD_CS} | ${item.GNG_CS}</p>
+                            </div>
+                        </div>
+                    `;
+                    container.append(cardHtml);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

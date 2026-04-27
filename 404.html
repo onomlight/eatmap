@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지를 찾을 수 없습니다 - eatmap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: rgb(42, 185, 194);
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: rgb(42, 185, 194);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: rgb(32, 160, 168);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>요청하신 페이지를 찾을 수 없습니다.<br>주소를 다시 확인하시거나 아래 버튼을 클릭해 메인으로 이동해 주세요.</p>
+        <a href="01main.html" class="btn">메인으로 돌아가기</a>
+    </div>
+    <script>
+        // 자동으로 메인 페이지로 리다이렉트 (선택 사항)
+        // setTimeout(() => { window.location.href = '01main.html'; }, 5000);
+    </script>
+</body>
+</html>
